@@ -1,5 +1,6 @@
 'use strict';
 
 module.exports = app => {
-  app.get('/', app.controller.home.index);
+  app.get('/', 'home.index');
+  app.get('/choose', 'choose.index');
 };

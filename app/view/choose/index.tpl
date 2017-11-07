@@ -1,5 +1,5 @@
-<!-- app/view/news/list.tpl -->
-<html>
+<!DOCTYPE html>
+<html lang="zh-cn">
   <head>
     <title>Hacker News</title>
     <link rel="stylesheet" href="/public/css/news.css" />
