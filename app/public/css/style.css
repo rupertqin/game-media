@@ -1,0 +1,11 @@
+.container {margin: 0 auto;}
+
+
+
+@media screen and (min-width: 1000px) {
+  .container {width: 960px;}
+}
+header {background: none;padding: none;height: auto;}
+header .menu {background: rgb(36, 122, 252);height: 2.75rem;}
+header .nav {color: #999;}
+.menu a.button, .menu button, .menu [role="button"] {background: rgb(21, 32, 190)}

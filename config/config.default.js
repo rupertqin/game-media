@@ -14,6 +14,11 @@ module.exports = appInfo => {
     },
   };
 
+  config.security = {
+    csrf: false,
+    ctoken: false,
+  };
+
   config.middleware = [];
 
   return config;
