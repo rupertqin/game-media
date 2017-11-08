@@ -27,6 +27,7 @@ module.exports = app => {
       if (isMember) {
         // const ssid = this.ctx.helper.genSession(name, account);
         // this.ctx.cookies.set('ssid', ssid);
+        this.ctx.request.user = account;
         this.ctx.session.user = account;
       }
       this.ctx.redirect('back');

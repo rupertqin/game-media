@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = (options, app) => {
+module.exports = options => {
   return function* (next) {
     if (this.session.user) {
       this.state.user = this.session.user;

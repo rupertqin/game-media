@@ -19,10 +19,21 @@ module.exports = appInfo => {
     ctoken: false,
   };
 
-  config.middleware = [ 'user' ];
-  config.user = {
-    yaha: 798,
+  config.redis = {
+    client: {
+      port: 6379,
+      host: '127.0.0.1',
+      password: null,
+      db: 0,
+    },
+    agent: true,
   };
+
+  // relate to user: session => locals ect.
+  // config.middleware = [ 'user' ];
+  // config.user = {
+  //   yaha: 798,
+  // };
 
   return config;
 };
