@@ -9,7 +9,10 @@
     <title>{% block title %}egg - {% endblock %}</title>
   </head>
   <body>
+
     <header>
+      <label for="drawer-checkbox" class="button drawer-toggle"></label>
+      
       <div class="nav">
         <div class="container">
           <div class="col-sm row">
@@ -38,8 +41,22 @@
       
       </div>
     </header>
+    
+    <input type="checkbox" id="drawer-checkbox">
+    <div class="drawer">
+      <nav>
+        <label for="drawer-checkbox" class="close"></label>
+        <input type="checkbox" id="drawer-checkbox">
+        <a href="#" class="">首页</a>
+        <a href="#" class="">选择游戏</a>
+        <a href="#" class="">推广列表</a>
+        <a href="#" class="">我的收入</a>
+        <a href="#" role="">联系我们</a>
+      </nav>
+    </div>
+    
     {% block content %}{% endblock %}
-    <footer>
+    <foote class="sticky">
       <div class="container">
         <p>&copy; 2001-2016 Web Corporation | <a href="#"></a> | <a href="#">Terms of use</a></p>
       </div>

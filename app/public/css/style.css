@@ -5,6 +5,12 @@
 @media screen and (min-width: 1000px) {
   .container {width: 960px;}
 }
+
+@media screen and (min-width: 766px) {
+  .drawer {display: none;}
+}
+      
+
 header {background: none;padding: none;height: auto;}
 header .menu {background: rgb(36, 122, 252);height: 2.75rem;}
 header .nav {color: #999;}
