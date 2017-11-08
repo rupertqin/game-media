@@ -11,9 +11,11 @@ module.exports = app => {
       };
 
       const account = await this.app.mysql.get('account', { id: 1 });
-      dataList.list.push({
-        title: account.username, url: account.username,
-      });
+      if (account && account.username) {
+        dataList.list.push({
+          title: account.username, url: account.username,
+        });
+      }
 
       const day = await this.app.redis.get('day');
       dataList.list.push({

@@ -16,7 +16,7 @@ module.exports = {
   async checkLogin(name, pwd) {
     pwd = md5(pwd);
     const account = await this.app.mysql.get('account', { username: name });
-    const isMember = pwd === account.password;
+    const isMember = !!account && (pwd === account.password);
     return { isMember, account: isMember ? account : null };
   },
 
