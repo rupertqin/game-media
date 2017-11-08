@@ -39,5 +39,10 @@
       </div>
     </header>
     {% block content %}{% endblock %}
+    <footer>
+      <div class="container">
+        <p>&copy; 2001-2016 Web Corporation | <a href="#"></a> | <a href="#">Terms of use</a></p>
+      </div>
+    </footer>
   </body>
 </html>
