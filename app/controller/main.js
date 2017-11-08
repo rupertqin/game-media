@@ -29,7 +29,7 @@ module.exports = app => {
         // this.ctx.cookies.set('ssid', ssid);
         this.ctx.session.user = account;
       }
-      this.ctx.redirect('/choose');
+      this.ctx.redirect('back');
     }
 
     async logout() {
