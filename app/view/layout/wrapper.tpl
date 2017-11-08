@@ -20,8 +20,8 @@
                 logo
               </div>
               <div class="col-sm-6">
-                {% if user %}
-                  {{ user.username }} | <a href="/logout">logout</a>
+                {% if not ctx.session.isNew %}
+                  {{ ctx.session.user.username }} | <a href="/logout">logout</a>
                 {% else %}
                   <a href="/">login</a>
                 {% endif %} 

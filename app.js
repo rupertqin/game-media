@@ -1,6 +1,12 @@
 'use strict';
 
 module.exports = app => {
+
+  app.beforeStart(function* () {
+    // 应用会等待这个函数执行完成才启动
+    app.cities = [ 'beijing', 'shanghai' ];
+  });
+
   // set redis session store
   // session store must have 3 methods
   // define sessionStore in `app.js` so you can access `app.redis`
@@ -24,6 +30,7 @@ module.exports = app => {
     },
   };
 
+
   // session store can be a session store class
   // app.sessionStore = class Store {
   //   constructor(app) {
@@ -33,4 +40,8 @@ module.exports = app => {
   //   * set() {}
   //   * destroy() {}
   // };
+
+
+  app.config.coreMiddleware.unshift('report');
+  // app.config.coreMiddleware.unshift('user');
 };
