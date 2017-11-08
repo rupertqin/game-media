@@ -31,11 +31,11 @@
         </div>
         <div class="menu">
           <div class="container">
-            <a href="#" class="logo">首页</a>
-            <a href="/choose" class="">选择游戏</a>
-            <a href="#" class="">推广列表</a>
-            <a href="#" class="">我的收入</a>
-            <a href="#" role="">联系我们</a>
+            <a href="/" class="logo">首页</a>
+            <a href="/choose" class="button">选择游戏</a>
+            <a href="#" class="button">推广列表</a>
+            <a href="#" class="button">我的收入</a>
+            <a href="#" class="button">联系我们</a>
           </div> 
         
         </div>
@@ -46,7 +46,7 @@
         <nav>
           <label for="drawer-checkbox" class="close"></label>
           <input type="checkbox" id="drawer-checkbox">
-          <a href="#" class="">首页</a>
+          <a href="/" class="">首页</a>
           <a href="/choose" class="">选择游戏</a>
           <a href="#" class="">推广列表</a>
           <a href="#" class="">我的收入</a>

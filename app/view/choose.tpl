@@ -7,7 +7,7 @@
       <div class="tabs">
         <input type="radio" name="tab-group" id="tab1" checked aria-hidden="true">
         <label for="tab1" aria-hidden="true">推荐</label>
-        <div>
+        <div class="tab-content clearfix">
           <h3>推荐</h3>
           <table class="">
             <thead>

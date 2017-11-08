@@ -1,5 +1,12 @@
 .container {margin: 0 auto;}
-
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
 
 
 @media screen and (min-width: 1000px) {
@@ -16,3 +23,5 @@ header .menu {background: rgb(36, 122, 252);height: 2.75rem;}
 header .nav {color: #999;}
 .menu a.button, .menu button, .menu [role="button"] {background: rgb(21, 32, 190)}
 footer {text-align: center;}
+
+.content .tabs .tab-content {height: auto;}
