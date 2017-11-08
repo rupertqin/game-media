@@ -11,15 +11,15 @@ module.exports = app => {
       const { isMember, account } = await this.ctx.helper.checkLogin(name, pwd);
       if (isMember) {
         // const ssid = this.ctx.helper.genSession(name, account);
-        this.ctx.session.user = account;
-        this.ctx.locals.user = account;
         // this.ctx.cookies.set('ssid', ssid);
+        this.ctx.session.user = account;
       }
       this.ctx.redirect('/choose');
     }
 
     async logout() {
-      
+      this.ctx.session.user = null;
+      this.ctx.redirect('/');
     }
   }
   return HomeController;

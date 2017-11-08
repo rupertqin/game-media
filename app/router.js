@@ -1,7 +1,8 @@
 'use strict';
 
 module.exports = app => {
-  app.get('/', 'home.index');
-  app.post('/login', 'home.login');
+  app.get('/', 'main.index');
+  app.post('/login', 'main.login');
+  app.get('/logout', 'main.logout');
   app.get('/choose', 'choose.index');
 };

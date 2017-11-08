@@ -18,7 +18,7 @@
             </div>
             <div class="col-sm-6">
               {% if user %}
-                {{ user.username }}
+                {{ user.username }} | <a href="/logout">logout</a>
               {% else %}
                 not logined
               {% endif %} 
