@@ -19,7 +19,10 @@ module.exports = appInfo => {
     ctoken: false,
   };
 
-  config.middleware = [];
+  config.middleware = [ 'user' ];
+  config.user = {
+    yaha: 798,
+  };
 
   return config;
 };

@@ -17,7 +17,11 @@
               logo
             </div>
             <div class="col-sm-6">
-              user info
+              {% if user %}
+                {{ user.username }}
+              {% else %}
+                not logined
+              {% endif %} 
             </div>
           </div>
         </div>

@@ -15,6 +15,7 @@ module.exports = appInfo => {
       password: null,
       db: 0,
     },
+    agent: true,
   };
 
   config.mysql = {
@@ -29,7 +30,6 @@ module.exports = appInfo => {
     agent: false,
   };
 
-  config.middleware = [];
 
   return config;
 };

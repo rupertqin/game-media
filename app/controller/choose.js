@@ -21,7 +21,6 @@ module.exports = app => {
       dataList.list.push({
         title: day, url: day,
       });
-
       await this.ctx.render('choose/index.tpl', dataList);
     }
   }
