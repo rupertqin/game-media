@@ -23,7 +23,10 @@ const app = new Vue({
   methods: {
     choose: () => {
       fetch('/api/choosegame', myInit).then(function(response) {
-        return response.json();
+        if (response.status === 200) {
+          return response.json();
+        }
+        return { ok: false };
       }).then(function(json) {
         console.log(json);
       });

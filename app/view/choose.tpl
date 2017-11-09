@@ -23,7 +23,7 @@
                 <td data-label="Name"><img src="https://www.youmi.net/static/img/hx2-front.1ccc5b6.png"></td>
                 <td data-label="Surname">滑雪大冒险2</td>
                 <td data-label="Alias">通过巧妙设置广告进入点——免费道具给予、免费复活机会、免费单局加成等等，给用户明确又实在的奖励，以让其能选择体验视频。从而最大程度地实现活跃流量的充分变现，并且营造了更好的游戏玩乐体验。</td>
-                <td data-label="Alias"><a href="#" v-on:click="choose" class="button tertiary">我要推广</a></td>
+                <td data-label="Alias"><a href="#" v-on:click="choose" class="button tertiary " disabled>我要推广</a></td>
               </tr>
               <tr>
                 <td data-label="Name"><img src="https://www.youmi.net/static/img/run2.6ed73e5.png"></td>
