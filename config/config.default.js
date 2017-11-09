@@ -31,7 +31,7 @@ module.exports = appInfo => {
 
   // relate to user: session => locals ect.
   config.middleware = [
-    // 'user',
+    'user',
   ];
   // config.user = {
   //   yaha: 798,

@@ -42,6 +42,6 @@ module.exports = app => {
   // };
 
 
-  app.config.coreMiddleware.unshift('report');
+  // app.config.coreMiddleware.unshift('report');
   // app.config.coreMiddleware.unshift('user');
 };

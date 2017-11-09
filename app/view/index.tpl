@@ -12,7 +12,7 @@
           </div>
         </div>
         <div class="col-sm-5">
-          {% if ctx.session.user == false or ctx.session.user == null %}
+          {% if not user %}
             <form method="post" action="/login">
               <fieldset>
                 <legend>Login</legend>
