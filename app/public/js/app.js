@@ -8,7 +8,7 @@ const defaultOptions = {
   cache: 'default',
 };
 
-var games = renderData.games.replace(/&quot;/g, '"');
+let games = renderData.games.replace(/&quot;/g, '"');
 games = JSON.parse(games);
 
 const app = new Vue({
@@ -19,7 +19,7 @@ const app = new Vue({
     msg: 'goto',
   },
   methods: {
-    choose: function(chosen, game_id, index) {
+    choose(chosen, game_id, index) {
       if (!renderData.isLogin || chosen) return;
       const self = this;
       defaultOptions.body = JSON.stringify({ game_id });

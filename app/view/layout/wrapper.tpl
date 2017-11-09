@@ -59,7 +59,7 @@
       </div>
       
       {% block content %}{% endblock %}
-      <footer class="sticky">
+      <footer class="">
         <div class="container">
           <p><a href="#">关于我们</a> | <a href="#">联系我们</a></p>
         </div>
