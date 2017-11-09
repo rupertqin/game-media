@@ -30,7 +30,6 @@
                     v-bind:disabled="!!game.chosen">我要推广</a>
                 </td>
               </tr>
-              ${msg}
             </tbody>
           </table>
         </div>
@@ -55,7 +54,7 @@
   <script> 
     var renderData = { 
       games: "{{ helper.stringify(games) }}",
-      isLogin: {{ not ctx.session.isNew }}
+      isLogin: {{ ctx.session.user != null }}
     }
   </script>
   <script src="/public/js/app.js"> </script>
