@@ -1,3 +1,7 @@
+{% if ctx.session.user %}
+  {% set user = ctx.session.user %}
+{% endif %}
+
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
