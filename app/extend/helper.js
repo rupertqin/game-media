@@ -25,4 +25,8 @@ module.exports = {
     this.app.redis.set(session, JSON.stringify(account));
     return session;
   },
+
+  stringify(json) {
+    return JSON.stringify(json);
+  },
 };

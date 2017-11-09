@@ -1,33 +1,41 @@
 'use strict';
 
+// Vue.config.delimiters = ['${', '}'];
 
-const myHeaders = new Headers({
-  'Accept': 'application/json, text/plain, */*',
-  'Content-Type': 'application/json',
-});
-
-const myInit = {
+const conf = {
   method: 'POST',
-  headers: myHeaders,
+  headers: { 'Content-Type': 'application/json' },
   mode: 'cors',
   credentials: 'same-origin',
   cache: 'default',
-  body: JSON.stringify({ app_id: 9898887, name: '滑雪大冒险2' }),
 };
 
+pageData = pageData.replace(/&quot;/g, '"');
+pageData = JSON.parse(pageData);
+
 const app = new Vue({
+  delimiters: ['${', '}'],
   el: '#app',
   data: {
-    message: 'Hello Vue!',
+    games: pageData,
+    msg: 'goto',
   },
   methods: {
-    choose: () => {
-      fetch('/api/choosegame', myInit).then(function(response) {
+    choose: function(chosen, game_id, index) {
+      const self = this;
+      // self.games[index]['chosen'] = !chosen;
+      if (chosen) return;
+      conf.body = JSON.stringify({ game_id });
+      fetch('/api/choosegame', conf).then(function(response) {
         if (response.status === 200) {
           return response.json();
         }
         return { ok: false };
       }).then(function(json) {
+        if (json.ok) {
+          self.games[index]['chosen'] = true;
+          // self.$set(`games[${index}][chosen]`, true);
+        }
         console.log(json);
       });
     },
