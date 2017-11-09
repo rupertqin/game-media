@@ -23,7 +23,12 @@
                 <td data-label="Name"><img v-bind:src="game.img" /></td>
                 <td data-label="Surname">${ game.name }</td>
                 <td data-label="Alias">${ game.intro }</td>
-                <td data-label="Alias"><a href="#" @click="choose(game.chosen || false , game.game_id, index )" class="button tertiary " v-bind:disabled="game.chosen">我要推广</a></td>
+                <td data-label="Alias">
+                  <a href="#" class="button" 
+                    @click.prevent="choose(game.chosen || false , game.game_id, index )" 
+                    v-bind:class="{ tertiary: !game.chosen }" 
+                    v-bind:disabled="!!game.chosen">我要推广</a>
+                </td>
               </tr>
               ${msg}
             </tbody>
@@ -47,6 +52,11 @@
 {% endblock %}
 
 {% block footer %}
-  <script> var pageData = "{{ helper.stringify(games) }}" </script>
+  <script> 
+    var renderData = { 
+      games: "{{ helper.stringify(games) }}",
+      isLogin: {{ not ctx.session.isNew }}
+    }
+  </script>
   <script src="/public/js/app.js"> </script>
 {% endblock %}

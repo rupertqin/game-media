@@ -1,8 +1,6 @@
 'use strict';
 
-// Vue.config.delimiters = ['${', '}'];
-
-const conf = {
+const defaultOptions = {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   mode: 'cors',
@@ -10,23 +8,22 @@ const conf = {
   cache: 'default',
 };
 
-pageData = pageData.replace(/&quot;/g, '"');
-pageData = JSON.parse(pageData);
+var games = renderData.games.replace(/&quot;/g, '"');
+games = JSON.parse(games);
 
 const app = new Vue({
   delimiters: ['${', '}'],
   el: '#app',
   data: {
-    games: pageData,
+    games,
     msg: 'goto',
   },
   methods: {
     choose: function(chosen, game_id, index) {
+      if (!renderData.isLogin || chosen) return;
       const self = this;
-      // self.games[index]['chosen'] = !chosen;
-      if (chosen) return;
-      conf.body = JSON.stringify({ game_id });
-      fetch('/api/choosegame', conf).then(function(response) {
+      defaultOptions.body = JSON.stringify({ game_id });
+      fetch('/api/choosegame', defaultOptions).then(function(response) {
         if (response.status === 200) {
           return response.json();
         }
@@ -34,9 +31,7 @@ const app = new Vue({
       }).then(function(json) {
         if (json.ok) {
           self.games[index]['chosen'] = true;
-          // self.$set(`games[${index}][chosen]`, true);
         }
-        console.log(json);
       });
     },
   },
