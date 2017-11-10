@@ -5,16 +5,17 @@ module.exports = app => {
     async choosegame() {
       let body = { ok: false };
       if (this.ctx.session.user && this.ctx.request.body) {
-        const { game_id } = this.ctx.request.body;
+        const { app_id } = this.ctx.request.body;
         const account_id = this.ctx.session.user.id;
         try {
-          const record = await this.app.mysql.get('chosen_game', { account_id, game_id });
-          if (!record) {
-            const backinfo2 = await this.app.mysql.insert('chosen_game', {
-              game_id,
-              account_id: this.ctx.session.user.id,
+          const chosenGame = await this.app.mysql.get('promote_link',
+            { admin_user_id: account_id, app_id });
+          if (!chosenGame) {
+            const insertInfo = await this.app.mysql.insert('promote_link', {
+              app_id,
+              admin_user_id: this.ctx.session.user.id,
             });
-            if (backinfo2.affectedRows === 1) {
+            if (insertInfo.affectedRows === 1) {
               body = { ok: true };
             } else {
               body = { ok: false };

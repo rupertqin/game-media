@@ -9,7 +9,7 @@ module.exports = app => {
         const chosenGames = await this.app.mysql.select('chosen_game', { account_id });
         // check if chosen
         for (const g of games) {
-          g.chosen = chosenGames.some(cg => cg.game_id === g.game_id);
+          g.chosen = chosenGames.some(cg => cg.app_id === g.app_id);
         }
       }
       this.ctx.locals.games = games;

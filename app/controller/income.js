@@ -7,8 +7,8 @@ module.exports = app => {
       if (this.ctx.session.user) {
         const account_id = this.ctx.session.user.id;
         const chosenGames = await this.app.mysql.select('chosen_game', { account_id });
-        const chosenGamesIDs = chosenGames.map(cg => cg.game_id);
-        games = await this.app.mysql.select('game', { where: { game_id: chosenGamesIDs } });
+        const chosenGamesIDs = chosenGames.map(cg => cg.app_id);
+        games = await this.app.mysql.select('game', { where: { app_id: chosenGamesIDs } });
       }
       this.ctx.locals.games = games;
       await this.ctx.render('income.tpl');

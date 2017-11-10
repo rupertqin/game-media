@@ -3,7 +3,7 @@
 module.exports = () => {
   return function* (next) {
     if (this.request.url !== '/' && (!this.session || !this.session.user)) {
-      this.response.redirect('/');
+      this.redirect('/');
     }
     yield next;
   };

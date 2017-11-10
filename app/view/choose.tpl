@@ -25,7 +25,7 @@
                 <td data-label="Alias">${ game.intro }</td>
                 <td data-label="Alias">
                   <a href="#" class="button" 
-                    @click.prevent="choose(game.chosen || false , game.game_id, index )" 
+                    @click.prevent="choose(game.chosen || false , game.app_id, index )" 
                     v-bind:class="{ tertiary: !game.chosen }" 
                     v-bind:disabled="!!game.chosen">我要推广</a>
                 </td>

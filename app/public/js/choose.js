@@ -19,10 +19,10 @@ const app = new Vue({
     msg: 'goto',
   },
   methods: {
-    choose(chosen, game_id, index) {
+    choose(chosen, app_id, index) {
       if (!renderData.isLogin || chosen) return;
       const self = this;
-      defaultOptions.body = JSON.stringify({ game_id });
+      defaultOptions.body = JSON.stringify({ app_id });
       fetch('/api/choosegame', defaultOptions).then(function(response) {
         if (response.status === 200) {
           return response.json();
