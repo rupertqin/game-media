@@ -17,14 +17,10 @@ module.exports = app => {
             });
             if (insertInfo.affectedRows === 1) {
               body = { ok: true };
-            } else {
-              body = { ok: false };
             }
-          } else {
-            body = { ok: false };
           }
         } catch (err) {
-          throw err;
+          body.msg = 'insert err';
         }
       }
       this.ctx.body = body;
