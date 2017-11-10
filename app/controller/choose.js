@@ -5,8 +5,8 @@ module.exports = app => {
     async index() {
       const games = await this.app.mysql.select('game');
       if (this.ctx.session.user) {
-        const account_id = this.ctx.session.user.id;
-        const chosenGames = await this.app.mysql.select('chosen_game', { account_id });
+        const admin_user_id = this.ctx.session.user.id;
+        const chosenGames = await this.app.mysql.select('promote_link', { admin_user_id });
         // check if chosen
         for (const g of games) {
           g.chosen = chosenGames.some(cg => cg.app_id === g.app_id);
