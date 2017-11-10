@@ -1,9 +1,18 @@
 'use strict';
 
 const crypto = require('crypto');
+const Hashids = require('hashids');
 
 function md5(text) {
   return crypto.createHash('md5').update(text).digest('hex');
+}
+
+function getHashids() {
+  const hashids = new Hashids(this.app.config.keys, 6);
+  getHashids = function() {
+    return hashids;
+  };
+  return getHashids();
 }
 
 module.exports = {
@@ -11,6 +20,16 @@ module.exports = {
     // this 是 helper 对象，在其中可以调用其他 helper 方法
     // this.ctx => context 对象
     // this.app => application 对象
+  },
+
+  generate(id) {
+    const hashids = getHashids.call(this);
+    return hashids.encode(id);
+  },
+
+  decode(str) {
+    const hashids = getHashids();
+    return hashids.decode(str);
   },
 
   async checkLogin(name, pwd) {

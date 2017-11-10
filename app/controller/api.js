@@ -15,7 +15,12 @@ module.exports = app => {
               app_id,
               admin_user_id: this.ctx.session.user.id,
             });
-            if (insertInfo.affectedRows === 1) {
+            const urlId = this.ctx.helper.generate(insertInfo.insertId);
+            const updateInfo = await this.app.mysql.update('promote_link', {
+              id: insertInfo.insertId,
+              url: urlId,
+            });
+            if (insertInfo.affectedRows === 1 && updateInfo.affectedRows === 1) {
               body = { ok: true };
             }
           }

@@ -37,6 +37,10 @@ module.exports = app => {
       this.ctx.session.user = null;
       this.ctx.redirect('/');
     }
+
+    async promotelink() {
+      await this.ctx.render('promotelink.tpl');
+    }
   }
   return HomeController;
 };
