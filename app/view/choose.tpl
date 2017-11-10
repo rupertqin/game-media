@@ -57,5 +57,5 @@
       isLogin: {{ ctx.session.user != null }}
     }
   </script>
-  <script src="/public/js/app.js"> </script>
+  <script src="/public/js/choose.js"> </script>
 {% endblock %}

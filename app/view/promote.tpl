@@ -4,75 +4,39 @@
   <div class="content">
     <div class="container">
       <p><strong>位置：</strong> 推广列表 </p>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="blue-box">
-            <h2>累计收入</h2>
-            <p>10000</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="red-box">
-            <h2>Media object heading</h2>
-            <p>Media object content...</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="green-box">
-            <h2>Media object heading</h2>
-            <p>Media object content...</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="yellow-box">
-            <h2>Media object heading</h2>
-            <p>Media object content...</p>
-          </div>
-        </div>
-      </div>
 
-      <div class="tabs">
-        <input type="radio" name="tab-group" id="tab1" checked aria-hidden="true">
-        <label for="tab1" aria-hidden="true">推荐</label>
-        <div class="tab-content clearfix" id="app">
-          <h3>推荐</h3>
-          <table class="">
-            <thead>
-              <tr>
-                <th>游戏图标</th>
-                <th>游戏名称</th>
-                <th>游戏简介</th>
-                <th>获取推广包</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(game, index) in games" key="game.id">
-                <td data-label="Name"><img v-bind:src="game.img" /></td>
-                <td data-label="Surname">${ game.name }</td>
-                <td data-label="Alias">${ game.intro }</td>
-                <td data-label="Alias">
-                  <a href="#" class="button" 
-                    @click.prevent="choose(game.chosen || false , game.game_id, index )" 
-                    v-bind:class="{ tertiary: !game.chosen }" 
-                    v-bind:disabled="!!game.chosen">我要推广</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <input type="radio" name="tab-group" id="tab2" aria-hidden="true">
-        <label for="tab2" aria-hidden="true">最新</label>
-        <div>
-          <h3>最新</h3>
-          <p>This is the second tab's content.</p>
-        </div>
-        <input type="radio" name="tab-group" id="tab3" aria-hidden="true">
-        <label for="tab3" aria-hidden="true">最热</label>
-        <div>
-          <h3>最热</h3>
-          <p>This is the third tab's content.</p>
-        </div>
-      </div>
+      <table>
+        <caption>我的推广</caption>
+        <thead>
+          <tr>
+            <th>推广产品</th>
+            <th>付费用户</th>
+            <th>玩家总消费</th>
+            <th>总收入</th>
+            <th>推广链接</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for game in games %}
+          <tr>
+            <td data-label="Name">{{ game.name }}</td>
+            <td data-label="Surname">Wilberts</td>
+            <td data-label="Alias">5000</td>
+            <td data-label="Alias">5000</td>
+            <td data-label="Alias">
+              <p>{{ game.promote_link }}</p>
+              <button class="">复制</button>
+            </td>
+            <td data-label="Alias">
+              <a href="" class="button tertiary">预览推广页</a><br/>
+              <a href="" class="button primary">下载推广二维码</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
     </div>
   </div>
 {% endblock %}
