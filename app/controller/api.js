@@ -3,7 +3,7 @@
 module.exports = app => {
   class APIController extends app.Controller {
     async choosegame() {
-      let body;
+      let body = { ok: false };
       if (this.ctx.session.user && this.ctx.request.body) {
         const { game_id } = this.ctx.request.body;
         const account_id = this.ctx.session.user.id;

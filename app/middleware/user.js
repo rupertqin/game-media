@@ -3,8 +3,11 @@
 module.exports = () => {
   return function* (next) {
     if (this.session && this.session.user) {
-      this.state.user = this.session.user;
-      // Object.assign(this.state, this.session);
+      if (this.state.user) {
+        Object.assign(this.state.user, this.session.user);
+      } else {
+        this.state.user = this.session.user;
+      }
     }
     yield next;
   };
