@@ -16,12 +16,17 @@
 @media screen and (min-width: 766px) {
   .drawer {display: none;}
 }
-      
 
 header {background: none;padding: 0;height: auto;}
 header .menu {background: rgb(36, 122, 252);height: 2.75rem;}
 header .nav {color: #999;}
 .menu a.button, .menu button, .menu [role="button"] {background: rgb(21, 32, 190)}
 footer {text-align: center;}
+table {width: 100%;}
 
 .content .tabs .tab-content {height: auto;}
+div[class$="-box"]{ border-radius: 2px; margin-bottom: 8px; min-height: 14px; padding: 14px 3%; color: white; }
+.blue-box { background: #0277bd; }
+.green-box { background: #0bbd4f; }
+.red-box { background: #e71b4e; }
+.yellow-box { background: #facc33; }

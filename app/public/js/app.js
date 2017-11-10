@@ -12,7 +12,7 @@ let games = renderData.games.replace(/&quot;/g, '"');
 games = JSON.parse(games);
 
 const app = new Vue({
-  delimiters: ['${', '}'],
+  delimiters: [ '${', '}' ],
   el: '#app',
   data: {
     games,
@@ -30,7 +30,7 @@ const app = new Vue({
         return { ok: false };
       }).then(function(json) {
         if (json.ok) {
-          self.games[index]['chosen'] = true;
+          self.games[index].chosen = true;
         }
       });
     },
