@@ -39,6 +39,10 @@ module.exports = app => {
     }
 
     async promotelink() {
+      const link = await this.app.mysql.get('promote_link', { url: this.ctx.params.id });
+      // const [ id ] = this.ctx.helper.decode(link.url);
+      const game = await this.app.mysql.get('game', { app_id: link.app_id });
+      this.ctx.locals.game = game;
       await this.ctx.render('promotelink.tpl');
     }
   }

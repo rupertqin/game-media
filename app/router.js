@@ -3,17 +3,18 @@
 module.exports = app => {
   const checkLogin = app.middlewares.checkLogin();
 
+  // main
   app.get('/', checkLogin, 'main.index');
   app.get('/choose', 'choose.index');
   app.get('/promote', checkLogin, 'promote.index');
   app.get('/income', checkLogin, 'income.index');
-  app.get('/promotelink', 'main.promotelink');
+  app.get('promotelink', '/promotelink/:id', 'main.promotelink');
 
   // login
   app.post('/login', 'main.login');
   app.get('/logout', 'main.logout');
 
-  // ajax
+  // APIs
   app.post('/api/choosegame', checkLogin, 'api.choosegame');
 
 

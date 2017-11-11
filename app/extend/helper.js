@@ -28,7 +28,7 @@ module.exports = {
   },
 
   decode(str) {
-    const hashids = getHashids();
+    const hashids = getHashids.call(this);
     return hashids.decode(str);
   },
 

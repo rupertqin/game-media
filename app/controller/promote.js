@@ -6,9 +6,13 @@ module.exports = app => {
       let games;
       if (this.ctx.session.user) {
         const admin_user_id = this.ctx.session.user.id;
-        const chosenGames = await this.app.mysql.select('promote_link', { admin_user_id });
-        const chosenGamesIDs = chosenGames.map(cg => cg.app_id);
-        games = await this.app.mysql.select('game', { where: { app_id: chosenGamesIDs } });
+        const promotelinks = await this.app.mysql.select('promote_link', { admin_user_id });
+        const promotelinksIDs = promotelinks.map(cg => cg.app_id);
+        games = await this.app.mysql.query('SELECT * FROM game WHERE app_id IN (?) ORDER BY field(app_id,?)',
+          [ promotelinksIDs, promotelinksIDs ]);
+        for (let i = 0; i < games.length; i++) {
+          games[i].url = promotelinks[i].url;
+        }
       }
       this.ctx.locals.games = games;
       await this.ctx.render('promote.tpl');
