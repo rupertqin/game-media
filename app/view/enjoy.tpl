@@ -12,13 +12,22 @@
     <div class="" id="wrapper">
 
       <div class="content">
-        <div class="container">
+        <div class="container" style="text-align: center;">
+          <h3 style="text-align: center;">{{ game.name }}<br><img src="{{ game.img }}"></h3>
           <div class="row">
             <div class="col-sm-6 copy">
-              <h3>{{ game.name }}</h3>
-              <img src="{{ game.img }}">
+              {% if game.app_store_id and game.app_store_id != 0 %}
+              <a href="https://itunes.apple.com/cn/app/id{{ game.app_store_id }}">
+                <h3>iOS 苹果下载</h3>
+              </a>
+              {% endif %}
             </div>
             <div class="col-sm-6">
+              {% if game.apk %}
+              <a href="{{ game.apk }}">
+                <h3>Android 安卓下载</h3>
+              </a>
+              {% endif %}
             </div>
           </div>
         </div>
