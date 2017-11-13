@@ -6,3 +6,7 @@ const clip = new Clipboard('.copy', {
     return 'ag_activate:' + id;
   },
 });
+
+$$('.copy').on('click', function() {
+  weixinMask();
+});

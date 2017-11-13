@@ -24,7 +24,7 @@
         </div>
       </div>
     </div>
-    <script src="/public/js/vue.js"></script>
+    <script src="/public/js/common.js"></script>
     <script src="/public/js/clipboard.js"></script>
     <script src="/public/js/enjoy.js"></script>
     

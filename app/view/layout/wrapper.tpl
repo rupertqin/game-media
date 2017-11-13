@@ -61,7 +61,7 @@
         </div>
       </footer>
     </div>
-    <script src="/public/js/vue.js"></script>
+    <script src="/public/js/common.js"></script>
     
     {% block footer %}{% endblock %}
   </body>

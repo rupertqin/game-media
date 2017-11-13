@@ -1,15 +1,5 @@
 'use strict';
 
-const $ = document.querySelectorAll.bind(document);
-const $$ = document.querySelector.bind(document);
-Element.prototype.on = Element.prototype.addEventListener;
-NodeList.prototype.on = function (event, fn) {
-  []['forEach'].call(this, function (el) {
-    el.on(event, fn);
-  });
-  return this;
-};
-
 let saveFile = function(data, filename) {
   const save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
   save_link.href = data;
