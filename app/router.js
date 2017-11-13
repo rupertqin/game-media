@@ -8,7 +8,7 @@ module.exports = app => {
   app.get('/choose', 'choose.index');
   app.get('/promote', checkLogin, 'promote.index');
   app.get('/income', checkLogin, 'income.index');
-  app.get('promotelink', '/promotelink/:id', 'main.promotelink');
+  app.get('enjoy', '/enjoy/:id', 'main.enjoy');
 
   // login
   app.post('/login', 'main.login');

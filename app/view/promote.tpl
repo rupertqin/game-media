@@ -29,7 +29,7 @@
               <button class="">复制</button>
             </td>
             <td data-label="Alias">
-              <a href="/promotelink/{{ game.url }}" class="button tertiary">预览推广页</a><br/>
+              <a href="/enjoy/{{ game.url }}" class="button tertiary">预览推广页</a><br/>
               <a href="" class="button primary">下载推广二维码</a>
             </td>
           </tr>
