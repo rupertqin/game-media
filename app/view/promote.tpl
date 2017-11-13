@@ -25,12 +25,12 @@
             <td data-label="Alias">5000</td>
             <td data-label="Alias">5000</td>
             <td data-label="Alias">
-              <p>{{ game.promote_link }}</p>
-              <button class="">复制</button>
+              <p><input type=text value="{{ game.url }}" id="url-{{ game.url }}" readonly></p>
+              <button class="copy" data-clipboard-target="#url-{{ game.url }}">复制</button>
             </td>
             <td data-label="Alias">
               <a href="/enjoy/{{ game.url }}" class="button tertiary">预览推广页</a><br/>
-              <a href="" class="button primary">下载推广二维码</a>
+              <a href="" data-id={{ game.url }} class="button primary">下载推广二维码</a>
             </td>
           </tr>
           {% endfor %}
@@ -42,11 +42,7 @@
 {% endblock %}
 
 {% block footer %}
-  <script> 
-    var renderData = { 
-      games: "{{ helper.stringify(games) }}",
-      isLogin: {{ ctx.session.user != null }}
-    }
-  </script>
-  <script src="/public/js/app.js"> </script>
+  <script src="/public/js/qr.js"> </script>
+  <script src="/public/js/clipboard.js"> </script>
+  <script src="/public/js/promote.js"> </script>
 {% endblock %}
