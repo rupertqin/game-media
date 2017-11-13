@@ -13,6 +13,7 @@ NodeList.prototype.on = function (event, fn) {
 let saveFile = function(data, filename) {
   const save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
   save_link.href = data;
+  save_link.target = '_blank';
   save_link.download = filename;
 
   const event = document.createEvent('MouseEvents');
@@ -23,7 +24,11 @@ let saveFile = function(data, filename) {
 [].forEach.call($('input[type=text]'), function(el) {
   el.value = window.location.origin + '/enjoy/' + el.value;
 });
-const clipboard = new Clipboard('.copy');
+const clipboard = new Clipboard('.copy', {
+  text (trigger) {
+    return trigger.previousElementSibling.firstElementChild.value;
+  }
+});
 clipboard.on('success', function(e) {
   // e.clearSelection();
   alert('已复制成功！');

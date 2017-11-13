@@ -43,6 +43,7 @@ module.exports = app => {
       // const [ id ] = this.ctx.helper.decode(link.url);
       const game = await this.app.mysql.get('game', { app_id: link.app_id });
       this.ctx.locals.game = game;
+      this.ctx.cookies.set('ag_activate:', this.ctx.params.id);
       await this.ctx.render('enjoy.tpl');
     }
   }

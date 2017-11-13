@@ -25,8 +25,8 @@
             <td data-label="Alias">5000</td>
             <td data-label="Alias">5000</td>
             <td data-label="Alias">
-              <p><input type=text value="{{ game.url }}" id="url-{{ game.url }}" readonly></p>
-              <button class="copy" data-clipboard-target="#url-{{ game.url }}">复制</button>
+              <p><input type=text value="{{ game.url }}" readonly></p>
+              <button class="copy">复制</button>
             </td>
             <td data-label="Alias">
               <a href="/enjoy/{{ game.url }}" class="button tertiary">预览推广页</a><br/>
