@@ -48,6 +48,9 @@ module.exports = app => {
       //   // encrypt: false,
       // });
 
+      // increase view count
+      this.service.viewCount.increase(this.ctx.params.id);
+
       this.ctx.cookies.set('ag_activate:', this.ctx.params.id, {
         httpOnly: false,
         signed: true,
