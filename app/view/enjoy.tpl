@@ -15,17 +15,17 @@
         <div class="container" style="text-align: center;">
           <h3 style="text-align: center;">{{ game.name }}<br><img src="{{ game.img }}"></h3>
           <div class="row">
-            <div class="col-sm-6 copy">
+            <div class="col-sm-6 button-group">
               {% if game.app_store_id and game.app_store_id != 0 %}
-              <a href="https://itunes.apple.com/cn/app/id{{ game.app_store_id }}">
-                <h3>iOS 苹果下载</h3>
+              <a href="https://itunes.apple.com/cn/app/id{{ game.app_store_id }}" class="apple">
+                <h3><img src="/public/img/apple.jpg"></h3>
               </a>
               {% endif %}
             </div>
             <div class="col-sm-6">
               {% if game.apk %}
-              <a href="{{ game.apk }}">
-                <h3>Android 安卓下载</h3>
+              <a href="{{ game.apk }}" class="android">
+                <h3><img src="/public/img/android.jpg"></h3>
               </a>
               {% endif %}
             </div>

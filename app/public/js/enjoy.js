@@ -1,12 +1,15 @@
 'use strict';
 
-const clip = new Clipboard('.copy', {
+weixinMask();
+
+const clip = new Clipboard('.button-group', {
   text() {
-    const [, id] = window.location.pathname.match(/\/([a-z0-9]+)$/);
+    const [ , id ] = window.location.pathname.match(/\/([a-z0-9]+)$/);
     return 'ag_activate:' + id;
   },
 });
 
-$$('.copy').on('click', function() {
-  weixinMask();
+$$('.button-group .apple').on('click', function(e) {
+  e.preventDefault();
+
 });
