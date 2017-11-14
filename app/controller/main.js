@@ -39,7 +39,8 @@ module.exports = app => {
     }
 
     async enjoy() {
-      const link = await this.app.mysql.get('promote_link', { url: this.ctx.params.id });
+      const urlId = this.ctx.params.id;
+      const link = await this.app.mysql.get('promote_link', { url: urlId });
       // const [ id ] = this.ctx.helper.decode(link.url);
       const game = await this.app.mysql.get('game', { app_id: link.app_id });
       this.ctx.locals.game = game;
@@ -49,9 +50,9 @@ module.exports = app => {
       // });
 
       // increase view count
-      this.service.viewCount.increase(this.ctx.params.id);
-
-      this.ctx.cookies.set('ag_activate:', this.ctx.params.id, {
+      this.service.viewCount.increase(urlId);
+      // this.app.runSchedule('update_view_count');
+      this.ctx.cookies.set('ag_activate:', urlId, {
         httpOnly: false,
         signed: true,
         encrypt: true,
