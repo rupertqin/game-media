@@ -8,7 +8,7 @@ function md5(text) {
 }
 
 let getHashids = function() {
-  const hashids = new Hashids(this.app.config.keys, 6);
+  const hashids = new Hashids('*)*(sdfs2342342342sfwfwf');
   getHashids = function() {
     return hashids;
   };
@@ -22,12 +22,12 @@ module.exports = {
     // this.app => application 对象
   },
 
-  generate(id) {
+  hashids_encode(id) {
     const hashids = getHashids.call(this);
     return hashids.encode(id);
   },
 
-  decode(str) {
+  hashids_decode(str) {
     const hashids = getHashids.call(this);
     return hashids.decode(str);
   },

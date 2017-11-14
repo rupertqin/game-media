@@ -12,7 +12,7 @@ module.exports = app => {
           games = await this.app.mysql.query('SELECT * FROM pay_client_app WHERE id IN (?) ORDER BY field(id,?)',
             [ promotelinksIDs, promotelinksIDs ]);
           for (let i = 0; i < games.length; i++) {
-            games[i].url = promotelinks[i].url;
+            games[i].hashid = this.ctx.helper.hashids_encode(promotelinks[i].id);
           }
         }
       }

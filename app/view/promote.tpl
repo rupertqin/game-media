@@ -25,12 +25,12 @@
             <td data-label="Alias">5000</td>
             <td data-label="Alias">5000</td>
             <td data-label="Alias">
-              <p><input type=text value="{{ game.url }}" readonly></p>
+              <p><input type=text value="{{ game.hashid }}" readonly></p>
               <button class="copy">复制</button>
             </td>
             <td data-label="Alias">
-              <a href="/enjoy/{{ game.url }}" class="button tertiary">预览推广页</a><br/>
-              <a href="" data-id={{ game.url }} class="button primary">下载推广二维码</a>
+              <a href="/enjoy/{{ game.hashid }}" class="button tertiary">预览推广页</a><br/>
+              <a href="" data-id={{ game.hashid }} class="button primary">下载推广二维码</a>
             </td>
           </tr>
           {% endfor %}

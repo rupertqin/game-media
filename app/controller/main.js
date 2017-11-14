@@ -39,8 +39,10 @@ module.exports = app => {
     }
 
     async enjoy() {
-      const urlId = this.ctx.params.id;
-      const link = await this.app.mysql.get('promote_link', { url: urlId });
+      let urlId = this.ctx.params.id;
+
+      [ urlId ] = this.ctx.helper.hashids_decode(urlId);
+      const link = await this.app.mysql.get('promote_link', { id: urlId });
       // const [ id ] = this.ctx.helper.decode(link.url);
       const game = await this.app.mysql.get('pay_client_app', { id: link.app_id });
       this.ctx.locals.game = game;
@@ -52,11 +54,14 @@ module.exports = app => {
       // increase view count
       this.service.viewCount.increase(urlId);
       // this.app.runSchedule('update_view_count');
-      this.ctx.cookies.set('ag_activate:', urlId, {
+      this.ctx.cookies.set('ag_activate:', urlId.toString(), {
         httpOnly: false,
         signed: true,
         encrypt: true,
       });
+
+      // ip+model
+      this.service.promoteClick.record(urlId);
       await this.ctx.render('enjoy.tpl');
     }
   }
