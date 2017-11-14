@@ -42,6 +42,11 @@ module.exports = app => {
       let urlId = this.ctx.params.id;
 
       [ urlId ] = this.ctx.helper.hashids_decode(urlId);
+      if (!urlId) {
+        this.status = 404;
+        this.body = 404;
+        return;
+      }
       const link = await this.app.mysql.get('promote_link', { id: urlId });
       // const [ id ] = this.ctx.helper.decode(link.url);
       const game = await this.app.mysql.get('pay_client_app', { id: link.app_id });
@@ -51,8 +56,7 @@ module.exports = app => {
       //   // encrypt: false,
       // });
 
-      // increase view count
-      this.service.viewCount.increase(urlId);
+
       // this.app.runSchedule('update_view_count');
       this.ctx.cookies.set('ag_activate:', urlId.toString(), {
         httpOnly: false,
@@ -60,8 +64,16 @@ module.exports = app => {
         encrypt: true,
       });
 
+      // increase view count
+      await this.app.redis.hincrby('enjoy_view_count', urlId, 1);
       // ip+model
-      this.service.promoteClick.record(urlId);
+      await this.service.promoteClick.record(urlId);
+
+      // 如果有 udid
+      if (this.ctx.query.udid) {
+        await this.app.redis.hincrby('enjoy_udid_count', `${this.ctx.query.udid}`, 1);
+      }
+
       await this.ctx.render('enjoy.tpl');
     }
   }
