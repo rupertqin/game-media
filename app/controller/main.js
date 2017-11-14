@@ -42,7 +42,7 @@ module.exports = app => {
       const urlId = this.ctx.params.id;
       const link = await this.app.mysql.get('promote_link', { url: urlId });
       // const [ id ] = this.ctx.helper.decode(link.url);
-      const game = await this.app.mysql.get('game', { app_id: link.app_id });
+      const game = await this.app.mysql.get('pay_client_app', { id: link.app_id });
       this.ctx.locals.game = game;
       // let ag = this.ctx.cookies.get('ag_activate:', {
       //   encrypt: true,

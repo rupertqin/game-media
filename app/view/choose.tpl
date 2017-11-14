@@ -20,12 +20,12 @@
             </thead>
             <tbody>
               <tr v-for="(game, index) in games" key="game.id">
-                <td data-label="Name"><img v-bind:src="game.img" /></td>
-                <td data-label="Surname">${ game.name }</td>
+                <td data-label="Name"><img v-bind:src="game.icon" /></td>
+                <td data-label="Surname">${ game.app_name }</td>
                 <td data-label="Alias">${ game.intro }</td>
                 <td data-label="Alias">
                   <a href="#" class="button" 
-                    @click.prevent="choose(game.chosen || false , game.app_id, index )" 
+                    @click.prevent="choose(game.chosen || false , game.id, index )" 
                     v-bind:class="{ tertiary: !game.chosen }" 
                     v-bind:disabled="!!game.chosen">我要推广</a>
                 </td>

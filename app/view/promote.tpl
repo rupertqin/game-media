@@ -20,7 +20,7 @@
         <tbody>
           {% for game in games %}
           <tr>
-            <td data-label="Name">{{ game.name }}</td>
+            <td data-label="Name">{{ game.app_name }}</td>
             <td data-label="Surname">Wilberts</td>
             <td data-label="Alias">5000</td>
             <td data-label="Alias">5000</td>

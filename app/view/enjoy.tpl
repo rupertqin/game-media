@@ -13,7 +13,7 @@
 
       <div class="content">
         <div class="container" style="text-align: center;">
-          <h3 style="text-align: center;">{{ game.name }}<br/><br/><img src="{{ game.img }}"></h3>
+          <h3 style="text-align: center;">{{ game.app_name }}<br/><br/><img src="{{ game.icon }}"></h3>
           <div class="row btns">
             <div class="col-sm-6">
               {% if game.app_store_id and game.app_store_id != 0 %}

@@ -3,15 +3,17 @@
 module.exports = app => {
   class PromoteController extends app.Controller {
     async index() {
-      let games;
+      let games = [];
       if (this.ctx.session.user) {
         const admin_user_id = this.ctx.session.user.id;
         const promotelinks = await this.app.mysql.select('promote_link', { admin_user_id });
-        const promotelinksIDs = promotelinks.map(cg => cg.app_id);
-        games = await this.app.mysql.query('SELECT * FROM game WHERE app_id IN (?) ORDER BY field(app_id,?)',
-          [ promotelinksIDs, promotelinksIDs ]);
-        for (let i = 0; i < games.length; i++) {
-          games[i].url = promotelinks[i].url;
+        if (promotelinks.length > 0) {
+          const promotelinksIDs = promotelinks.map(cg => cg.app_id);
+          games = await this.app.mysql.query('SELECT * FROM pay_client_app WHERE id IN (?) ORDER BY field(id,?)',
+            [ promotelinksIDs, promotelinksIDs ]);
+          for (let i = 0; i < games.length; i++) {
+            games[i].url = promotelinks[i].url;
+          }
         }
       }
       this.ctx.locals.games = games;
