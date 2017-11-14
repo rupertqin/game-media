@@ -8,17 +8,18 @@
     <link rel="icon" href="/public/favicon.png" type="image/x-icon">
     <title>{{ game.name }} - 游戏下载</title>
   </head>
-  <body>
-    <div class="" id="wrapper">
+  <body class="page-enjoy" >
+    <div id="wrapper">
 
       <div class="content">
         <div class="container" style="text-align: center;">
-          <h3 style="text-align: center;">{{ game.name }}<br><img src="{{ game.img }}"></h3>
-          <div class="row">
-            <div class="col-sm-6 button-group">
+          <h3 style="text-align: center;">{{ game.name }}<br/><br/><img src="{{ game.img }}"></h3>
+          <div class="row btns">
+            <div class="col-sm-6">
               {% if game.app_store_id and game.app_store_id != 0 %}
               <a href="https://itunes.apple.com/cn/app/id{{ game.app_store_id }}" class="apple">
                 <h3><img src="/public/img/apple.jpg"></h3>
+                <span>下载</span>
               </a>
               {% endif %}
             </div>
@@ -26,6 +27,7 @@
               {% if game.apk %}
               <a href="{{ game.apk }}" class="android">
                 <h3><img src="/public/img/android.jpg"></h3>
+                <span>下载</span>
               </a>
               {% endif %}
             </div>

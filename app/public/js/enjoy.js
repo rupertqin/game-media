@@ -9,7 +9,7 @@ const clip = new Clipboard('.button-group', {
   },
 });
 
-$$('.button-group .apple').on('click', function(e) {
+$$('.btns .apple, .btns .android').on('click', function(e) {
   e.preventDefault();
 
 });

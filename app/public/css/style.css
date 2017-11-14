@@ -30,3 +30,8 @@ div[class$="-box"]{ border-radius: 2px; margin-bottom: 8px; min-height: 14px; pa
 .green-box { background: #0bbd4f; }
 .red-box { background: #e71b4e; }
 .yellow-box { background: #facc33; }
+
+ .page-enjoy {background: #fff;}
+.page-enjoy .apple img, .page-enjoy .android img {
+  width: 100px; 
+} 
