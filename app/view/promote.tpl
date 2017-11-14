@@ -42,7 +42,7 @@
 {% endblock %}
 
 {% block footer %}
-  <script src="/public/js/qr.js"> </script>
-  <script src="/public/js/clipboard.js"> </script>
+  <script src="/public/vendor/qr.js"> </script>
+  <script src="/public/vendor/clipboard.js"> </script>
   <script src="/public/js/promote.js"> </script>
 {% endblock %}
