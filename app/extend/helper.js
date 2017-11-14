@@ -7,13 +7,13 @@ function md5(text) {
   return crypto.createHash('md5').update(text).digest('hex');
 }
 
-function getHashids() {
+let getHashids = function() {
   const hashids = new Hashids(this.app.config.keys, 6);
   getHashids = function() {
     return hashids;
   };
   return getHashids();
-}
+};
 
 module.exports = {
   foo() {

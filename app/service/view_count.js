@@ -7,7 +7,8 @@ module.exports = app => {
       app.redis.hincrby('enjoy_view_count', id, 1);
     }
 
-    async decode(str) {
+    async decode() {
+      console.log('');
     }
   }
   return Main;
