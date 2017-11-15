@@ -60,3 +60,13 @@ function weixinMask() {
     loadHtml();
   }
 }
+
+;(function() {
+  // const [, name]location.pathname.match(/^\/([a-zA-z0-9]+)\/?/);
+  [].some.call($('.menu a'), function(el) {
+    if (el.getAttribute('href') === location.pathname) {
+      el.classList.add('active');
+      return true;
+    }
+  });
+}());

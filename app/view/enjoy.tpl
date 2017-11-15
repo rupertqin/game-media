@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/public/css/mini.default.min.css" />
     <link rel="stylesheet" href="/public/css/style.css" />
     <link rel="icon" href="/public/favicon.png" type="image/x-icon">
-    <title>{{ game.name }} - 游戏下载</title>
+    <title>{{ game.app_name }} - 游戏下载</title>
   </head>
   <body class="page-enjoy" >
     <div id="wrapper">

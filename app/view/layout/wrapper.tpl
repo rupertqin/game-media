@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/public/css/mini.default.min.css" />
     <link rel="stylesheet" href="/public/css/style.css" />
     <link rel="icon" href="/public/favicon.png" type="image/x-icon">
-    <title>{% block title %}egg - {% endblock %}</title>
+    <title>{% block title %} 北艾 - {% endblock %}</title>
   </head>
   <body>
     <div class="" id="wrapper">
@@ -17,9 +17,9 @@
           <div class="container">
             <div class="col-sm row">
               <div class="col-sm-6">
-                logo
+                <img src="/public/img/logo.png">
               </div>
-              <div class="col-sm-6">
+              <div class="col-sm-6 middle flex-right">
                 {% if user %}
                   {{ user.username }} | <a href="/logout">logout</a>
                 {% else %}
@@ -31,7 +31,7 @@
         </div>
         <div class="menu">
           <div class="container">
-            <a href="/" class="logo">首页</a>
+            <a href="/" class="button">首页</a>
             <a href="/choose" class="button">选择游戏</a>
             <a href="/promote" class="button">推广列表</a>
             <a href="/income" class="button">我的收入</a>
@@ -55,12 +55,12 @@
       </div>
       
       {% block content %}{% endblock %}
+    </div>
       <footer class="">
         <div class="container">
           <p><a href="#">关于我们</a> | <a href="#">联系我们</a></p>
         </div>
       </footer>
-    </div>
     <script src="/public/js/common.js"></script>
     
     {% block footer %}{% endblock %}

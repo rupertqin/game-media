@@ -1,3 +1,12 @@
+body {
+  background: #fff;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+#wrapper {
+  flex: 1;
+}
 .container {margin: 0 auto;}
 .clearfix:after {
   visibility: hidden;
@@ -17,10 +26,29 @@
   .drawer {display: none;}
 }
 
+.middle {
+  display: flex;
+  align-items: center;
+}
+.flex-right { display: flex;   justify-content: flex-end;}
+
+.align-right {text-align: right;}
+
 header {background: none;padding: 0;height: auto;}
 header .menu {background: rgb(36, 122, 252);height: 2.75rem;}
 header .nav {color: #999;}
-.menu a.button, .menu button, .menu [role="button"] {background: rgb(21, 32, 190)}
+.menu a.button, .menu button, .menu [role="button"] {
+  background: transparent;
+  border-radius: 0;
+  margin: 0;
+  height: 2.75rem;
+  box-sizing: border-box;
+  min-width: 7em;
+  text-align: center;
+}
+.menu a.button.active, .menu a.button:hover{
+  background: rgb(21, 32, 190);
+}
 footer {text-align: center;}
 table {width: 100%;}
 
@@ -31,7 +59,7 @@ div[class$="-box"]{ border-radius: 2px; margin-bottom: 8px; min-height: 14px; pa
 .red-box { background: #e71b4e; }
 .yellow-box { background: #facc33; }
 
- .page-enjoy {background: #fff;}
+ .page-enjoy {}
 .page-enjoy .apple img, .page-enjoy .android img {
   width: 100px; 
 } 
