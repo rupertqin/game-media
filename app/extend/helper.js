@@ -45,6 +45,20 @@ module.exports = {
     return session;
   },
 
+  ipToInt(IP) {
+    return parseInt(IP.replace(/\d+\.?/ig, function(a) {
+      a = parseInt(a);
+      return (a > 15 ? '' : '0') + a.toString(16);
+    }), 16);
+  },
+
+  intToIp(INT) {
+    if (INT < 0 || INT > 0xFFFFFFFF) {
+      throw ('The number is not normal!');
+    }
+    return (INT>>>24) + '.' + (INT>>16 & 0xFF) + '.' + (INT>>8 & 0xFF) + '.' + (INT & 0xFF);
+  },
+
   stringify(json) {
     return JSON.stringify(json);
   },

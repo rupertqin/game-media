@@ -64,15 +64,8 @@ module.exports = app => {
         encrypt: true,
       });
 
-      // increase view count
-      await this.app.redis.hincrby('enjoy_view_count', urlId, 1);
       // ip+model
       await this.service.promoteClick.record(urlId);
-
-      // 如果有 udid
-      if (this.ctx.query.udid) {
-        await this.app.redis.hincrby('enjoy_udid_count', `${this.ctx.query.udid}`, 1);
-      }
 
       await this.ctx.render('enjoy.tpl');
     }

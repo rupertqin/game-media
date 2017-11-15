@@ -19,6 +19,18 @@ module.exports = appInfo => {
     ctoken: false,
   };
 
+  config.mysql = {
+    client: {
+      host: 'localhost',
+      port: '3306',
+      user: 'root',
+      password: '123',
+      database: 'halo',
+    },
+    app: true,
+    agent: false,
+  };
+
   config.redis = {
     client: {
       port: 6379,
