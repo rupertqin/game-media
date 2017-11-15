@@ -43,8 +43,7 @@ module.exports = app => {
 
       [ urlId ] = this.ctx.helper.hashids_decode(urlId);
       if (!urlId) {
-        this.status = 404;
-        this.body = 404;
+        this.ctx.status = 404;
         return;
       }
       const link = await this.app.mysql.get('promote_link', { id: urlId });

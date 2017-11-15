@@ -16,7 +16,7 @@ body {
   clear: both;
   height: 0;
 }
-
+a {text-decoration: none;}
 
 @media screen and (min-width: 1000px) {
   .container {width: 960px;}
@@ -50,6 +50,7 @@ header .nav {color: #999;}
   background: rgb(21, 32, 190);
 }
 footer {text-align: center;}
+footer a {color: #fff;}
 table {width: 100%;}
 
 .content .tabs .tab-content {height: auto;}
