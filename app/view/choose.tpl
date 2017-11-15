@@ -32,15 +32,18 @@
               </tr>
             </tbody>
           </table>
-          <div class="button-group">
+          <div class="paginator">
             {% if paginator.has_previous_page %}
-            <a href="/choose?p={{ paginator.previous_page }}" class="button">前页</a>
+            <a href="/choose?p={{ paginator.previous_page }}" class="button"><前页</a>
             {% endif %}
-            {% for i in range(1, paginator.pages + 1) -%}
+            {% if paginator.first_page != 1 %}
+            <a href="/choose" class="button">首页</a>
+            {% endif %}
+            {% for i in range(paginator.first_page, paginator.last_page) -%}
             <a href="/choose?p={{ i }}" class="button  {{ 'primary' if i == paginator.current_page  }}">{{ i }}</a>
             {%- endfor %}
             {% if paginator.has_next_page %}
-            <a href="/choose?p={{ paginator.next_page }}" class="button">后页</a>
+            <a href="/choose?p={{ paginator.next_page }}" class="button">后页></a>
             {% endif %}
           </div>
 

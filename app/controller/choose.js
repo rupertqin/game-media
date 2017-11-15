@@ -1,12 +1,9 @@
 'use strict'
 
-const Paginator = require('paginator')
-const perPage = 10
-const paginator = new Paginator(perPage, 7)
-
 module.exports = app => {
   class ChooseController extends app.Controller {
     async index() {
+      const perPage = 2
       const page = this.ctx.query.p
       const games = await this.app.mysql.select('pay_client_app', {
         // limit: perPage,
@@ -23,7 +20,7 @@ module.exports = app => {
       }
       const gameLen = games.length
       this.ctx.locals.games = games.slice(perPage * (page - 1), perPage * page);
-      this.ctx.locals.paginator = paginator.build(gameLen, page || 1)
+      this.ctx.locals.paginator = this.ctx.helper.paginator(gameLen, page || 1)
       await this.ctx.render('choose.tpl');
     }
   }

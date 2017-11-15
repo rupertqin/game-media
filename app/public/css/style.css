@@ -64,3 +64,4 @@ div[class$="-box"]{ border-radius: 2px; margin-bottom: 8px; min-height: 14px; pa
 .page-enjoy .apple img, .page-enjoy .android img {
   width: 100px; 
 } 
+.paginator {text-align: center;}
