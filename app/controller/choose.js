@@ -20,7 +20,7 @@ module.exports = app => {
       }
       const gameLen = games.length
       this.ctx.locals.games = games.slice(perPage * (page - 1), perPage * page);
-      this.ctx.locals.paginator = this.ctx.helper.paginator(gameLen, page || 1)
+      this.ctx.locals.paginator = this.ctx.helper.paginator(perPage, gameLen, page || 1)
       await this.ctx.render('choose.tpl');
     }
   }

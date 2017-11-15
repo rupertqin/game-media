@@ -4,8 +4,7 @@ const crypto = require('crypto');
 const Hashids = require('hashids');
 
 const Paginator = require('./paginator')
-const perPage = 2
-const paginator = new Paginator(perPage, 7)
+
 
 function md5(text) {
   return crypto.createHash('md5').update(text).digest('hex');
@@ -18,6 +17,14 @@ let getHashids = function() {
   };
   return getHashids();
 };
+
+let paginatorBuild = function(perPage, ...arg) {
+  const paginator = new Paginator(perPage, 7)
+  paginatorBuild = function(perPage2, ...arg2) {
+    return paginator.build(...arg2)
+  }
+  return paginatorBuild(perPage, ...arg)
+}
 
 module.exports = {
   foo() {
@@ -67,7 +74,5 @@ module.exports = {
     return JSON.stringify(json);
   },
 
-  paginator(...arg) {
-    return paginator.build(...arg)
-  },
+  paginator: paginatorBuild,
 };

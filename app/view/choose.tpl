@@ -39,7 +39,7 @@
             {% if paginator.first_page != 1 %}
             <a href="/choose" class="button">首页</a>
             {% endif %}
-            {% for i in range(paginator.first_page, paginator.last_page) -%}
+            {% for i in range(paginator.first_page, paginator.last_page+1) -%}
             <a href="/choose?p={{ i }}" class="button  {{ 'primary' if i == paginator.current_page  }}">{{ i }}</a>
             {%- endfor %}
             {% if paginator.has_next_page %}
