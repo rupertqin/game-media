@@ -3,8 +3,8 @@
 module.exports = app => {
   class ChooseController extends app.Controller {
     async index() {
-      const perPage = 2
-      const page = this.ctx.query.p
+      const perPage = 7
+      const page = this.ctx.query.p || 1
       const games = await this.app.mysql.select('pay_client_app', {
         // limit: perPage,
         // offset: perPage * (page - 1),
