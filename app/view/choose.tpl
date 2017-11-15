@@ -32,7 +32,20 @@
               </tr>
             </tbody>
           </table>
+          <div class="button-group">
+            {% if paginator.has_previous_page %}
+            <a href="/choose?p={{ paginator.previous_page }}" class="button">前页</a>
+            {% endif %}
+            {% for i in range(1, paginator.pages + 1) -%}
+            <a href="/choose?p={{ i }}" class="button  {{ 'primary' if i == paginator.current_page  }}">{{ i }}</a>
+            {%- endfor %}
+            {% if paginator.has_next_page %}
+            <a href="/choose?p={{ paginator.next_page }}" class="button">后页</a>
+            {% endif %}
+          </div>
+
         </div>
+
         <input type="radio" name="tab-group" id="tab2" aria-hidden="true">
         <label for="tab2" aria-hidden="true">最新</label>
         <div>
