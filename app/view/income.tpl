@@ -42,12 +42,12 @@
           </tr>
         </thead>
         <tbody>
-          {% for game in games %}
+          {% for po in payOrders %}
           <tr>
-            <td data-label="Name">Chad</td>
-            <td data-label="Surname">{{ game.app_name }}</td>
-            <td data-label="Alias">MrOne</td>
-            <td data-label="Alias">MrOne</td>
+            <td data-label="Name">{{ po.pay_at }}</td>
+            <td data-label="Surname">{{ po.app_name }}</td>
+            <td data-label="Alias">{{ po.price }}</td>
+            <td data-label="Alias">{{ po.price * 0.7 }}</td>
           </tr>
           {% endfor %}
         </tbody>
@@ -59,7 +59,7 @@
 {% block footer %}
   <script> 
     var renderData = { 
-      games: "{{ helper.stringify(games) }}",
+      payOrders: "{{ helper.stringify(PayOrders) }}",
       isLogin: {{ ctx.session.user != null }}
     }
   </script>
