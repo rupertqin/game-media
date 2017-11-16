@@ -6,9 +6,13 @@ module.exports = app => {
       let games;
       if (this.ctx.session.user) {
         const account_id = this.ctx.session.user.id;
-        const chosenGames = await this.app.mysql.select('promote_link', { account_id });
-        const chosenGamesIDs = chosenGames.map(cg => cg.app_id);
-        games = await this.app.mysql.select('pay_client_app', { where: { id: chosenGamesIDs } });
+        let allGame = await this.app.redis.get('game')
+        allGame = JSON.parse(allGame)
+
+        games = await this.app.mysql.select('pay_order', { account_id });
+        for (const g of games) {
+          g.app_name = allGame[g.app_id].app_name
+        }
       }
       this.ctx.locals.games = games;
       await this.ctx.render('income.tpl');

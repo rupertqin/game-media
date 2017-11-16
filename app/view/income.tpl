@@ -42,24 +42,14 @@
           </tr>
         </thead>
         <tbody>
+          {% for game in games %}
           <tr>
             <td data-label="Name">Chad</td>
-            <td data-label="Surname">Wilberts</td>
+            <td data-label="Surname">{{ game.app_name }}</td>
             <td data-label="Alias">MrOne</td>
             <td data-label="Alias">MrOne</td>
           </tr>
-          <tr>
-            <td data-label="Name">Adam</td>
-            <td data-label="Surname">Smith</td>
-            <td data-label="Alias">TheSmith</td>
-            <td data-label="Alias">MrOne</td>
-          </tr>
-          <tr>
-            <td data-label="Name">Sophia</td>
-            <td data-label="Surname">Canderson</td>
-            <td data-label="Alias">Candee</td>
-            <td data-label="Alias">MrOne</td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
