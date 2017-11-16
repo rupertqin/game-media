@@ -12,7 +12,9 @@ let saveFile = function(data, filename) {
 };
 
 [].forEach.call($('input[type=text]'), function(el) {
-  el.value = window.location.origin + '/enjoy/' + el.value;
+  // 此正则修正 input 浏览器返回值的 bug
+  const [ , value ] = el.value.match(/([A-Za-z\d]+)$/)
+  el.value = window.location.origin + '/enjoy/' + value
 });
 const clipboard = new Clipboard('.copy', {
   text (trigger) {

@@ -6,6 +6,7 @@ class UpdateCache extends Subscription {
     return {
       interval: '1h',
       type: 'worker',
+      disable: true,
       // immediate: true,
     };
   }
