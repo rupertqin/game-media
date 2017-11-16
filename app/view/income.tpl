@@ -52,6 +52,21 @@
           {% endfor %}
         </tbody>
       </table>
+      <div class="paginator">
+        {% if paginator.has_previous_page %}
+        <a href="/income?p={{ paginator.previous_page }}" class="button"><前页</a>
+        {% endif %}
+        {% if paginator.first_page != 1 %}
+        <a href="/income" class="button">首页</a>
+        {% endif %}
+        {% for i in range(paginator.first_page, paginator.last_page+1) -%}
+        <a href="/income?p={{ i }}" class="button  {{ 'primary' if i == paginator.current_page  }}">{{ i }}</a>
+        {%- endfor %}
+        {% if paginator.has_next_page %}
+        <a href="/income?p={{ paginator.next_page }}" class="button">后页></a>
+        {% endif %}
+      </div>
+
     </div>
   </div>
 {% endblock %}
