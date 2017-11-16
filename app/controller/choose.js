@@ -12,7 +12,7 @@ module.exports = app => {
       });
       if (this.ctx.session.user) {
         const admin_user_id = this.ctx.session.user.id;
-        const chosenGames = await this.app.mysql.select('promote_link', { admin_user_id });
+        const chosenGames = await this.app.mysql.select('promote_link', { where: { admin_user_id } });
         // check if chosen
         for (const g of games) {
           g.chosen = chosenGames.some(cg => cg.app_id === g.id);

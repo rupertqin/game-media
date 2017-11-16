@@ -26,7 +26,7 @@
         <div class="col-sm-3">
           <div class="yellow-box">
             <h2>5000</h2>
-            <p>累计体现</p>
+            <p>累计提现</p>
           </div>
         </div>
       </div>
