@@ -6,7 +6,6 @@ const utils = require('utility')
 module.exports = app => {
   class IncomeController extends app.Controller {
     async index() {
-      if (!this.ctx.session.user) this.ctx.redirect('/')
 
       const perPage = 10
       const page = this.ctx.query.p || 1

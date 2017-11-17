@@ -13,13 +13,13 @@
         </div>
         <div class="col-sm-3">
           <div class="red-box">
-            <h2>5000</h2>
+            <h2>{{ income.sumAllDay or 0 }}</h2>
             <p>累计收入</p>
           </div>
         </div>
         <div class="col-sm-3">
           <div class="green-box">
-            <h2>5000</h2>
+            <h2>{{ income.sumToday or 0 }}</h2>
             <p>今日收入</p>
           </div>
         </div>
