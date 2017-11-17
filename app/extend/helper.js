@@ -74,5 +74,9 @@ module.exports = {
     return JSON.stringify(json);
   },
 
+  price() {
+    return 'oneone'
+  },
+
   paginator: paginatorBuild,
 };

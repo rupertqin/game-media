@@ -46,8 +46,8 @@
           <tr>
             <td data-label="Name">{{ po.pay_at }}</td>
             <td data-label="Surname">{{ po.app_name }}</td>
-            <td data-label="Alias">{{ po.price }}</td>
-            <td data-label="Alias">{{ po.price * 0.7 }}</td>
+            <td data-label="Alias">{{ po.price | formatCent }}</td>
+            <td data-label="Alias">{{ po.price | getFromProfit | formatCent }}</td>
           </tr>
           {% endfor %}
         </tbody>
