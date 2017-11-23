@@ -10,8 +10,7 @@
     "egg-scripts": "^2.1.0",
     "egg-session-redis": "^1.0.0",
     "egg-view-nunjucks": "^2.1.4",
-    "hashids": "^1.1.4",
-    "ua-parser-js": "^0.7.17"
+    "hashids": "^1.1.4"
   },
   "devDependencies": {
     "autod": "^2.10.0",

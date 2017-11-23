@@ -1,6 +1,6 @@
 'use strict';
 
-const uaParser = require('ua-parser-js');
+const uaParser = require('../extend/ua-parser');
 
 module.exports = app => {
   class Main extends app.Service {
@@ -10,7 +10,7 @@ module.exports = app => {
       const model = ua.device.model || '';
       const promoteLink = await app.mysql.get('promote_link', { id: urlId });
       const game = await app.mysql.get('pay_client_app', { id: promoteLink.app_id });
-      const idfa = `${this.ctx.ip}-${model}`;
+      const idfa = `${model}@${this.ctx.ip}`;
       await app.mysql.insert('promote_click', {
         pid: urlId.toString(),
         model,
@@ -22,7 +22,7 @@ module.exports = app => {
         ts: (+new Date()).toString().slice(0, -3), // 时间戳，精确到秒
       });
 
-      await app.redis.lpush(`enjoy:${idfa}`, urlId);
+      await app.redis.hset('enjoy', `${idfa}#${game.id}`, urlId);
       // increase view count
       await app.redis.hincrby('enjoy_view_count', urlId, 1);
       // 如果有 udid
