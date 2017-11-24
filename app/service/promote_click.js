@@ -22,12 +22,12 @@ module.exports = app => {
         ts: (+new Date()).toString().slice(0, -3), // 时间戳，精确到秒
       });
 
-      await app.redis.hset('enjoy', `${idfa}#${game.id}`, urlId);
+      await app.redis.hset('ENJOY_IDFA', `${idfa}@${game.id}`, urlId);
       // increase view count
-      await app.redis.hincrby('enjoy_view_count', urlId, 1);
+      await app.redis.hincrby('ENJOY_VIEW_COUNT', urlId, 1);
       // 如果有 udid
       if (this.ctx.query.udid) {
-        await this.app.redis.hincrby('enjoy_udid_count', `${this.ctx.query.udid}`, 1);
+        await this.app.redis.hincrby('ENJOY_UDID_COUNT', `${this.ctx.query.udid}`, 1);
       }
 
     }
