@@ -11,7 +11,7 @@ function md5(text) {
 }
 
 let getHashids = function() {
-  const hashids = new Hashids('*)*(sdfs2342342342sfwfwf');
+  const hashids = new Hashids(this.config.keys);
   getHashids = function() {
     return hashids;
   };
