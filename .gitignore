@@ -11,4 +11,5 @@ run/
 *.swp
 .vscode/
 config/config.prod.js
+config/config.local.js
 dump.rdb
