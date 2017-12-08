@@ -1,31 +1,36 @@
 {% extends "layout/wrapper.tpl" %}
 
 {% block content %}
-  <div class="content">
+  <div class="content index-page">
     <div class="container">
-      <div class="col-sm row">
-        <div class="col-sm-7">
-          <div class="card">
-            <img src="https://placehold.it/800x600" class="section media">
-            <div class="section doublepadded"><p>Content</p></div>
-            <div class="section dark"><p>Content</p></div>
-          </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <img src="/public/img/slide.jpg" class="media">
         </div>
-        <div class="col-sm-5">
+        <div class="col-sm-4">
           {% if not user %}
-            <form method="post" action="/login">
-              <fieldset>
-                <legend>Login</legend>
-                <div class="inputgroup fluid"><label for="username2">Username</label> <input type="text" value="" name="name" placeholder="username"></div>
-                <div class="inputgroup fluid"><label for="pwd2">Password</label> <input type="password" value="" name="pwd" placeholder="password"></div>
-                <div class="inputgroup fluid"> <input type="submit" value="Login" id="pwd2"></div>
-              </fieldset>
+            <form method="post" action="/login" class="mui-form">
+              <div class="field">
+                <label class="label">用户名</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="用户名" name="name">
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">密码</label>
+                <div class="control">
+                  <input class="input" type="password" placeholder="密码" name="pwd">
+                </div>
+              </div>
+              <div class="mui-textfield"><button type="submit" class="mui-btn mui-btn--raised">登录</button></div>
             </form>
           {% else %}
             {{ user.username }} <br/>
             {{ user.realname }} <br/>
             {{ user.last_login_at }} <br/>
           {% endif %}
+
         </div>
       </div>
 
@@ -33,8 +38,51 @@
         <input type="radio" name="tabgroup" id="tab1" checked ariahidden="true">
         <label for="tab1" ariahidden="true">平台公告</label>
         <div>
-          <h3>平台公告</h3>
-          <p>This is the first tab's content.</p>
+          <div class="box">
+            <article class="media">
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>［公告］</strong> 关于需要合作伙伴账号修改密码的通知
+                    <br>
+                    <small>各位亲爱的合作伙伴： 因目前平台中弱密码渠道账号较多，为保证您的账号安全，请修改您的密码。建议密码为最少六位，字母加数字，不重复且不连续。如有问题欢迎随时与相应商务合作经理联系，也可反馈问题至，感谢您对UC一如既往地支持与理解！</small>
+                    <br>
+                    <time>2016-01-18 18:16:34</time>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="box">
+            <article class="media">
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>［公告］</strong> 关于需要合作伙伴账号修改密码的通知
+                    <br>
+                    <small>各位亲爱的合作伙伴： 因目前平台中弱密码渠道账号较多，为保证您的账号安全，请修改您的密码。建议密码为最少六位，字母加数字，不重复且不连续。如有问题欢迎随时与相应商务合作经理联系，也可反馈问题至，感谢您对UC一如既往地支持与理解！</small>
+                    <br>
+                    <time>2016-01-18 18:16:34</time>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="box">
+            <article class="media">
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>［公告］</strong> 关于需要合作伙伴账号修改密码的通知
+                    <br>
+                    <small>各位亲爱的合作伙伴： 因目前平台中弱密码渠道账号较多，为保证您的账号安全，请修改您的密码。建议密码为最少六位，字母加数字，不重复且不连续。如有问题欢迎随时与相应商务合作经理联系，也可反馈问题至，感谢您对UC一如既往地支持与理解！</small>
+                    <br>
+                    <time>2016-01-18 18:16:34</time>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </div>
