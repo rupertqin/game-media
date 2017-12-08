@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = app => {
-  class HomeController extends app.Controller {
+  class MainController extends app.Controller {
     async index() {
       const dataList = {
         list: [ ],
@@ -68,6 +68,11 @@ module.exports = app => {
 
       await this.ctx.render('enjoy.tpl');
     }
+
+    async contact() {
+      await this.ctx.render('contact.tpl');
+    }
+
   }
-  return HomeController;
-};
+  return MainController;
+}

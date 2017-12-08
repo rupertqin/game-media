@@ -1,7 +1,7 @@
 {% extends "layout/wrapper.tpl" %}
 
 {% block content %}
-  <div class="content index-page">
+  <div class="main-content index-page">
     <div class="container">
       <div class="row">
         <div class="col-sm-8">

@@ -59,7 +59,7 @@ table td {
 }
 
 
-.content .tabs .tab-content {height: auto;}
+.main-content .tabs .tab-content {height: auto;}
 div[class$="-box"]{ border-radius: 2px; margin-bottom: 8px; min-height: 14px; padding: 14px 3%; color: white; }
 .blue-box { background: #0277bd; }
 .green-box { background: #0bbd4f; }
@@ -71,6 +71,9 @@ div[class$="-box"]{ border-radius: 2px; margin-bottom: 8px; min-height: 14px; pa
   width: 100px; 
 } 
 .paginator {text-align: center;}
+
+.income-page {}
+.income-page .board h2 {color: #fff;}
 
 form {margin: 0;}
 

@@ -1,14 +1,13 @@
 {% extends "./layout/wrapper.tpl" %}
 
 {% block content %}
-  <div class="content">
+  <div class="main-content">
     <div class="container">
       <p><strong>位置：</strong> 游戏列表 </p>
       <div class="tabs">
         <input type="radio" name="tab-group" id="tab1" checked aria-hidden="true">
         <label for="tab1" aria-hidden="true">推荐</label>
         <div class="tab-content clearfix" id="app">
-          <h3>推荐</h3>
           <table class="">
             <thead>
               <tr>
@@ -32,21 +31,6 @@
               </tr>
             </tbody>
           </table>
-          <div class="paginator">
-            {% if paginator.has_previous_page %}
-            <a href="/choose?p={{ paginator.previous_page }}" class="button"><前页</a>
-            {% endif %}
-            {% if paginator.first_page != 1 %}
-            <a href="/choose" class="button">首页</a>
-            {% endif %}
-            {% for i in range(paginator.first_page, paginator.last_page+1) -%}
-            <a href="/choose?p={{ i }}" class="button  {{ 'primary' if i == paginator.current_page  }}">{{ i }}</a>
-            {%- endfor %}
-            {% if paginator.has_next_page %}
-            <a href="/choose?p={{ paginator.next_page }}" class="button">后页></a>
-            {% endif %}
-          </div>
-
         </div>
 
         <input type="radio" name="tab-group" id="tab2" aria-hidden="true">
@@ -62,6 +46,21 @@
           <p>This is the third tab's content.</p>
         </div>
       </div>
+      <div class="paginator">
+        {% if paginator.has_previous_page %}
+        <a href="/choose?p={{ paginator.previous_page }}" class="button"><前页</a>
+        {% endif %}
+        {% if paginator.first_page != 1 %}
+        <a href="/choose" class="button">首页</a>
+        {% endif %}
+        {% for i in range(paginator.first_page, paginator.last_page+1) -%}
+        <a href="/choose?p={{ i }}" class="button  {{ 'primary' if i == paginator.current_page  }}">{{ i }}</a>
+        {%- endfor %}
+        {% if paginator.has_next_page %}
+        <a href="/choose?p={{ paginator.next_page }}" class="button">后页></a>
+        {% endif %}
+      </div>
+
     </div>
   </div>
 {% endblock %}

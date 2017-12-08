@@ -1,7 +1,7 @@
 {% extends "./layout/wrapper.tpl" %}
 
 {% block content %}
-  <div class="content">
+  <div class="main-content">
     <div class="container">
       <p><strong>位置：</strong> 推广列表 </p>
 

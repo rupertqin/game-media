@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/public/vendor/css/bulma.css" />
     <link rel="stylesheet" href="/public/css/style.css" />
     <link rel="icon" href="/public/favicon.png" type="image/x-icon">
-    <title>{% block title %} 艾游戏 - {% endblock %}</title>
+    <title>{% block title %} 艾擎 {% endblock %} - 艾游戏</title>
   </head>
   <body>
     <header>

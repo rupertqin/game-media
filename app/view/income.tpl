@@ -1,10 +1,10 @@
 {% extends "./layout/wrapper.tpl" %}
 
 {% block content %}
-  <div class="content">
+  <div class="main-content income-page">
     <div class="container">
       <p><strong>位置：</strong> 推广列表 </p>
-      <div class="row">
+      <div class="row board">
         <div class="col-sm-3">
           <div class="blue-box">
             <h2>5000</h2>
@@ -78,5 +78,4 @@
       isLogin: {{ ctx.session.user != null }}
     }
   </script>
-  <script src="/public/vendor/app.js"> </script>
 {% endblock %}

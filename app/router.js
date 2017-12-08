@@ -9,6 +9,7 @@ module.exports = app => {
   app.get('/promote', checkLogin, 'promote.index');
   app.get('/income', checkLogin, 'income.index');
   app.get('enjoy', '/enjoy/:id', 'main.enjoy');
+  app.get('contact', '/contact', 'main.contact');
 
   // login
   app.post('/login', 'main.login');
