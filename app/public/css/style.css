@@ -29,6 +29,11 @@ a {text-decoration: none;}
 
 .align-right {text-align: right;}
 
+.mb-1 {margin-bottom: 1rem;}
+.mb-2 {margin-bottom: 2rem;}
+.mb-3 {margin-bottom: 3rem;}
+.mb-4 {margin-bottom: 4rem;}
+
 header {background: none;padding: 0;height: auto;margin-bottom: 1rem;}
 .navbar {background: rgb(0,102,221);}
 header .logo img {width: 180px;display: inline-block;font-size: 0;}

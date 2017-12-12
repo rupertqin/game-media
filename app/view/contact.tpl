@@ -45,27 +45,27 @@
           <div class="container">
           <div class="columns has-text-centered">
             <div class="column">
-              <img src="/public/img/contact_1.png" alt="">
+              <img src="/public/img/contact_1.png" class="mb-1" alt="">
               <h3 class="title is-3">优质资源</h3>
               汇聚最新最热游戏<br>
               提供最佳合作方式
             </div>
             <div class="column">
-              <img src="/public/img/contact_2.png" alt="">
+              <img src="/public/img/contact_2.png" class="mb-1" alt="">
               <h3 class="title is-3">入驻零门槛</h3>
               任何渠道、公司<br>
               个人都可入驻<br>
               合作灵活提供最佳合作方式
             </div>
             <div class="column">
-              <img src="/public/img/contact_3.png" alt="">
+              <img src="/public/img/contact_3.png" class="mb-1" alt="">
               <h3 class="title is-3">高收入</h3>
               高分成<br>
               持续收益<br>
               实时结算快速到账
             </div>
             <div class="column">
-              <img src="/public/img/contact_4.png" alt="">
+              <img src="/public/img/contact_4.png" class="mb-1" alt="">
               <h3 class="title is-3">精准统计</h3>
               统计精准<br>
               推广数据实时展现 <br>
