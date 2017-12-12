@@ -81,10 +81,13 @@
           联系方式
         </p>
         <div class="panel-block">
-          QQ: 1234556789  <br>
-          微信：123234323 <br>
-          电话：021－87768889 <br>
-          邮箱： wang@adxyun.com  
+          <div style="width: 100%;">
+            <img src="/public/img/qr.png" class="is-pulled-right" alt="">
+            QQ: 1234556789  <br>
+            微信：123234323 <br>
+            电话：021－87768889 <br>
+            邮箱： wang@adxyun.com  
+          </div>
         </div>
         <p class="panel-heading">
           公司地址

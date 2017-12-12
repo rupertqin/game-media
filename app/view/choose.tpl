@@ -51,7 +51,7 @@
               <td data-label="Alias">
                 <a href="#" class="button" 
                   @click.prevent="choose(game.chosen || false , game.id, index )" 
-                  v-bind:class="{ tertiary: !game.chosen }" 
+                  v-bind:class="{ 'is-success': !game.chosen }" 
                   v-bind:disabled="!!game.chosen">我要推广</a>
               </td>
             </tr>
