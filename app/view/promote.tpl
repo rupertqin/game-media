@@ -1,12 +1,17 @@
 {% extends "./layout/wrapper.tpl" %}
 
 {% block content %}
-  <div class="main-content">
+  <div class="main-content page-promote">
     <div class="container">
-      <p><strong>位置：</strong> 推广列表 </p>
+      <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+          <li>位置：</li>
+          <li class="is-active"><a href="#" aria-current="page">推广列表</a></li>
+        </ul>
+      </nav>
 
-      <table>
-        <caption>我的推广</caption>
+      <h1 class="title has-text-centered">我的推广</h1>
+      <table class="table is-bordered">
         <thead>
           <tr>
             <th>推广产品</th>
@@ -26,11 +31,11 @@
             <td data-label="Alias">5000</td>
             <td data-label="Alias">
               <p><input type=text value="{{ game.hashid }}" readonly></p>
-              <button class="copy">复制</button>
+              <button class="copy button">复制</button>
             </td>
             <td data-label="Alias">
-              <a href="/enjoy/{{ game.hashid }}" class="button tertiary">预览推广页</a><br/>
-              <a href="" data-id={{ game.hashid }} class="button primary">下载推广二维码</a>
+              <a href="/enjoy/{{ game.hashid }}" class="button is-success width-160">预览推广页</a><br/>
+              <a href="" data-id={{ game.hashid }} class="button is-link width-160">下载推广二维码</a>
             </td>
           </tr>
           {% endfor %}

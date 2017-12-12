@@ -13,10 +13,11 @@ games = JSON.parse(games);
 
 const app = new Vue({
   delimiters: [ '${', '}' ],
-  el: '#app',
+  el: '.main-content',
   data: {
     games,
     msg: 'goto',
+    active_tab: 0,
   },
   methods: {
     choose(chosen, app_id, index) {

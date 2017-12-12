@@ -35,8 +35,8 @@
       </div>
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="container">
-          <div class="navbar-start has-text-centered">
-            <a class="navbar-item has-text-centered" href="/"> 首页 </a>
+          <div class="navbar-start">
+            <a class="navbar-item" href="/"> 首页 </a>
             <a class="navbar-item" href="/choose"> 选择游戏 </a>
             <a class="navbar-item" href="/promote"> 推广列表 </a>
             <a class="navbar-item" href="/income"> 我的收入 </a>

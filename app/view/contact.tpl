@@ -6,7 +6,7 @@
     <div class="container">
       <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-          <li><a href="#">位置：</a></li>
+          <li>位置：</li>
           <li class="is-active"><a href="#" aria-current="page">联系我们</a></li>
         </ul>
       </nav>

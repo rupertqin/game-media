@@ -52,19 +52,32 @@ div[class$="-box"]{ border-radius: 2px; margin-bottom: 8px; min-height: 14px; pa
 .red-box { background: #e71b4e; }
 .yellow-box { background: #facc33; }
 
- .page-enjoy {}
+.page-enjoy {}
 .page-enjoy .apple img, .page-enjoy .android img {
   width: 100px; 
 }
-.paginator {text-align: center;}
+.pagination-list {justify-content: center;}
 
 .income-page {}
 .income-page .board h2 {color: #fff;}
 .income-page .banner {margin-top: -1rem;}
+.income-page td, .income-page th {text-align: center;}
 
+.page-choose {}
+.page-choose td {vertical-align: middle;}
+.page-choose td img {width: 100px;}
+
+.page-promote {}
+.page-promote td {vertical-align: middle;}
+.page-promote td .button {margin: 5px 0;}
+.page-promote td input[type=text] {border: none;width: 100%;}
 
 .index-page .panel-block time {text-align: right;display: block;font-size: 12px;color: rgb(0,102,221	);}
 
+
+.width-160 {width: 160px;}
+.width-200 {width: 200px;}
+.breadcrumb li + li::before { content: " "; }
 @media screen and (min-width: 1000px) {
 
 }
