@@ -72,6 +72,6 @@
       isLogin: {{ ctx.session.user != null }}
     }
   </script>
-  <script src="/public/vendor/vue.js"> </script>
+  <script src="/public/vendor/js/vue.min.js"> </script>
   <script src="/public/js/choose.js"> </script>
 {% endblock %}

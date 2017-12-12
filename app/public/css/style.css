@@ -8,7 +8,7 @@ body {
 #wrapper {
   flex: 1;
 }
-.main-content{min-height: 100vh;box-sizing: border-box;padding-top: 167px;margin-top: -167px; padding-bottom: 76px; margin-bottom: -76px; }
+.main-content{min-height: 100vh;box-sizing: border-box;padding-top: 153px;margin-top: -153px; padding-bottom: 100px; margin-bottom: -48px; }
 .container {margin: 0 auto;}
 .clearfix:after {
   visibility: hidden;
@@ -21,7 +21,6 @@ body {
 a {text-decoration: none;}
 
 
-
 .middle {
   display: flex;
   align-items: center;
@@ -31,26 +30,12 @@ a {text-decoration: none;}
 .align-right {text-align: right;}
 
 header {background: none;padding: 0;height: auto;margin-bottom: 1rem;}
-header .menu {background: rgb(0,102,221	);height: 64px;}
-header .nav {color: #999;}
+.navbar {background: rgb(0,102,221);}
 header .logo img {width: 180px;display: inline-block;font-size: 0;}
-.menu a.button, .menu button, .menu [role="button"] {
-  background: transparent;
-  border-radius: 0;
-  margin: 0;
-  height: 64px;
-  line-height: 64px;
-  padding: 0;
-  box-sizing: border-box;
-  min-width: 7em;
-  text-align: center;
-}
-.menu a.button.active, .menu a.button:hover{
-  background: rgb(0,79,171);
-  color: #fff;
-}
-footer {text-align: center;}
-footer a {color: #fff;}
+.navbar a { background: transparent; border-radius: 0; margin: 0;color: #fff; height: 52px; line-height: 52px; padding: 0; box-sizing: border-box; width: 140px; justify-content: center; }
+.navbar a.active, .navbar a:hover{ background: rgb(0,79,171); color: #fff; }
+.footer {text-align: center;padding: 0.75rem 0.5rem;background: #000;}
+.footer a, footer a:hover {color: #fff;}
 table {width: 100%;border: none;}
 table tr {padding: 0;}
 table td {
@@ -70,23 +55,18 @@ div[class$="-box"]{ border-radius: 2px; margin-bottom: 8px; min-height: 14px; pa
  .page-enjoy {}
 .page-enjoy .apple img, .page-enjoy .android img {
   width: 100px; 
-} 
+}
 .paginator {text-align: center;}
 
 .income-page {}
 .income-page .board h2 {color: #fff;}
+.income-page .banner {margin-top: -1rem;}
 
-form {margin: 0;}
 
-.index-page form {height: 316px;box-sizing: border-box;}
-.index-page .tabs {margin-top: 1em;}
-.tabs>label {height: initial;}
-.tabs {white-space: normal;}
-.index-page .tabs time {text-align: right;display: block;font-size: 12px;color: rgb(0,102,221	);}
-.index-page .tabs>:checked+label+div {height: initial;}
+.index-page .panel-block time {text-align: right;display: block;font-size: 12px;color: rgb(0,102,221	);}
 
 @media screen and (min-width: 1000px) {
-  .container {width: 960px;}
+
 }
 
 @media screen and (min-width: 766px) {

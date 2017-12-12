@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/public/css/mini.default.min.css" />
     <link rel="stylesheet" href="/public/vendor/css/bulma.css" />
     <link rel="stylesheet" href="/public/css/style.css" />
     <link rel="icon" href="/public/favicon.png" type="image/x-icon">
@@ -11,8 +10,6 @@
   </head>
   <body>
     <header>
-      <label for="drawer-checkbox" class="button drawer-toggle"></label>
-      
       <div class="nav container">
         <table>
           <tbody>
@@ -35,32 +32,30 @@
             </tr>
           </tbody>
         </table>
+      </div>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="container">
-          <div class="col-sm row">
-            <div class="col-sm-6">
-              
-            </div>
-            <div class="col-sm-6 middle flex-right"></div>
+          <div class="navbar-start has-text-centered">
+            <a class="navbar-item has-text-centered" href="/"> 首页 </a>
+            <a class="navbar-item" href="/choose"> 选择游戏 </a>
+            <a class="navbar-item" href="/promote"> 推广列表 </a>
+            <a class="navbar-item" href="/income"> 我的收入 </a>
+            <a class="navbar-item" href="/contact"> 联系我们 </a>
+          </div>
+          <div class="navbar-brand">
+            <button class="button navbar-burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </div>
         </div>
-      </div>
-      <div class="menu mui-appbar mui--z1">
-        <div class="container">
-          <div class="col-sm row">
-            <a href="/" class="button">首页</a>
-            <a href="/choose" class="button">选择游戏</a>
-            <a href="/promote" class="button">推广列表</a>
-            <a href="/income" class="button">我的收入</a>
-            <a href="/contact" class="button">联系我们</a>
-          </div>
-        </div> 
-      
-      </div>
+      </nav>
     </header>
     {% block content %}{% endblock %}
-    <footer class="">
+    <footer class="footer">
       <div class="container">
-        <p><a href="#">关于我们</a> | <a href="#">联系我们</a></p>
+        <p><a href="#">关于我们</a> | <a href="/contact">联系我们</a></p>
       </div>
     </footer>
     <script src="/public/js/common.js"></script>
