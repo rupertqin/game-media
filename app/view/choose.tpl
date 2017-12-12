@@ -12,19 +12,19 @@
 
       <div class="tabs is-toggle is-fullwidth">
         <ul>
-          <li :class="{ 'is-active': active_tab==0 }" @click="active_tab=0">
+          <li class="is-active">
             <a>
               <span class="icon is-small"><i class="fa fa-image"></i></span>
               <span>推荐</span>
             </a>
           </li>
-          <li :class="{ 'is-active': active_tab==1 }" @click="active_tab=1">
+          <li>
             <a>
               <span class="icon is-small"><i class="fa fa-music"></i></span>
               <span>最新</span>
             </a>
           </li>
-          <li :class="{ 'is-active': active_tab==2 }" @click="active_tab=2">
+          <li>
             <a>
               <span class="icon is-small"><i class="fa fa-music"></i></span>
               <span>最热</span>
