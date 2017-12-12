@@ -1,7 +1,7 @@
 {% extends "./layout/wrapper.tpl" %}
 {% block title %} 联系我们 {% endblock %}
 {% block content %}
-  <div class="main-content income-page">
+  <div class="main-content page-contact">
     <div class="banner">  <img src="/public/img/contact_banner.jpg" alt=""> </div>
     <div class="container">
       <nav class="breadcrumb" aria-label="breadcrumbs">
