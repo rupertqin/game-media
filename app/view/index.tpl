@@ -1,36 +1,32 @@
 {% extends "layout/wrapper.tpl" %}
 
 {% block content %}
-  <div class="main-content index-page">
+  <div class="main-content page-index">
     <div class="container">
       <div class="columns">
-        <div class="column is-three-quarters">
-          <img src="/public/img/slide.jpg" class="media">
+        <div class="column slide {{ 'is-three-quarters' if not user }}">
+          <img src="/public/img/slide.jpg">
         </div>
+        {% if not user %}
         <div class="column is-one-quarter">
-          {% if not user %}
-            <form method="post" action="/login" class="mui-form">
-              <div class="field">
-                <label class="label">用户名</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="用户名" name="name">
-                </div>
+          <form method="post" action="/login" class="mui-form">
+            <div class="field">
+              <label class="label">用户名</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="用户名" name="name">
               </div>
+            </div>
 
-              <div class="field">
-                <label class="label">密码</label>
-                <div class="control">
-                  <input class="input" type="password" placeholder="密码" name="pwd">
-                </div>
+            <div class="field">
+              <label class="label">密码</label>
+              <div class="control">
+                <input class="input" type="password" placeholder="密码" name="pwd">
               </div>
-              <div class="mui-textfield"><button type="submit" class="mui-btn mui-btn--raised">登录</button></div>
-            </form>
-          {% else %}
-            {{ user.username }} <br/>
-            {{ user.realname }} <br/>
-            {{ user.last_login_at }} <br/>
-          {% endif %}
+            </div>
+            <div class="mui-textfield"><button type="submit" class="mui-btn mui-btn--raised">登录</button></div>
+          </form>
         </div>
+        {% endif %}
       </div>
 
       <div class="panel">

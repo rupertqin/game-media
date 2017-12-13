@@ -81,9 +81,9 @@ div[class$="-box"]{ border-radius: 2px; margin-bottom: 8px; min-height: 14px; pa
 .page-contact .panel-block {padding: 2em;}
 .page-contact .panel-block .column {padding: 2em;}
 
-
-.index-page .panel-block time {text-align: right;display: block;font-size: 12px;color: rgb(0,102,221	);}
-
+.page-index {}
+.page-index .panel-block time {text-align: right;display: block;font-size: 12px;color: rgb(0,102,221	);}
+.page-index .slide img {width: 100%;}
 
 .width-160 {width: 160px;}
 .width-200 {width: 200px;}
