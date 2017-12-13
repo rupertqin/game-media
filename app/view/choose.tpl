@@ -12,20 +12,20 @@
 
       <div class="tabs is-toggle is-fullwidth">
         <ul>
-          <li class="is-active">
-            <a>
+          <li class="{{ 'is-active' if request.query.type == '' or request.query.type == 'recommend' }}">
+            <a href="?type=recommend">
               <span class="icon is-small"><i class="fa fa-image"></i></span>
-              <span>推荐</span>
+              <span>推荐 {{gameLen}}</span>
             </a>
           </li>
-          <li>
-            <a>
+          <li class="{{ 'is-active' if request.query.type == 'new' }}">
+            <a href="?type=new">
               <span class="icon is-small"><i class="fa fa-music"></i></span>
               <span>最新</span>
             </a>
           </li>
-          <li>
-            <a>
+          <li class="{{ 'is-active' if request.query.type == 'hot' }}">
+            <a href="?type=hot">
               <span class="icon is-small"><i class="fa fa-music"></i></span>
               <span>最热</span>
             </a>
@@ -33,7 +33,7 @@
         </ul>
       </div>
 
-      <div class="panel" v-show="active_tab==0">
+      <div class="panel" v-cloak>
         <table class="table is-striped">
           <thead>
             <tr>
@@ -61,22 +61,22 @@
           <ul class="pagination-list">
             {% if paginator.has_previous_page %}
             <li>
-              <a href="/choose?p={{ paginator.previous_page }}" class="button pagination-previous"><前页</a>
+              <a href="{{ helper.urlFor('choose', { page: paginator.previous_page, type: request.query.type }) }}" class="button pagination-previous"><前页</a>
             </li>
             {% endif %}
             {% if paginator.first_page != 1 %}
             <li>
-              <a href="/choose" class="button pagination-link">首页</a>
+              <a href="{{ helper.urlFor('choose', { page: 1, type: request.query.type }) }}" class="button pagination-link">首页</a>
             </li>
             {% endif %}
             {% for i in range(paginator.first_page, paginator.last_page+1) -%}
             <li>
-              <a href="/choose?p={{ i }}" class="button pagination-link {{ 'is-current' if i == paginator.current_page  }}">{{ i }}</a>
+              <a href="{{ helper.urlFor('choose', { page: i, type: request.query.type }) }}" class="button pagination-link {{ 'is-current' if i == paginator.current_page  }}">{{ i }}</a>
             </li>
             {%- endfor %}
             {% if paginator.has_next_page %}
             <li>
-              <a href="/choose?p={{ paginator.next_page }}" class="button pagination-next">后页></a>
+              <a href="{{ helper.urlFor('choose', { page: paginator.next_page, type: request.query.type }) }}" class="button pagination-next">后页></a>
             </li>
             {% endif %}
           </ul>

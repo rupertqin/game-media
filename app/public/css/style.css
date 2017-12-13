@@ -8,6 +8,8 @@ body {
 #wrapper {
   flex: 1;
 }
+[v-cloak] { display: none; }
+
 .main-content{min-height: 100vh;box-sizing: border-box;padding-top: 153px;margin-top: -153px; padding-bottom: 100px; margin-bottom: -48px; }
 .container {margin: 0 auto;}
 .clearfix:after {

@@ -10,6 +10,7 @@ module.exports = app => {
   (async () => {
     const games = await app.mysql.select('pay_client_app')
     const game = {}
+    app.gameLen = games.length
     for (const g of games) {
       game[g.id] = g
     }

@@ -17,7 +17,6 @@ const app = new Vue({
   data: {
     games,
     msg: 'goto',
-    active_tab: 0,
   },
   methods: {
     choose(chosen, app_id, index) {
