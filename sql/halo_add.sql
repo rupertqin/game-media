@@ -31,3 +31,11 @@ CREATE TABLE IF NOT EXISTS SDKMediaStat_{年月} (
   PRIMARY KEY (`SDKMediaStatId`),
   KEY `idx_app_media_day` (`AppId`,`MediaId`,`PromoteLinkId`,`Day`) USING BTREE
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+ALTER TABLE `account`
+ADD `balance` int(15) NOT NULL DEFAULT '0' COMMENT '帐户余额' AFTER `first_ip`,
+ADD `total_income` int(15) NOT NULL DEFAULT '0' COMMENT '累计收入' AFTER `balance`,
+ADD `total_withdraw` int(15) NOT NULL DEFAULT '0' COMMENT '累计提现' AFTER `total_income`;
+
+
