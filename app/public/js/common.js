@@ -36,11 +36,11 @@ function weixinMask() {
     const div = document.createElement('div');
     div.id = 'weixin-tip';
     div.innerHTML = `<p>
-      <span class="close">⊗</span>
+      <i class="tip-close" style="color: #ccc;position: absolute;font-size:2em;top:0">&#10799;</i>
       <img src="/public/img/live_weixin.png" alt="微信打开"/>
       <img class="qr" src="/public/img/qr_wx.png" alt="微信打开"/>
     </p>`;
-    const $close = div.querySelector('.close')
+    const $close = div.querySelector('.tip-close')
     $close.on('click', () => div.outerHTML = '')
     document.body.appendChild(div);
   };

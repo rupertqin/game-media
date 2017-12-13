@@ -3,8 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/public/vendor/css/bulma.css" />
     <link rel="stylesheet" href="/public/css/style.css" />
+    <style>
+      a {color: #333;}
+      .column {width: 40%;display: inline-block;}
+      img {max-width: 100%;}
+    </style>
     <link rel="icon" href="/public/favicon.png" type="image/x-icon">
     <title>{{ game.app_name }} - 游戏下载</title>
   </head>
