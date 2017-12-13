@@ -39,7 +39,7 @@ a {text-decoration: none;}
 header {background: none;padding: 0;height: auto;margin-bottom: 1rem;}
 .navbar {background: rgb(0,102,221);}
 header .logo img {width: 180px;display: inline-block;font-size: 0;}
-.navbar a { background: transparent; border-radius: 0; margin: 0;color: #fff; height: 52px; line-height: 52px; padding: 0; box-sizing: border-box; width: 140px; justify-content: center;text-align: center;background: rgb(0,102,221);}
+.navbar a { background: transparent; border-radius: 0; margin: 0;color: #fff; height: 52px; line-height: 52px; padding: 0; box-sizing: border-box; width: 180px; justify-content: center;text-align: center;background: rgb(0,102,221);}
 .navbar a.active, .navbar a:hover{ background: rgb(0,79,171); color: #fff; }
 .footer {text-align: center;padding: 0.75rem 0.5rem;background: #000;}
 .footer a, footer a:hover {color: #fff;}

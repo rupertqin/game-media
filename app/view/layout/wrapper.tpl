@@ -23,7 +23,7 @@
                       {% if user %}
                         {{ user.username }} | <a href="/logout">logout</a>
                       {% else %}
-                        <a href="/">login</a>
+                        {# <a href="/">login</a> #}
                       {% endif %}
                     </a>
                   </li>
