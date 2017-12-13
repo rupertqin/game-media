@@ -35,16 +35,23 @@ function weixinMask() {
     loadStyleText();
     const div = document.createElement('div');
     div.id = 'weixin-tip';
-    div.innerHTML = '<p><img src="/public/img/live_weixin.png" alt="微信打开"/></p>';
-    document
-      .body
-      .appendChild(div);
+    div.innerHTML = `<p>
+      <span class="close">⊗</span>
+      <img src="/public/img/live_weixin.png" alt="微信打开"/>
+      <img class="qr" src="/public/img/qr_wx.png" alt="微信打开"/>
+    </p>`;
+    const $close = div.querySelector('.close')
+    $close.on('click', () => div.outerHTML = '')
+    document.body.appendChild(div);
   };
 
   const loadStyleText = function() {
     const cssText = `#weixin-tip{position: fixed; left:0; top:0; background: rgba(0,0,0,0.8); filter:
         alpha(opacity=80); width: 100%; height:100%; z-index: 100;} #weixin-tip p{text-a
-        lign: center; margin-top: 10%; padding:0 5%;}`;
+        lign: center; margin-top: 10%; padding:0 5%;text-align: center;}
+        .qr {width: 50%;}
+        .close {position: absolute; left: 10px; top: 10px;color: #fff;font-size: 36px;}
+        `;
     let style = document.createElement('style');
     style.rel = 'stylesheet';
     style.type = 'text/css';

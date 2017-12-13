@@ -30,6 +30,7 @@
     "stop": "egg-scripts stop",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
+    "browserSync": "browser-sync start --proxy 'localhost:7001' --files 'app/'",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",

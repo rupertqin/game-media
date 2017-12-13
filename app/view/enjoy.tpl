@@ -2,8 +2,8 @@
 <html lang="zh-cn">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-    <link rel="stylesheet" href="/public/css/mini.default.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/public/vendor/css/bulma.css" />
     <link rel="stylesheet" href="/public/css/style.css" />
     <link rel="icon" href="/public/favicon.png" type="image/x-icon">
     <title>{{ game.app_name }} - 游戏下载</title>
@@ -13,9 +13,10 @@
 
       <div class="content">
         <div class="container" style="text-align: center;">
+          <br/>
           <h3 style="text-align: center;">{{ game.app_name }}<br/><br/><img src="{{ game.icon }}"></h3>
-          <div class="row btns">
-            <div class="col-sm-6">
+          <div class="columns is-mobile btns">
+            <div class="column">
               {% if game.app_store_id and game.app_store_id != 0 %}
               <a href="https://itunes.apple.com/cn/app/id{{ game.app_store_id }}" class="apple">
                 <h3><img src="/public/img/apple.jpg"></h3>
@@ -23,7 +24,7 @@
               </a>
               {% endif %}
             </div>
-            <div class="col-sm-6">
+            <div class="column">
               {% if game.apk %}
               <a href="{{ game.apk }}" class="android">
                 <h3><img src="/public/img/android.jpg"></h3>
