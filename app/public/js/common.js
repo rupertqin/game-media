@@ -36,9 +36,15 @@ function weixinMask() {
     const div = document.createElement('div');
     div.id = 'weixin-tip';
     div.innerHTML = `<p>
-      <i class="tip-close" style="color: #ccc;position: absolute;font-size:2em;top:0">&#10799;</i>
+      <i class="tip-close" style="color: #ccc;position: absolute;font-size:3em;top:0">&#10799;</i>
       <img src="/public/img/live_weixin.png" alt="微信打开"/>
-      <img class="qr" src="//dowload.17kaiheiba.com/promote/qrcode.png" alt="微信打开"/>
+      <div style="text-align:center;margin-top:-40px">
+        <div style="font-size:1em;color:#ffd042;font-weight:bold">关注小艾官方微信，更多游戏资讯与你共享</div>
+        <fieldset style="border: #ffd042 dashed 2px;width:80%;display: inline-block;padding:1%">
+          <legend style="font-size:.2em;color:#ffd042;font-weight:bold">长按识别</legend>
+          <img style="width:100%" src="/public/img/qr_wx.png">
+        </fieldset>
+      </div>
     </p>`;
     const $close = div.querySelector('.tip-close')
     $close.on('click', () => div.outerHTML = '')
@@ -50,7 +56,7 @@ function weixinMask() {
         alpha(opacity=80); width: 100%; height:100%; z-index: 100;} #weixin-tip p{text-a
         lign: center; margin-top: 10%; padding:0 5%;text-align: center;}
         .qr {width: 50%;}
-        .close {position: absolute; left: 10px; top: 10px;color: #fff;font-size: 36px;}
+        .tip-close {font-style: normal;}
         `;
     let style = document.createElement('style');
     style.rel = 'stylesheet';
