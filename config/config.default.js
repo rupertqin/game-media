@@ -5,6 +5,8 @@ module.exports = appInfo => {
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1509849515376_3730';
+  config.proxy = true
+  config.ipHeaders = 'x-forwarded-for'
 
   // add your config here
   config.view = {

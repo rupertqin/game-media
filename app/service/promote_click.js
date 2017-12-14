@@ -10,7 +10,7 @@ module.exports = app => {
       const model = ua.device.model || '';
       const promoteLink = await app.mysql.get('promote_link', { id: promotelink_id });
       const game = await app.mysql.get('pay_client_app', { id: promoteLink.app_id });
-      const ip = this.ctx.request.header['X-Forwarded-For'] || this.ctx.request.header['X-Real-IP'] || this.ctx.ip
+      const ip = this.ctx.ip
       await app.mysql.insert('promote_click', {
         pid: promotelink_id.toString(),
         model,
