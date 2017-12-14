@@ -19,6 +19,7 @@ class ChooseService extends Service {
       limit: +query.limit,
       offset: query.limit * (query.page - 1),
       columns: [ 'id', 'app_store_id', 'app_name', 'icon', 'admin_user_id', 'apk' ],
+      where: { status: 1 },
       orders: [ order ],
     });
     if (this.ctx.session.user) {
