@@ -14,6 +14,7 @@ module.exports = app => {
             const insertInfo = await this.app.mysql.insert('promote_link', {
               app_id,
               admin_user_id: this.ctx.session.user.id,
+              media_id: 1,
             });
             if (insertInfo.affectedRows === 1) {
               body = { ok: true };

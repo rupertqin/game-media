@@ -13,6 +13,7 @@ module.exports = app => {
             [ promotelinksIDs, promotelinksIDs ]);
           for (let i = 0; i < games.length; i++) {
             games[i].hashid = this.ctx.helper.hashids_encode(promotelinks[i].id);
+            // games[i].media_id = promotelinks[i].media_id
           }
         }
       }

@@ -39,14 +39,12 @@ module.exports = app => {
     }
 
     async enjoy() {
-      let urlId = this.ctx.params.id;
-
-      [ urlId ] = this.ctx.helper.hashids_decode(urlId);
-      if (!urlId) {
+      const [ promotelinkid ] = this.ctx.helper.hashids_decode(this.ctx.params.id);
+      if (!promotelinkid) {
         this.ctx.status = 404;
         return;
       }
-      const link = await this.app.mysql.get('promote_link', { id: urlId });
+      const link = await this.app.mysql.get('promote_link', { id: promotelinkid });
       // const [ id ] = this.ctx.helper.decode(link.url);
       const game = await this.app.mysql.get('pay_client_app', { id: link.app_id });
       this.ctx.locals.game = game;
@@ -57,14 +55,14 @@ module.exports = app => {
 
 
       // this.app.runSchedule('update_view_count');
-      this.ctx.cookies.set('ag_activate:', urlId.toString(), {
+      this.ctx.cookies.set('ag_activate:', promotelinkid.toString(), {
         httpOnly: false,
         signed: true,
         encrypt: true,
       });
 
       // ip+model
-      await this.service.promoteClick.record(urlId);
+      this.service.promoteClick.record(promotelinkid, link.media_id);
 
       await this.ctx.render('enjoy.tpl');
     }
