@@ -4,7 +4,7 @@ const uaParser = require('../extend/ua-parser');
 
 module.exports = app => {
   class Main extends app.Service {
-    async record(promotelink_id, media_id) {
+    async record(promotelink_id) {
       const user_agent = this.ctx.header['user-agent'];
       const ua = uaParser(user_agent);
       const model = ua.device.model || '';

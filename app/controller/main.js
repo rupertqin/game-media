@@ -62,7 +62,7 @@ module.exports = app => {
       });
 
       // ip+model
-      this.service.promoteClick.record(promotelinkid, link.media_id);
+      this.service.promoteClick.record(promotelinkid);
 
       await this.ctx.render('enjoy.tpl');
     }
