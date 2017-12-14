@@ -22,13 +22,14 @@ module.exports = app => {
         ts: (+new Date()).toString().slice(0, -3), // 时间戳，精确到秒
       });
 
-      await app.redis.hset(`trace:common:${promoteLink.app_id}`, `${model}@${ip}`, `${promotelink_id}`)
 
       // increase view count
       await app.redis.hincrby('enjoy_view_count', promotelink_id, 1);
+
+      await app.redis.hset(`trace:common:${promoteLink.app_id}`, `${model}@${ip}`, promotelink_id)
       // 如果有 udid
       if (this.ctx.query.udid) {
-        await app.redis.hset(`trace:udid:${promoteLink.app_id}`, `${this.ctx.query.udid}`, `${promotelink_id}`)
+        await app.redis.hset(`trace:udid:${promoteLink.app_id}`, `${this.ctx.query.udid}`, promotelink_id)
       }
 
     }
