@@ -57,6 +57,7 @@ module.exports = {
   },
 
   ipToInt(IP) {
+    if (!IP) return ''
     return parseInt(IP.replace(/\d+\.?/ig, function(a) {
       a = parseInt(a);
       return (a > 15 ? '' : '0') + a.toString(16);
