@@ -3,6 +3,7 @@ body {
   background: #fff;
   display: flex;
   min-height: 100vh;
+  margin: 0;
   flex-direction: column;
   font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
 }
@@ -63,10 +64,14 @@ div[class$="-box"]{ border-radius: 2px; margin-bottom: 8px; min-height: 14px; pa
 .red-box { background: #e71b4e; }
 .yellow-box { background: #facc33; }
 
-.page-enjoy {}
-.page-enjoy .apple img, .page-enjoy .android img {
-  width: 100px; 
-}
+.page-enjoy {background: #fff;}
+.page-enjoy .apple img, .page-enjoy .android img { width: 40px; }
+.page-enjoy .columns {text-align: center; font-size: 10px;}
+.page-enjoy .columns h3 {margin: .5em 0;}
+.page-enjoy h1.game-logo {margin: 15vh auto 2em; font-size: 26px;}
+.page-enjoy h1.game-logo img {margin-bottom: .2em;}
+
+
 .pagination-list {justify-content: center;}
 
 .income-page {}

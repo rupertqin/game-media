@@ -18,24 +18,24 @@
       <div class="content">
         <div class="container" style="text-align: center;">
           <br/>
-          <h3 style="text-align: center;">{{ game.app_name }}<br/><br/><img src="{{ game.icon }}"></h3>
+          <h1 class="game-logo" style="text-align: center;"><img src="{{ game.icon }}"><br/>{{ game.app_name }}<br/></h1>
           <div class="columns is-mobile btns">
+            {% if game.app_store_id and game.app_store_id != 0 %}
             <div class="column">
-              {% if game.app_store_id and game.app_store_id != 0 %}
               <a href="https://itunes.apple.com/cn/app/id{{ game.app_store_id }}" class="apple">
                 <h3><img src="/public/img/apple.jpg"></h3>
                 <span>下载</span>
               </a>
-              {% endif %}
             </div>
+            {% endif %}
+            {% if game.apk %}
             <div class="column">
-              {% if game.apk %}
               <a href="{{ game.apk }}" class="android">
                 <h3><img src="/public/img/android.jpg"></h3>
                 <span>下载</span>
               </a>
-              {% endif %}
             </div>
+            {% endif %}
           </div>
         </div>
       </div>
