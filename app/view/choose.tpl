@@ -61,22 +61,22 @@
           <ul class="pagination-list">
             {% if paginator.has_previous_page %}
             <li>
-              <a href="{{ helper.urlFor('choose', { page: paginator.previous_page, type: query.type }) }}" class="button pagination-previous"><前页</a>
+              <a href="{{ helper.pathFor('choose', { page: paginator.previous_page, type: query.type }) }}" class="button pagination-previous"><前页</a>
             </li>
             {% endif %}
             {% if paginator.first_page != 1 %}
             <li>
-              <a href="{{ helper.urlFor('choose', { page: 1, type: query.type }) }}" class="button pagination-link">首页</a>
+              <a href="{{ helper.pathFor('choose', { page: 1, type: query.type }) }}" class="button pagination-link">首页</a>
             </li>
             {% endif %}
             {% for i in range(paginator.first_page, paginator.last_page+1) -%}
             <li>
-              <a href="{{ helper.urlFor('choose', { page: i, type: query.type }) }}" class="button pagination-link {{ 'is-current' if i == paginator.current_page  }}">{{ i }}</a>
+              <a href="{{ helper.pathFor('choose', { page: i, type: query.type }) }}" class="button pagination-link {{ 'is-current' if i == paginator.current_page  }}">{{ i }}</a>
             </li>
             {%- endfor %}
             {% if paginator.has_next_page %}
             <li>
-              <a href="{{ helper.urlFor('choose', { page: paginator.next_page, type: query.type }) }}" class="button pagination-next">后页></a>
+              <a href="{{ helper.pathFor('choose', { page: paginator.next_page, type: query.type }) }}" class="button pagination-next">后页></a>
             </li>
             {% endif %}
           </ul>
