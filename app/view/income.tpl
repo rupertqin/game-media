@@ -13,7 +13,7 @@
       <div class="columns board">
         <div class="column">
           <div class="blue-box">
-            <h2 class="is-size-2">{{ user.balance }}</h2>
+            <h2 class="is-size-2">{{ user.money }}</h2>
             <p>帐户余额</p>
           </div>
         </div>
@@ -31,7 +31,7 @@
         </div>
         <div class="column">
           <div class="yellow-box">
-            <h2 class="is-size-2">{{ user.total_withdraw }}</h2>
+            <h2 class="is-size-2">{{ user.total_encashment }}</h2>
             <p>累计提现</p>
           </div>
         </div>

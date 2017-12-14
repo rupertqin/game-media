@@ -39,3 +39,6 @@ ADD `total_income` int(15) NOT NULL DEFAULT '0' COMMENT '累计收入' AFTER `ba
 ADD `total_withdraw` int(15) NOT NULL DEFAULT '0' COMMENT '累计提现' AFTER `total_income`;
 
 
+ALTER TABLE `account`
+CHANGE `balance` `money` int(15) NOT NULL DEFAULT '0' COMMENT '帐户余额' AFTER `first_ip`,
+CHANGE `total_withdraw` `total_encashment` int(15) NOT NULL DEFAULT '0' COMMENT '累计提现' AFTER `total_income`;
