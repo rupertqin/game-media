@@ -1,6 +1,9 @@
 {% extends "./layout/wrapper.tpl" %}
 {% block title %} 联系我们 {% endblock %}
+
 {% block content %}
+  <link rel="stylesheet" href="/public/vendor/fontawesome/web-fonts-with-css/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/public/vendor/fontawesome/web-fonts-with-css/css/fa-solid.min.css">
   <div class="main-content page-contact">
     <div class="banner">  <img src="/public/img/contact_banner.jpg" alt=""> </div>
     <div class="container">
@@ -15,13 +18,13 @@
         <ul>
           <li :class="{ 'is-active': active_tab==0 }" @click="active_tab=0">
             <a>
-              <span class="icon is-small"><i class="fa fa-image"></i></span>
+              <span class="icon is-small"></i></span>
               <span>公司介绍</span>
             </a>
           </li>
           <li :class="{ 'is-active': active_tab==1 }" @click="active_tab=1">
             <a>
-              <span class="icon is-small"><i class="fa fa-music"></i></span>
+              <span class="icon is-small"></i></span>
               <span>联系我们</span>
             </a>
           </li>
@@ -38,35 +41,24 @@
         <p class="panel-heading">
           平台优势
         </p>
-        <div class="panel-block ">
+        <div class="panel-block advantages">
           <div class="container">
           <div class="columns has-text-centered">
             <div class="column">
-              <img src="/public/img/contact_1.png" class="mb-1" alt="">
-              <h3 class="title is-3">优质资源</h3>
-              汇聚最新最热游戏<br>
-              提供最佳合作方式
+              <i class="fa fa-map-marker-alt bg_blue fa-5x"></i>
+              <h3 class="title is-3">精准定位</h3>
             </div>
             <div class="column">
-              <img src="/public/img/contact_2.png" class="mb-1" alt="">
-              <h3 class="title is-3">入驻零门槛</h3>
-              任何渠道、公司<br>
-              个人都可入驻<br>
-              合作灵活提供最佳合作方式
+              <i class="fa fa-dollar-sign bg_red fa-5x"></i>
+              <h3 class="title is-3">高付费率</h3>
             </div>
             <div class="column">
-              <img src="/public/img/contact_3.png" class="mb-1" alt="">
-              <h3 class="title is-3">高收入</h3>
-              高分成<br>
-              持续收益<br>
-              实时结算快速到账
+              <i class="fa fa-sync bg_yellow fa-5x"></i>
+              <h3 class="title is-3">留存稳定</h3>
             </div>
             <div class="column">
-              <img src="/public/img/contact_4.png" class="mb-1" alt="">
-              <h3 class="title is-3">精准统计</h3>
-              统计精准<br>
-              推广数据实时展现 <br>
-              账户信息透明
+              <i class="fa fa-rocket bg_green fa-5x"></i>
+              <h3 class="title is-3">高ARPU</h3>
             </div>
           </div>
           </div>
@@ -80,17 +72,16 @@
         <div class="panel-block">
           <div style="width: 100%;">
             <img src="/public/img/qr.png" class="is-pulled-right" alt="">
-            QQ: 1234556789  <br>
-            微信：123234323 <br>
-            电话：021－87768889 <br>
-            邮箱： wang@adxyun.com  
+            QQ: 215305143  <br>
+            电话：15821093079 <br>
+            邮箱： xuweiling@adxyun.com  
           </div>
         </div>
         <p class="panel-heading">
           公司地址
         </p>
         <div class="panel-block ">
-          电话：021－87768889 <br>
+          电话：021-66286566-8008 <br>
           地址：上海市静安区江场路299号中铁时代广场3号楼702室 <br>
           邮编： 200040
         </div> 

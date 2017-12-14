@@ -12,7 +12,7 @@ class ChooseService extends Service {
     } else if (query.type === 'new') {
       order = [ 'id', 'desc' ]
     } else {
-      order = [ 'id', 'asc' ]
+      order = [ 'id', 'desc' ]
     }
 
     const games = await this.app.mysql.select('pay_client_app', {
