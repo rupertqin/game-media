@@ -38,7 +38,7 @@ function weixinMask() {
     div.innerHTML = `<p>
       <i class="tip-close" style="color: #ccc;position: absolute;font-size:2em;top:0">&#10799;</i>
       <img src="/public/img/live_weixin.png" alt="微信打开"/>
-      <img class="qr" src="/public/img/qr_wx.png" alt="微信打开"/>
+      <img class="qr" src="//dowload.17kaiheiba.com/promote/qrcode.png" alt="微信打开"/>
     </p>`;
     const $close = div.querySelector('.tip-close')
     $close.on('click', () => div.outerHTML = '')

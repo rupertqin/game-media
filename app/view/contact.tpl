@@ -71,7 +71,7 @@
         </p>
         <div class="panel-block">
           <div style="width: 100%;">
-            <img src="/public/img/qr.png" class="is-pulled-right" alt="">
+            <img src="//dowload.17kaiheiba.com/promote/qrcode.png" class="is-pulled-right" alt="">
             QQ: 215305143  <br>
             电话：15821093079 <br>
             邮箱： xuweiling@adxyun.com  
