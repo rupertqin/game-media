@@ -23,8 +23,15 @@ module.exports = app => {
       });
 
 
-      // increase view count
+      // increase promotelink view count
       await app.redis.hincrby('enjoy_view_count', promotelink_id, 1);
+
+      // increase game view count
+      let games = await app.redis.get('game')
+      games = JSON.parse(games)
+      let game_view_count = games[game.id].view_count || 0
+      games[game.id].view_count = ++game_view_count
+      await app.redis.set('game', JSON.stringify(games))
 
       await app.redis.hset(`trace:common:${promoteLink.app_id}`, `${model}@${ip}`, promotelink_id)
       // 如果有 udid

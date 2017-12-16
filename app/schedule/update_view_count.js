@@ -2,12 +2,12 @@
 
 const Subscription = require('egg').Subscription;
 module.exports = app => {
-  class UpdateCache extends Subscription {
+  class Main extends Subscription {
     static get schedule() {
       return {
         interval: '1h',
         type: 'worker',
-        disable: app.config.env !== 'prod',
+        disable: app.config.env === 'local',
         // immediate: true,
       };
     }
@@ -33,5 +33,5 @@ module.exports = app => {
     }
   }
 
-  return UpdateCache
+  return Main
 }

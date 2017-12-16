@@ -9,10 +9,17 @@ module.exports = app => {
 
   (async () => {
     const games = await app.mysql.select('pay_client_app')
-    const game = {}
+    let game = {}
     app.gameLen = games.length
     for (const g of games) {
       game[g.id] = g
+    }
+    let oriGames = await app.redis.get('game')
+    if (oriGames) {
+      oriGames = JSON.parse(oriGames)
+      for (const k in game) {
+        game[k] = Object.assign({}, oriGames[k], game[k])
+      }
     }
     app.redis.set('game', JSON.stringify(game))
   })();

@@ -42,3 +42,9 @@ ADD `total_withdraw` int(15) NOT NULL DEFAULT '0' COMMENT '累计提现' AFTER `
 ALTER TABLE `account`
 CHANGE `balance` `money` int(15) NOT NULL DEFAULT '0' COMMENT '帐户余额' AFTER `first_ip`,
 CHANGE `total_withdraw` `total_encashment` int(15) NOT NULL DEFAULT '0' COMMENT '累计提现' AFTER `total_income`;
+
+ALTER TABLE `promote_click`
+CHANGE `created_at` `created_at` datetime NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间' AFTER `callback`;
+
+ALTER TABLE `promote_link`
+CHANGE `created_at` `created_at` datetime NULL DEFAULT CURRENT_TIMESTAMP COMMENT '添加推广时间' AFTER `down_count`;
