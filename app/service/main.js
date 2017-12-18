@@ -16,7 +16,10 @@ module.exports = app => {
         const expTime = 3600
         const [{ 'SUM(price)': sumAllDay }] = await this.app.mysql.query('SELECT SUM(price) FROM pay_order WHERE account_id=?', [ userID ])
         const [{ 'SUM(price)': sumToday }] = await this.app.mysql.query('SELECT SUM(price) FROM `pay_order` WHERE `account_id`=? AND `pay_at`>=?', [ userID, today ])
-        sumup = { sumAllDay, sumToday }
+        sumup = {
+          sumAllDay: sumAllDay || 0,
+          sumToday: sumToday || 0,
+        }
         await this.app.redis.set(`SUM_INCOME:USER_${userID}`, JSON.stringify(sumup))
         await this.app.redis.expire(`SUM_INCOME:USER_${userID}`, expTime)
       }
