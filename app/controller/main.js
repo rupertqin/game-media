@@ -29,8 +29,11 @@ module.exports = app => {
         // this.ctx.cookies.set('ssid', ssid);
         this.ctx.request.user = account;
         this.ctx.session.user = account;
+        this.ctx.body = { ok: true };
+        this.ctx.redirect('back');
+      } else {
+        this.ctx.status = 401
       }
-      this.ctx.redirect('back');
     }
 
     async logout() {
@@ -39,32 +42,15 @@ module.exports = app => {
     }
 
     async enjoy() {
-      const [ promotelinkid ] = this.ctx.helper.hashids_decode(this.ctx.params.id);
-      if (!promotelinkid) {
-        this.ctx.status = 404;
-        return;
+      const [ promotelink_id ] = this.ctx.helper.hashids_decode(this.ctx.params.id)
+      if (!promotelink_id) {
+        this.ctx.throw(404, 'page not founded')
       }
-      const link = await this.app.mysql.get('promote_link', { id: promotelinkid });
-      // const [ id ] = this.ctx.helper.decode(link.url);
-      const game = await this.app.mysql.get('pay_client_app', { id: link.app_id });
-      this.ctx.locals.game = game;
-      // let ag = this.ctx.cookies.get('ag_activate:', {
-      //   encrypt: true,
-      //   // encrypt: false,
-      // });
+      const promoteLink = await app.mysql.get('promote_link', { id: promotelink_id });
+      const game = await app.mysql.get('pay_client_app', { id: promoteLink.app_id });
+      this.service.main.enjoy(promoteLink.app_id, promotelink_id.toString(), this.ctx.quest.uuid, game.app_store_id)
 
-
-      // this.app.runSchedule('update_view_count');
-      this.ctx.cookies.set('ag_activate:', promotelinkid.toString(), {
-        httpOnly: false,
-        signed: true,
-        encrypt: true,
-      });
-
-      // ip+model
-      this.service.promoteClick.record(promotelinkid);
-
-      await this.ctx.render('enjoy.tpl');
+      await this.ctx.render('enjoy.tpl', { game })
     }
 
     async contact() {
