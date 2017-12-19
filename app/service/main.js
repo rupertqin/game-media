@@ -42,6 +42,35 @@ module.exports = app => {
       return games
     }
 
+    async income(query) {
+      const { limit, page } = query
+
+      // get income sumup
+      const income = await this.ctx.service.main.getUserIncome()
+
+      // get all game
+      let allGame = await this.app.redis.get('game')
+      allGame = JSON.parse(allGame)
+
+      // get pay orders' length
+      const [{ payOrdersCount }] = await app.mysql.query(`SELECT COUNT(*) AS payOrdersCount FROM pay_order WHERE account_id=${this.ctx.session.user.id}`)
+
+      // get pay orders
+      const payOrders = await this.app.mysql.select('pay_order', {
+        where: { account_id: this.ctx.session.user.id },
+        limit,
+        offset: limit * (page - 1),
+      });
+
+      // add game name to orders
+      for (const p of payOrders) {
+        p.app_name = allGame[p.app_id].app_name
+        p.pay_at = utils.YYYYMMDD(p.pay_at)
+      }
+      const paginator = this.ctx.helper.paginator(limit, payOrdersCount, page)
+      return { income, payOrders, paginator }
+    }
+
     async enjoy(app_id, promotelink_id, udid, app_store_id) {
 
       // set cookie

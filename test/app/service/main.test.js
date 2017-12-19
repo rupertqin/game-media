@@ -36,6 +36,15 @@ describe('test/app/service/main.test.js', () => {
 
   })
 
+  it('should get income sucess', async function() {
+    const page = 2
+    const limit = 7
+    const { income, payOrders, paginator } = await ctx.service.main.income({ page, limit })
+    assert(Array.isArray(payOrders))
+    assert(payOrders.length === limit)
+    assert(paginator.current_page === page)
+  })
+
   it('should promote get games sucess', async function() {
     const games = await ctx.service.main.promote()
     assert(Array.isArray(games))
