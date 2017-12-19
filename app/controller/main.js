@@ -1,5 +1,7 @@
 'use strict';
 
+const { URL } = require('url')
+
 module.exports = app => {
   class MainController extends app.Controller {
     async index() {
@@ -27,10 +29,11 @@ module.exports = app => {
       if (isMember) {
         // const ssid = this.ctx.helper.genSession(name, account);
         // this.ctx.cookies.set('ssid', ssid);
+        const myURL = new URL(this.ctx.request.header.referer)
         this.ctx.request.user = account;
         this.ctx.session.user = account;
         this.ctx.body = { ok: true };
-        this.ctx.redirect('back');
+        this.ctx.redirect(myURL.pathname);
       } else {
         this.ctx.status = 401
       }
@@ -38,7 +41,8 @@ module.exports = app => {
 
     async logout() {
       this.ctx.session.user = null;
-      this.ctx.redirect('/');
+      const myURL = new URL(this.ctx.request.header.referer)
+      this.ctx.redirect(myURL.pathname);
     }
 
     async enjoy() {
