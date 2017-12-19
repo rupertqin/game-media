@@ -12,6 +12,8 @@ describe('test/app/service/main.test.js', () => {
   before(async () => {
     app = mock.app();
     await app.ready();
+
+    // 模拟登录
     app.mockSession({
       user: {
         id: user_id,

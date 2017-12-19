@@ -11,6 +11,8 @@ describe('test/app/controller/choose.test.js', () => {
   before(async () => {
     app = mock.app();
     await app.ready();
+
+    // 模拟登录
     app.mockSession({
       user: {
         id: user_id,
@@ -20,7 +22,7 @@ describe('test/app/controller/choose.test.js', () => {
     ctx = app.mockContext();
   });
 
-  // afterEach(mock.restore);
+  afterEach(mock.restore);
 
   it('should GET /choose limit, gameLen, page success', async function() {
     const limit = 10
