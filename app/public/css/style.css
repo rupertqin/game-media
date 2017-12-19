@@ -45,6 +45,7 @@ header {background: none;padding: 0;height: auto;margin-bottom: 1rem;}
 .navbar {background: rgba(255, 255, 255, 0.9);min-height: 5rem;}
 header .logo img {width: 180px;display: inline-block;font-size: 0;}
 .navbar a.navbar-item { font-size: 14px;background: initial; border-radius: 0; margin: 0;color: #333; height: 5rem; line-height: 5rem; padding: 0; box-sizing: border-box; width: 130px; justify-content: center;text-align: center;}
+.navbar .navbar-item > a { font-size: 14px;}
 .navbar a.active, .navbar a:hover{color: #3273dc; }
 .navbar a.navbar-item.active span {border-bottom: 4px solid #3273dc;line-height: 2rem;}
 .navbar a {color: #333;}

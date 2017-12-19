@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/public/vendor/fontawesome/web-fonts-with-css/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/public/vendor/fontawesome/web-fonts-with-css/css/fa-solid.min.css">
     <link rel="stylesheet" href="/public/vendor/css/bulma.css" />
     <link rel="stylesheet" href="/public/css/style.css" />
     <link rel="icon" href="/public/favicon.png" type="image/x-icon">
@@ -27,11 +29,11 @@
               <a class="navbar-item" href="/income"> <span>我的收入</span> </a>
               <a class="navbar-item" href="/contact"> <span>联系我们</span> </a>
               <span class="navbar-item">
-                <i class="fa fa-user" aria-hidden="true"></i>
+                <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;
                 {% if user %}
                   {{ user.username }} &nbsp;|&nbsp;&nbsp; <a href="/logout">logout</a>
                 {% else %}
-                  <a href="/" @click.prevent="showModal">会员登录</a> / <a href="/">厂商登录</a>
+                  <a href="/" @click.prevent="showModal">会员登录</a> &nbsp;/&nbsp; <a href="/">厂商登录</a>
                 {% endif %}
               </span>
             </div>
@@ -45,19 +47,22 @@
           <div class="box">
             <form method="post" action="/login" class="mui-form">
               <div class="field">
-                <label class="label">用户名</label>
+                <label class="label">登录账号</label>
                 <div class="control">
                   <input class="input" type="text" placeholder="用户名" name="name">
                 </div>
               </div>
 
               <div class="field">
-                <label class="label">密码</label>
                 <div class="control">
                   <input class="input" type="password" placeholder="密码" name="pwd">
                 </div>
               </div>
-              <div class="mui-textfield"><button type="submit" class="mui-btn mui-btn--raised">登录</button></div>
+              <div class="field is-grouped">
+                <div class="control">
+                  <button type="submit" class="button is-info">登录</button>
+                </div>
+              </div>
             </form>
           </div>
         </div>

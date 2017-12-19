@@ -14,19 +14,19 @@
         <ul>
           <li class="{{ 'is-active' if query.type == 'recommend' }}">
             <a href="?type=recommend">
-              <span class="icon is-small"><i class="fa fa-image"></i></span>
+              <span class="icon is-small"></span>
               <span>推荐 {{gameLen}}</span>
             </a>
           </li>
           <li class="{{ 'is-active' if query.type == 'new' }}">
             <a href="?type=new">
-              <span class="icon is-small"><i class="fa fa-music"></i></span>
+              <span class="icon is-small"></span>
               <span>最新</span>
             </a>
           </li>
           <li class="{{ 'is-active' if query.type == 'hot' }}">
             <a href="?type=hot">
-              <span class="icon is-small"><i class="fa fa-music"></i></span>
+              <span class="icon is-small"></span>
               <span>最热</span>
             </a>
           </li>

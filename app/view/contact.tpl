@@ -2,8 +2,6 @@
 {% block title %} 联系我们 {% endblock %}
 
 {% block content %}
-  <link rel="stylesheet" href="/public/vendor/fontawesome/web-fonts-with-css/css/fontawesome.min.css">
-  <link rel="stylesheet" href="/public/vendor/fontawesome/web-fonts-with-css/css/fa-solid.min.css">
   <div class="main-content page-contact">
     <div class="banner">  <img src="/public/img/contact_banner.jpg" alt=""> </div>
     <div class="container">
