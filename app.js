@@ -8,8 +8,10 @@ module.exports = app => {
   });
 
   (async () => {
-    const games = await app.mysql.select('pay_client_app')
-    let game = {}
+    const games = await app.mysql.select('pay_client_app', {
+      where: { status: 1 },
+    })
+    const game = {}
     app.gameLen = games.length
     for (const g of games) {
       game[g.id] = g
