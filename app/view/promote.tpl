@@ -15,8 +15,8 @@
         <thead>
           <tr>
             <th>推广产品</th>
-            <th>付费用户</th>
-            {# <th>玩家总消费</th>
+            {# <th>付费用户</th>
+            <th>玩家总消费</th>
             <th>总收入</th> #}
             <th>推广链接</th>
             <th>操作</th>
@@ -26,8 +26,8 @@
           {% for game in games %}
           <tr>
             <td data-label="Name">{{ game.app_name }}</td>
-            <td data-label="Surname">Wilberts</td>
-            {# <td data-label="Alias">5000</td>
+            {# <td data-label="Surname">Wilberts</td>
+            <td data-label="Alias">5000</td>
             <td data-label="Alias">5000</td> #}
             <td data-label="Alias">
               <p><input type=text value="{{ game.hashid }}" readonly></p>
@@ -41,7 +41,9 @@
           {% endfor %}
         </tbody>
       </table>
-
+      
+      {% import "./component/pagination.tpl" as pagination %}
+      {{ pagination.paginator('promote', helper, query, paginator) }}
     </div>
   </div>
 {% endblock %}

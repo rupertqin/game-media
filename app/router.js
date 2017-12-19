@@ -6,7 +6,7 @@ module.exports = app => {
   // main
   app.get('/', checkLogin, 'main.index');
   app.get('choose', '/choose', checkLogin, 'choose.index');
-  app.get('/promote', checkLogin, 'promote.index');
+  app.get('promote', '/promote', checkLogin, 'promote.index');
   app.get('income', '/income', checkLogin, 'income.index');
   app.get('enjoy', '/enjoy/:id', 'main.enjoy');
   app.get('contact', '/contact', 'main.contact');

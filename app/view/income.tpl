@@ -57,24 +57,9 @@
           {% endfor %}
         </tbody>
       </table>
-      <nav class="pagination" role="navigation" aria-label="pagination">
-        <ul class="pagination-list">
-        {% if paginator.has_previous_page %}
-        <a href="{{ helper.pathFor('income', { page: paginator.previous_page }) }}" class="button pagination-link"><前页</a>
-        {% endif %}
-        {% if paginator.first_page != 1 %}
-        <a href="/income" class="button">首页</a>
-        {% endif %}
-        {% for i in range(paginator.first_page, paginator.last_page+1) -%}
-        <li>
-          <a href="{{ helper.pathFor('income', { page: i }) }}" class="button pagination-link {{ 'is-current' if i == paginator.current_page  }}">{{ i }}</a>
-        </li>
-        {%- endfor %}
-        {% if paginator.has_next_page %}
-        <a href="{{ helper.pathFor('income', { page: paginator.next_page }) }}" class="button pagination-link">后页></a>
-        {% endif %}
-        </ul>
-      </nav>
+      
+      {% import "./component/pagination.tpl" as pagination %}
+      {{ pagination.paginator('income', helper, query, paginator) }}
 
     </div>
   </div>
