@@ -13,13 +13,13 @@
       <div class="columns board">
         <div class="column">
           <div class="blue-box">
-            <h2 class="is-size-2">{{ user.money }}</h2>
+            <h2 class="is-size-2">{{ user.money or 0 }}</h2>
             <p>帐户余额</p>
           </div>
         </div>
         <div class="column">
           <div class="red-box">
-            <h2 class="is-size-2">{{ user.total_income }}</h2>
+            <h2 class="is-size-2">{{ user.total_income or 0 }}</h2>
             <p>累计收入</p>
           </div>
         </div>
@@ -31,7 +31,7 @@
         </div>
         <div class="column">
           <div class="yellow-box">
-            <h2 class="is-size-2">{{ user.total_encashment }}</h2>
+            <h2 class="is-size-2">{{ user.total_encashment or 0 }}</h2>
             <p>累计提现</p>
           </div>
         </div>
