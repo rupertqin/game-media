@@ -16,13 +16,13 @@
         <div class="container">
           <div class="navbar-brand">
             <a class="navbar-item logo" href="/"> <img src="/public/img/logo.jpg"></a>
-            <button class="button navbar-burger" data-target="navMenu">
+            <button class="button navbar-burger" @click="isMenuShow = !isMenuShow" data-target="navMenu">
               <span></span>
               <span></span>
               <span></span>
             </button>
           </div>
-          <div class="navbar-menu" id="navMenu">
+          <div class="navbar-menu" id="navMenu" :class="{'is-active': isMenuShow}">
             <div class="navbar-end">
               <a class="navbar-item" href="/choose"> <span>选择游戏</span> </a>
               <a class="navbar-item" href="/promote"> <span>推广列表</span> </a>
