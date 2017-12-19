@@ -9,4 +9,8 @@ module.exports = {
   getFromProfit(num) {
     return num * 0.2
   },
+
+  stringify(json) {
+    return JSON.stringify(json)
+  },
 }

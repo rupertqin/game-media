@@ -5,15 +5,20 @@ const mock = require('egg-mock');
 const assert = require('assert');
 
 describe('test/app/controller/main.test.js', () => {
-  let app;
-  before(() => {
+  let app
+  let ctx
+  before(async () => {
     app = mock.app();
-    return app.ready();
+    await app.ready();
+    ctx = app.mockContext();
   });
 
-  afterEach(mock.restore);
 
   it('should GET /choose redirect to home', async function() {
+    app.mockSession({
+      user: null,
+    });
+    ctx = app.mockContext();
     const response = await app.httpRequest()
       .get('/choose')
       .expect(302);

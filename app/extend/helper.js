@@ -71,10 +71,6 @@ module.exports = {
     return (INT>>>24) + '.' + (INT>>16 & 0xFF) + '.' + (INT>>8 & 0xFF) + '.' + (INT & 0xFF);
   },
 
-  stringify(json) {
-    return JSON.stringify(json);
-  },
-
   price() {
     return 'oneone'
   },

@@ -83,7 +83,7 @@
 {% block footer %}
   <script> 
     var renderData = { 
-      payOrders: "{{ helper.stringify(PayOrders) }}",
+      payOrders: "{{ PayOrders | stringify }}",
       isLogin: {{ ctx.session.user != null }}
     }
   </script>

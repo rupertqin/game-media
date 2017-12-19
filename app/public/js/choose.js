@@ -8,14 +8,11 @@ const defaultOptions = {
   cache: 'default',
 };
 
-let games = renderData.games.replace(/&quot;/g, '"');
-games = JSON.parse(games);
-
 const app = new Vue({
   delimiters: [ '${', '}' ],
   el: '.main-content',
   data: {
-    games,
+    games: renderData.games,
     msg: 'goto',
   },
   methods: {

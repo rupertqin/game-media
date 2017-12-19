@@ -21,11 +21,6 @@ describe('test/app/service/main.test.js', () => {
     ctx = app.mockContext();
   });
 
-  // afterEach(mock.restore);
-
-  // it('should getUserIncome sucess when already has data', async function() {
-  // })
-
   it('should getUserIncome sucess when already has data', async function() {
     await app.redis.set(`SUM_INCOME:USER_${user_id}`, JSON.stringify({
       sumToday: 999,

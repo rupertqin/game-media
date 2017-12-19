@@ -92,7 +92,7 @@
 {% block footer %}
   <script> 
     var renderData = { 
-      games: "{{ helper.stringify(games) }}",
+      games: {{ games | stringify | safe }},
       isLogin: {{ ctx.session.user != null }}
     }
   </script>
