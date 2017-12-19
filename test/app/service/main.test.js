@@ -9,7 +9,7 @@ describe('test/app/service/main.test.js', () => {
   let ctx;
   const user_id = 1
   const username = '18055855754'
-  before(async () => {
+  beforeEach(async () => {
     app = mock.app();
     await app.ready();
 
@@ -23,6 +23,8 @@ describe('test/app/service/main.test.js', () => {
     ctx = app.mockContext();
   });
 
+  afterEach(mock.restore)
+
   it('should getUserIncome sucess when already has data', async function() {
     await app.redis.set(`SUM_INCOME:USER_${user_id}`, JSON.stringify({
       sumToday: 999,
@@ -32,6 +34,11 @@ describe('test/app/service/main.test.js', () => {
     assert(sumAllDay === 999999)
     assert(sumToday === 999)
 
+  })
+
+  it('should promote get games sucess', async function() {
+    const games = await ctx.service.main.promote()
+    assert(Array.isArray(games))
   })
 
   it('should getUserIncome sucess when has no data', async function() {
