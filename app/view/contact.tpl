@@ -91,6 +91,5 @@
 {% endblock %}
 
 {% block footer %}
-  <script src="/public/vendor/js/vue.min.js"> </script>
   <script src="/public/js/contact.js"> </script>
 {% endblock %}

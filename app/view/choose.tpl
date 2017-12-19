@@ -39,7 +39,6 @@
             <tr>
               <th>游戏图标</th>
               <th>游戏名称</th>
-              <th>游戏简介</th>
               <th>获取推广包</th>
             </tr>
           </thead>
@@ -47,7 +46,6 @@
             <tr v-for="(game, index) in games" key="game.id">
               <td data-label="Name"><img v-bind:src="game.icon" /></td>
               <td data-label="Surname">${ game.app_name }</td>
-              <td data-label="Alias">${ game.intro }</td>
               <td data-label="Alias">
                 <a href="#" class="button" 
                   @click.prevent="choose(game.chosen || false , game.id, index )" 
@@ -75,6 +73,5 @@
       isLogin: {{ ctx.session.user != null }}
     }
   </script>
-  <script src="/public/vendor/js/vue.min.js"> </script>
   <script src="/public/js/choose.js"> </script>
 {% endblock %}

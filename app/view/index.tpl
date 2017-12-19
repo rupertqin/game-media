@@ -2,38 +2,15 @@
 
 {% block content %}
   <div class="main-content page-index">
+    <section class="has-text-centered banner"><img src="/public/img/index-banner.jpg" alt=""></section>
     <div class="container">
-      <div class="columns">
-        <div class="column slide {{ 'is-three-quarters' if not user }}">
-          <img src="/public/img/slide.jpg">
-        </div>
-        {% if not user %}
-        <div class="column is-one-quarter">
-          <form method="post" action="/login" class="mui-form">
-            <div class="field">
-              <label class="label">用户名</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="用户名" name="name">
-              </div>
-            </div>
-
-            <div class="field">
-              <label class="label">密码</label>
-              <div class="control">
-                <input class="input" type="password" placeholder="密码" name="pwd">
-              </div>
-            </div>
-            <div class="mui-textfield"><button type="submit" class="mui-btn mui-btn--raised">登录</button></div>
-          </form>
-        </div>
-        {% endif %}
-      </div>
 
       <div class="panel">
         <p class="panel-heading">
           平台公告
         </p>
-        <div class="panel-block" v-for="n in 4">
+        {% for i in range(0, 5) -%}
+        <div class="panel-block">
           <div>
             <strong>［公告］</strong> 关于需要合作伙伴账号修改密码的通知
             <br>
@@ -42,6 +19,7 @@
             <time>2016-01-18 18:16:34</time>
           </div>
         </div>
+        {%- endfor %}
       </div>
 
     </div>
@@ -49,6 +27,5 @@
 {% endblock %}
 
 {% block footer %}
-  <script src="/public/vendor/js/vue.min.js"> </script>
   <script src="/public/js/index.js"> </script>
 {% endblock %}

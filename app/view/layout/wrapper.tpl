@@ -10,33 +10,10 @@
   </head>
   <body>
     <header>
-      <div class="nav container is-hidden-touch">
-        <table>
-          <tbody>
-            <tr class="mui--appbar-height">
-              <td class="mui--text-title"><a href="/" class="logo"> <img src="/public/img/logo.jpg"></a></td>
-              <td class="mui--text-right" style="vertical-align: middle;">
-                <ul class="mui-list--inline mui--text-body2 has-text-right">
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-user" aria-hidden="true"></i>
-                      {% if user %}
-                        {{ user.username }} | <a href="/logout">logout</a>
-                      {% else %}
-                        {# <a href="/">login</a> #}
-                      {% endif %}
-                    </a>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="container">
           <div class="navbar-brand">
-            <a class="navbar-item" href="/"> 首页 </a>
+            <a class="navbar-item logo" href="/"> <img src="/public/img/logo.jpg"></a>
             <button class="button navbar-burger" data-target="navMenu">
               <span></span>
               <span></span>
@@ -44,15 +21,48 @@
             </button>
           </div>
           <div class="navbar-menu" id="navMenu">
-            <div class="navbar-start">
-              <a class="navbar-item" href="/choose"> 选择游戏 </a>
-              <a class="navbar-item" href="/promote"> 推广列表 </a>
-              <a class="navbar-item" href="/income"> 我的收入 </a>
-              <a class="navbar-item" href="/contact"> 联系我们 </a>
+            <div class="navbar-end">
+              <a class="navbar-item" href="/choose"> <span>选择游戏</span> </a>
+              <a class="navbar-item" href="/promote"> <span>推广列表</span> </a>
+              <a class="navbar-item" href="/income"> <span>我的收入</span> </a>
+              <a class="navbar-item" href="/contact"> <span>联系我们</span> </a>
+              <span class="navbar-item">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                {% if user %}
+                  {{ user.username }} &nbsp;|&nbsp;&nbsp; <a href="/logout">logout</a>
+                {% else %}
+                  <a href="/" @click.prevent="showModal">会员登录</a> / <a href="/">厂商登录</a>
+                {% endif %}
+              </span>
             </div>
           </div>
         </div>
       </nav>
+      <div id="login" class="modal" :class="{'is-active': isModalShow}" v-cloak>
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <!-- Any other Bulma elements you want -->
+          <div class="box">
+            <form method="post" action="/login" class="mui-form">
+              <div class="field">
+                <label class="label">用户名</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="用户名" name="name">
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">密码</label>
+                <div class="control">
+                  <input class="input" type="password" placeholder="密码" name="pwd">
+                </div>
+              </div>
+              <div class="mui-textfield"><button type="submit" class="mui-btn mui-btn--raised">登录</button></div>
+            </form>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" @click="isModalShow = false"></button>
+      </div>
     </header>
     {% block content %}{% endblock %}
     <footer class="footer">
@@ -60,6 +70,8 @@
         <p><a href="#">关于我们</a> | <a href="/contact">联系我们</a></p>
       </div>
     </footer>
+
+    <script src="/public/vendor/js/vue.min.js"></script>
     <script src="/public/js/common.js"></script>
     
     {% block footer %}{% endblock %}

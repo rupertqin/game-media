@@ -108,3 +108,17 @@ function toggleMenu() {
 }
 
 toggleMenu()
+
+
+const headerVM = new Vue({
+  delimiters: [ '${', '}' ],
+  el: 'header',
+  data: {
+    isModalShow: false,
+  },
+  methods: {
+    showModal(chosen, app_id, index) {
+      this.isModalShow = true
+    },
+  },
+})

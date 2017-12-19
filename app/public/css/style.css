@@ -12,7 +12,7 @@ body {
 }
 [v-cloak] { display: none; }
 
-.main-content{min-height: 100vh;box-sizing: border-box;padding-top: 153px;margin-top: -153px; padding-bottom: 100px; margin-bottom: -48px; }
+.main-content{min-height: 100vh;box-sizing: border-box;padding-top: 6rem;margin-top: -6rem; padding-bottom: 100px; margin-bottom: -48px; }
 .container {margin: 0 auto;}
 .clearfix:after {
   visibility: hidden;
@@ -42,10 +42,14 @@ a {text-decoration: none;}
 .mb-4 {margin-bottom: 4rem;}
 
 header {background: none;padding: 0;height: auto;margin-bottom: 1rem;}
-.navbar {background: rgb(0, 119, 255);}
+.navbar {background: rgba(255, 255, 255, 0.9);min-height: 5rem;}
 header .logo img {width: 180px;display: inline-block;font-size: 0;}
-.navbar a { background: transparent; border-radius: 0; margin: 0;color: #fff; height: 52px; line-height: 52px; padding: 0; box-sizing: border-box; width: 180px; justify-content: center;text-align: center;background: rgb(0, 119, 255);}
-.navbar a.active, .navbar a:hover{ background: rgb(0, 108, 216); color: #fff; }
+.navbar a.navbar-item { font-size: 14px;background: initial; border-radius: 0; margin: 0;color: #333; height: 5rem; line-height: 5rem; padding: 0; box-sizing: border-box; width: 130px; justify-content: center;text-align: center;}
+.navbar a.active, .navbar a:hover{color: #3273dc; }
+.navbar a.navbar-item.active span {border-bottom: 4px solid #3273dc;line-height: 2rem;}
+.navbar a {color: #333;}
+.logo {width: 180px!important;}
+.logo img { max-height: 5rem; }
 .footer {text-align: center;padding: 0.75rem 0.5rem;background: #000;}
 .footer a, footer a:hover {color: #fff;}
 table {width: 100%;border: none;}
@@ -100,14 +104,11 @@ div[class$="-box"]{ border-radius: 2px; margin-bottom: 8px; min-height: 14px; pa
 .page-index {}
 .page-index .panel-block time {text-align: right;display: block;font-size: 12px;color: rgb(0, 119, 255	);}
 .page-index .slide img {width: 100%;}
+.page-index .banner {margin-top: -1rem;}
 
 .width-160 {width: 160px;}
 .width-200 {width: 200px;}
 .breadcrumb li + li::before { content: " "; }
-@media screen and (min-width: 1000px) {
-
-}
-
-@media screen and (min-width: 766px) {
-  .drawer {display: none;}
+@media screen and (min-width: 1024) {
+  .navbar { min-height: 4.25rem; }
 }
