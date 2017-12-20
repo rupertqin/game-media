@@ -24,8 +24,24 @@ module.exports = app => {
     }
 
     async login() {
+      const { username, pwd } = this.ctx.request.body;
+      const { isMember, account } = await this.ctx.helper.checkLogin(username, pwd);
+      if (isMember) {
+        // const ssid = this.ctx.helper.genSession(name, account);
+        // this.ctx.cookies.set('ssid', ssid);
+        const myURL = new URL(this.ctx.request.header.referer)
+        this.ctx.request.user = account;
+        this.ctx.session.user = account;
+        this.ctx.body = { ok: true };
+        this.ctx.redirect(myURL.pathname);
+      } else {
+        this.ctx.status = 401
+      }
+    }
+
+    async loginAP() {
       const { name, pwd } = this.ctx.request.body;
-      const { isMember, account } = await this.ctx.helper.checkLogin(name, pwd);
+      const { isMember, account } = await this.ctx.helper.checkAPLogin(name, pwd);
       if (isMember) {
         // const ssid = this.ctx.helper.genSession(name, account);
         // this.ctx.cookies.set('ssid', ssid);

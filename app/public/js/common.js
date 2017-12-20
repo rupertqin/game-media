@@ -90,6 +90,7 @@ const headerVM = new Vue({
   el: 'header',
   data: {
     isModalShow: false,
+    isAPModalShow: false,
     isMenuShow: false,
   },
   methods: {

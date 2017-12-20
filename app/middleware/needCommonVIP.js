@@ -2,7 +2,7 @@
 
 module.exports = () => {
   return function* (next) {
-    if (this.request.url !== '/' && (!this.session || !this.session.user)) {
+    if (!this.session || !this.session.user || this.session.user.isAP === true) {
       return this.redirect('/');
     }
     yield next;

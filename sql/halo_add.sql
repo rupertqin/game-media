@@ -48,3 +48,17 @@ CHANGE `created_at` `created_at` datetime NULL DEFAULT CURRENT_TIMESTAMP COMMENT
 
 ALTER TABLE `promote_link`
 CHANGE `created_at` `created_at` datetime NULL DEFAULT CURRENT_TIMESTAMP COMMENT '添加推广时间' AFTER `down_count`;
+
+CREATE TABLE `client` (
+  `id` int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `name` varchar(10) NOT NULL COMMENT '客户名字',
+  `password` varchar(32) NOT NULL COMMENT '密码',
+  `company` varchar(30) NOT NULL COMMENT '公司名',
+  `bank` varchar(20) NOT NULL COMMENT '开户银行',
+  `bank_area` varchar(20) NOT NULL COMMENT '开户支行',
+  `bank_user` varchar(10) NOT NULL COMMENT '开户名',
+  `bank_no` int(20) NOT NULL COMMENT '账号',
+  `tax_location` varchar(20) NOT NULL COMMENT '纳税地点',
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_at` datetime DEFAULT NULL COMMENT '修改时间'
+);

@@ -43,9 +43,17 @@ module.exports = {
     return hashids.decode(str);
   },
 
-  async checkLogin(name, pwd) {
+  async checkLogin(username, pwd) {
     pwd = md5(pwd);
-    const account = await this.app.mysql.get('account', { username: name });
+    const account = await this.app.mysql.get('account', { username });
+    const isMember = !!account && (pwd === account.password);
+    return { isMember, account: isMember ? account : null };
+  },
+
+  async checkAPLogin(name, pwd) {
+    pwd = md5(pwd);
+    const account = await this.app.mysql.get('client', { name });
+    account.isAP = true
     const isMember = !!account && (pwd === account.password);
     return { isMember, account: isMember ? account : null };
   },
