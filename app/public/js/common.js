@@ -110,6 +110,7 @@ const headerVM = new Vue({
         headers: {
           'Content-type': 'application/json',
         },
+        // 带上 session
         credentials: 'include',
         body: JSON.stringify({ name: this.name, password: this.password }),
       }).then(res => {

@@ -11,7 +11,7 @@ let saveFile = function(data, filename) {
   save_link.dispatchEvent(event);
 };
 
-[].forEach.call($('input[type=text]'), function(el) {
+[].forEach.call($('.main-content input[type=text]'), function(el) {
   // 此正则修正 input 浏览器返回值的 bug
   const [ , value ] = el.value.match(/([A-Za-z\d]+)$/)
   el.value = window.location.origin + '/enjoy/' + value
