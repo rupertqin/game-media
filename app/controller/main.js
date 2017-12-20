@@ -24,34 +24,28 @@ module.exports = app => {
     }
 
     async login() {
-      const { username, pwd } = this.ctx.request.body;
-      const { isMember, account } = await this.ctx.helper.checkLogin(username, pwd);
+      const { name, password } = this.ctx.request.body;
+      const { isMember, account } = await this.ctx.helper.checkLogin(name, password);
       if (isMember) {
-        // const ssid = this.ctx.helper.genSession(name, account);
-        // this.ctx.cookies.set('ssid', ssid);
-        const myURL = new URL(this.ctx.request.header.referer)
         this.ctx.request.user = account;
         this.ctx.session.user = account;
+        this.ctx.status = 200
         this.ctx.body = { ok: true };
-        this.ctx.redirect(myURL.pathname);
       } else {
         this.ctx.status = 401
       }
     }
 
     async loginAP() {
-      const { name, pwd } = this.ctx.request.body;
-      const { isMember, account } = await this.ctx.helper.checkAPLogin(name, pwd);
+      const { name, password } = this.ctx.request.body;
+      const { isMember, account } = await this.ctx.helper.checkAPLogin(name, password);
       if (isMember) {
-        // const ssid = this.ctx.helper.genSession(name, account);
-        // this.ctx.cookies.set('ssid', ssid);
-        const myURL = new URL(this.ctx.request.header.referer)
         this.ctx.request.user = account;
         this.ctx.session.user = account;
+        this.ctx.status = 200
         this.ctx.body = { ok: true };
-        this.ctx.redirect(myURL.pathname);
       } else {
-        this.ctx.status = 401
+        this.ctx.throw(401, 'page not founded')
       }
     }
 

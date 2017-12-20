@@ -45,21 +45,21 @@
           </div>
         </div>
       </nav>
-      <div id="login" class="modal" :class="{'is-active': isModalShow}" v-cloak>
+      <div id="login" class="modal login" :class="{'is-active': isModalShow}" v-cloak>
         <div class="modal-background"></div>
         <div class="modal-content">
           <div class="box">
-            <form method="post" action="/login" class="mui-form">
+            <form method="post" action="/login" @submit.prevent="login('/login')" class="mui-form">
               <div class="field">
                 <label class="label">会员登录</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="用户名" name="username">
+                  <input class="input" type="text" placeholder="用户名" v-model="name">
                 </div>
               </div>
 
               <div class="field">
                 <div class="control">
-                  <input class="input" type="password" placeholder="密码" name="pwd">
+                  <input class="input" type="password" placeholder="密码" v-model="password">
                 </div>
               </div>
               <div class="field is-grouped">
@@ -70,23 +70,23 @@
             </form>
           </div>
         </div>
-        <button class="modal-close is-large" aria-label="close" @click="isModalShow = false"></button>
+        <button class="modal-close is-large" aria-label="close" @click="reset"></button>
       </div>
-      <div id="login-ap" class="modal" :class="{'is-active': isAPModalShow}" v-cloak>
+      <div id="login-ap" class="modal login" :class="{'is-active': isAPModalShow}" v-cloak>
         <div class="modal-background"></div>
         <div class="modal-content">
           <div class="box">
-            <form method="post" action="/login-ap" class="mui-form">
+            <form method="post" action="/login-ap" @submit.prevent="login('/login-ap')" class="mui-form">
               <div class="field">
                 <label class="label">厂商登录</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="用户名" name="name">
+                  <input class="input" type="text" placeholder="用户名" v-model="name">
                 </div>
               </div>
 
               <div class="field">
                 <div class="control">
-                  <input class="input" type="password" placeholder="密码" name="pwd">
+                  <input class="input" type="password" placeholder="密码" v-model="password">
                 </div>
               </div>
               <div class="field is-grouped">
@@ -97,7 +97,7 @@
             </form>
           </div>
         </div>
-        <button class="modal-close is-large" aria-label="close" @click="isAPModalShow = false"></button>
+        <button class="modal-close is-large" aria-label="close" @click="reset"></button>
       </div>
     </header>
     {% block content %}{% endblock %}

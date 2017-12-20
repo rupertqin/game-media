@@ -111,6 +111,12 @@ div[class$="-box"]{ border-radius: 2px; margin-bottom: 8px; min-height: 14px; pa
 .width-160 {width: 160px;}
 .width-200 {width: 200px;}
 .breadcrumb li + li::before { content: " "; }
+
+.login.modal .modal-content{ max-width: 360px; }
+.login.modal .modal-content .box { padding: 2rem; }
+
+
+
 @media screen and (min-width: 1024) {
   .navbar { min-height: 4.25rem; }
 }

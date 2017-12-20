@@ -92,10 +92,37 @@ const headerVM = new Vue({
     isModalShow: false,
     isAPModalShow: false,
     isMenuShow: false,
+    name: '',
+    password: '',
   },
   methods: {
     showModal(chosen, app_id, index) {
       this.isModalShow = true
+    },
+    login(submitPath) {
+      if (!this.name) {
+        alert('用户名不正确')
+      } else if (!this.password) {
+        alert('密码不正确')
+      }
+      fetch(submitPath, {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify({ name: this.name, password: this.password }),
+      }).then(res => {
+        if (res.status === 200) {
+          location.reload()
+        } else {
+          alert('密码不正确')
+        }
+      })
+    },
+    reset() {
+      this.name = this.password = ''
+      this.isModalShow = this.isAPModalShow = false
     },
   },
 })
