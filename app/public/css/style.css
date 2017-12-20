@@ -2,6 +2,7 @@ html {font-size: 16px;}
 body {
   background: #fff;
   display: flex;
+  font-size: 14px;
   min-height: 100vh;
   margin: 0;
   flex-direction: column;
@@ -12,7 +13,7 @@ body {
 }
 [v-cloak] { display: none; }
 
-.main-content{min-height: 100vh;box-sizing: border-box;padding-top: 6rem;margin-top: -6rem; padding-bottom: 100px; margin-bottom: -48px; }
+.main-content{min-height: 100vh;box-sizing: border-box;padding-top: calc(5rem + 1rem);margin-top: calc(-5rem - 1rem); padding-bottom: calc(5rem + 2rem); margin-bottom: -5rem; }
 .container {margin: 0 auto;}
 .clearfix:after {
   visibility: hidden;
@@ -44,14 +45,14 @@ a {text-decoration: none;}
 header {background: none;padding: 0;height: auto;margin-bottom: 1rem;}
 .navbar {background: rgba(255, 255, 255, 0.9);min-height: 5rem;}
 header .logo img {width: 180px;display: inline-block;font-size: 0;}
-.navbar a.navbar-item { font-size: 14px;background: initial; border-radius: 0; margin: 0;color: #333; height: 5rem; line-height: 5rem; padding: 0; box-sizing: border-box; width: 130px; justify-content: center;text-align: center;}
-.navbar .navbar-item > a { font-size: 14px;}
+.navbar a.navbar-item { background: initial; border-radius: 0; margin: 0;color: #333; height: 5rem; line-height: 5rem; padding: 0; box-sizing: border-box; width: 130px; justify-content: center;text-align: center;}
+.navbar .navbar-item > a { }
 .navbar a.active, .navbar a:hover{color: #3273dc; }
 .navbar a.navbar-item.active span {border-bottom: 4px solid #3273dc;line-height: 2rem;}
 .navbar a {color: #333;}
 .logo {width: 180px!important;}
 .logo img { max-height: 5rem; }
-.footer {text-align: center;padding: 0.75rem 0.5rem;background: #000;}
+.footer {text-align: center;height: 5rem;line-height: 5rem;padding: 0; background: #474d51;}
 .footer a, footer a:hover {color: #fff;}
 table {width: 100%;border: none;}
 table tr {padding: 0;}
