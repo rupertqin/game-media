@@ -62,3 +62,10 @@ CREATE TABLE `client` (
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `updated_at` datetime DEFAULT NULL COMMENT '修改时间'
 );
+
+ALTER TABLE `client`
+ADD `username` varchar(20) COLLATE 'utf8_general_ci' NOT NULL COMMENT '客户用户名' AFTER `name`;
+
+ALTER TABLE `client` ADD INDEX(`username`);
+ALTER TABLE `client` ADD UNIQUE(`username`);
+

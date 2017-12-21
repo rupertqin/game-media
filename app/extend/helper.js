@@ -50,9 +50,9 @@ module.exports = {
     return { isMember, account: isMember ? account : null };
   },
 
-  async checkAPLogin(name, password) {
+  async checkAPLogin(username, password) {
     password = md5(password);
-    const account = await this.app.mysql.get('client', { name });
+    const account = await this.app.mysql.get('client', { username });
     account.isAP = true
     const isMember = !!account && (password === account.password);
     return { isMember, account: isMember ? account : null };
