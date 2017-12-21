@@ -37,8 +37,7 @@
                 {% if user %}
                   {{ user.username or user.name }} &nbsp;|&nbsp;&nbsp; <a href="/logout">登出</a>
                 {% else %}
-                  <a href="/" @click.prevent="isModalShow = true">会员登录</a> &nbsp;/&nbsp; 
-                  <a href="/" @click.prevent="isAPModalShow = true">厂商登录</a>
+                  <a href="/" @click.prevent="isModalShow = true">登录</a> 
                 {% endif %}
               </span>
             </div>
@@ -66,6 +65,9 @@
                 <div class="control">
                   <button type="submit" class="button is-info">登录</button>
                 </div>
+                <div class="control">
+                  <button class="button is-text is-size-7" @click.prevent="isModalShow = false;isAPModalShow = true">厂商登录</button>
+                </div>
               </div>
             </form>
           </div>
@@ -92,6 +94,9 @@
               <div class="field is-grouped">
                 <div class="control">
                   <button type="submit" class="button is-info">登录</button>
+                </div>
+                <div class="control">
+                  <button class="button is-text is-size-7" @click.prevent="isModalShow = true;isAPModalShow = false">会员登录</button>
                 </div>
               </div>
             </form>
