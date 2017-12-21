@@ -10,7 +10,7 @@ module.exports = app => {
   app.get('choose', '/choose', needCommonVIP, 'choose.index');
   app.get('promote', '/promote', needCommonVIP, 'promote.index');
   app.get('income', '/income', needCommonVIP, 'income.index');
-  app.get('income', '/app-report', needAPVIP, 'appReport.index');
+  app.get('app-report', '/app-report', needAPVIP, 'appReport.index');
   app.get('enjoy', '/enjoy/:id', 'main.enjoy');
   app.get('contact', '/contact', 'main.contact');
 

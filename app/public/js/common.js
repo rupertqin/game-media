@@ -101,9 +101,10 @@ const headerVM = new Vue({
     },
     login(submitPath) {
       if (!this.name) {
-        alert('用户名不正确')
-      } else if (!this.password) {
-        alert('密码不正确')
+        return alert('用户名不正确')
+      }
+      if (!this.password) {
+        return alert('密码不正确')
       }
       fetch(submitPath, {
         method: 'POST',
@@ -117,7 +118,7 @@ const headerVM = new Vue({
         if (res.status === 200) {
           location.reload()
         } else {
-          alert('密码不正确')
+          alert('密码不正确!')
         }
       })
     },

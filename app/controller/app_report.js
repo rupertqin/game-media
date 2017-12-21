@@ -1,15 +1,16 @@
 'use strict';
 
 module.exports = app => {
-  class IncomeController extends app.Controller {
+  class Main extends app.Controller {
     async index() {
-      const { income, payOrders, paginator } = await this.ctx.service.main.income({
-        limit: 10,
-        page: this.ctx.query.page || 1,
-      })
+      const query = Object.assign({}, { page: 1, limit: 7, type: 'recommend' }, this.ctx.query)
 
-      await this.ctx.render('income.tpl', { income, payOrders, paginator });
+      // 不能大于20
+      if (query.limit > 20)query.limit = 20
+      const games = await this.ctx.service.appReport.find(query)
+      const paginator = this.ctx.helper.paginator(query.limit, this.app.gameLen, query.page || 1)
+      await this.ctx.render('app_report.tpl', { games, paginator, query });
     }
   }
-  return IncomeController;
+  return Main;
 };
