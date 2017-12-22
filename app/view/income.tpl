@@ -1,5 +1,6 @@
 {% extends "./layout/wrapper.tpl" %}
 
+{% block title %} 我的收入 {% endblock %}
 {% block content %}
   <div class="main-content income-page">
     <div class="container">

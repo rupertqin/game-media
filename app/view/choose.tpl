@@ -1,5 +1,6 @@
 {% extends "./layout/wrapper.tpl" %}
 
+{% block title %} 游戏列表 {% endblock %}
 {% block content %}
   <div class="main-content page-choose">
     <div class="container">

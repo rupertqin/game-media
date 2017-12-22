@@ -1,5 +1,6 @@
 {% extends "layout/wrapper.tpl" %}
 
+{% block title %} 首页 {% endblock %}
 {% block content %}
   <div class="main-content page-index">
     <section class="has-text-centered banner"><img src="/public/img/index-banner.jpg" alt=""></section>

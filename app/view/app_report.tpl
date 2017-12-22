@@ -1,12 +1,13 @@
 {% extends "./layout/wrapper.tpl" %}
 
+{% block title %} 报表 {% endblock %}
 {% block content %}
   <div class="main-content page-choose">
     <div class="container">
       <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
           <li>位置：</li>
-          <li class="is-active"><a href="#" aria-current="page">游戏列表</a></li>
+          <li class="is-active"><a href="#" aria-current="page">报表</a></li>
         </ul>
       </nav>
 
