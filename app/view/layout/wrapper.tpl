@@ -44,15 +44,15 @@
           </div>
         </div>
       </nav>
-      <div id="login" class="modal login" :class="{'is-active': isModalShow}" v-cloak>
-        <div class="modal-background"></div>
+      <div id="login" class="modal login is-active" v-if="isModalShow" v-cloak>
+        <div class="modal-background" @click="reset"></div>
         <div class="modal-content">
           <div class="box">
             <form method="post" action="/login" @submit.prevent="login('/login')" class="mui-form">
               <div class="field">
                 <label class="label">会员登录</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="用户名" v-model="name">
+                  <input class="input" type="text" placeholder="用户名" v-focus v-model="name">
                 </div>
               </div>
 
@@ -61,12 +61,12 @@
                   <input class="input" type="password" placeholder="密码" v-model="password">
                 </div>
               </div>
-              <div class="field is-grouped">
-                <div class="control">
-                  <button type="submit" class="button is-info">登录</button>
+              <div class="field is-clearfix">
+                <div class="control is-pulled-right">
+                  <a class="button is-text is-size-7" @click.prevent="switchModal">切换厂商</a>
                 </div>
-                <div class="control">
-                  <button class="button is-text is-size-7" @click.prevent="isModalShow = false;isAPModalShow = true">厂商登录</button>
+                <div class="control is-pulled-left">
+                  <button type="submit" class="button is-info">登录</button>
                 </div>
               </div>
             </form>
@@ -74,15 +74,15 @@
         </div>
         <button class="modal-close is-large" aria-label="close" @click="reset"></button>
       </div>
-      <div id="login-ap" class="modal login" :class="{'is-active': isAPModalShow}" v-cloak>
-        <div class="modal-background"></div>
+      <div id="login-ap" class="modal login is-active" v-if="isAPModalShow" v-cloak>
+        <div class="modal-background" @click="reset"></div>
         <div class="modal-content">
           <div class="box">
             <form method="post" action="/login-ap" @submit.prevent="login('/login-ap')" class="mui-form">
               <div class="field">
                 <label class="label">厂商登录</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="用户名" v-model="name">
+                  <input class="input" key="a" type="text" placeholder="用户名" v-focus v-model="name">
                 </div>
               </div>
 
@@ -91,12 +91,12 @@
                   <input class="input" type="password" placeholder="密码" v-model="password">
                 </div>
               </div>
-              <div class="field is-grouped">
-                <div class="control">
-                  <button type="submit" class="button is-info">登录</button>
+              <div class="field is-clearfix">
+                <div class="control is-pulled-right">
+                  <a class="button is-text is-size-7" @click.prevent="switchModal">切换会员</a>
                 </div>
-                <div class="control">
-                  <button class="button is-text is-size-7" @click.prevent="isModalShow = true;isAPModalShow = false">会员登录</button>
+                <div class="control is-pulled-left">
+                  <button type="submit" class="button is-info">登录</button>
                 </div>
               </div>
             </form>

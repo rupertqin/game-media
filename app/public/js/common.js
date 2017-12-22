@@ -84,6 +84,13 @@ function weixinMask() {
   });
 }());
 
+Vue.directive('focus', {
+  // 当被绑定的元素插入到 DOM 中时……
+  inserted(el) {
+    // 聚焦元素
+    el.focus()
+  },
+})
 
 const headerVM = new Vue({
   delimiters: [ '${', '}' ],
@@ -98,6 +105,15 @@ const headerVM = new Vue({
   methods: {
     showModal(chosen, app_id, index) {
       this.isModalShow = true
+    },
+    switchModal() {
+      if (this.isModalShow) {
+        this.isModalShow = false
+        this.isAPModalShow = true
+      } else {
+        this.isModalShow = true
+        this.isAPModalShow = false
+      }
     },
     login(submitPath) {
       if (!this.name) {
@@ -128,3 +144,5 @@ const headerVM = new Vue({
     },
   },
 })
+
+
