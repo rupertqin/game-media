@@ -1,5 +1,6 @@
 'use strict'
 
+const utils = require('utility')
 
 module.exports = {
   formatCent(num) {
@@ -13,4 +14,9 @@ module.exports = {
   stringify(json) {
     return JSON.stringify(json)
   },
+
+  YYYYMMDD(date) {
+    return utils.YYYYMMDD(date)
+  },
+
 }

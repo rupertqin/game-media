@@ -25,7 +25,7 @@
           <div class="navbar-menu" id="navMenu" :class="{'is-active': isMenuShow}">
             <div class="navbar-end">
               {% if user.isAP %}
-              <a class="navbar-item" href="/app-report"> <span>游戏报表</span> </a>
+              <a class="navbar-item" href="/app-report"> <span>报表</span> </a>
               {% else %}
               <a class="navbar-item" href="/choose"> <span>选择游戏</span> </a>
               <a class="navbar-item" href="/promote"> <span>推广列表</span> </a>

@@ -10,68 +10,39 @@
         </ul>
       </nav>
 
-      <div class="tabs is-toggle is-fullwidth">
-        <ul>
-          <li class="{{ 'is-active' if query.type == 'recommend' }}">
-            <a href="?type=recommend">
-              <span class="icon is-small"></span>
-              <span>推荐 {{gameLen}}</span>
-            </a>
-          </li>
-          <li class="{{ 'is-active' if query.type == 'new' }}">
-            <a href="?type=new">
-              <span class="icon is-small"></span>
-              <span>最新</span>
-            </a>
-          </li>
-          <li class="{{ 'is-active' if query.type == 'hot' }}">
-            <a href="?type=hot">
-              <span class="icon is-small"></span>
-              <span>最热</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="panel" v-cloak>
+      <div class="panel">
         <table class="table is-striped">
           <thead>
             <tr>
-              <th>游戏图标</th>
+              <th>时间</th>
+              <th></th>
               <th>游戏名称</th>
-              <th>获取推广包</th>
+              <th>充值人数</th>
+              <th>充值金额</th>
+              <th>分成金额</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(game, index) in games" key="game.id">
-              <td data-label="Name"><img v-bind:src="game.icon" /></td>
-              <td data-label="Surname">${ game.app_name }</td>
-              <td data-label="Alias">
-                <a href="#" class="button" 
-                  @click.prevent="choose(game.chosen || false , game.id, index )" 
-                  v-bind:class="{ 'is-success': !game.chosen }" 
-                  v-bind:disabled="!!game.chosen">我要推广</a>
-              </td>
+            {% for item in items %}
+            <tr>
+              <td data-label="Surname">{{ item.date | YYYYMMDD }}</td>
+              <td data-label="Name"><img src={{ item.icon }} /></td>
+              <td data-label="Surname">{{ item.app_name }}</td>
+              <td data-label="Surname">{{ item.recharge_num }}</td>
+              <td data-label="Surname">{{ item.price | round(2) }}</td>
+              <td data-label="Surname">{{ item.price | getFromProfit | round(2) }}</td>
             </tr>
+            {% endfor %}
           </tbody>
         </table>
 
         {% import "./component/pagination.tpl" as pagination %}
         {{ pagination.paginator('app-report', helper, query, paginator) }}
       </div>
-
-      
-
     </div>
   </div>
 {% endblock %}
 
 {% block footer %}
-  <script> 
-    var renderData = { 
-      games: {{ games | stringify | safe }},
-      isLogin: {{ ctx.session.user != null }}
-    }
-  </script>
-  <script src="/public/js/choose.js"> </script>
+
 {% endblock %}
