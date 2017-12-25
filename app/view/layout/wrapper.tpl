@@ -48,53 +48,31 @@
         <div class="modal-background" @click="reset"></div>
         <div class="modal-content">
           <div class="box">
-            <form method="post" action="/login" @submit.prevent="login('/login')" class="mui-form">
+            <form method="post" action="/login" @submit.prevent="login('/login')">
               <div class="field">
-                <label class="label">会员登录</label>
+                <label class="label is-size-5 mb-1">${ loginTitle }</label>
                 <div class="control">
                   <input class="input" type="text" placeholder="用户名" v-focus v-model="name">
                 </div>
               </div>
-
               <div class="field">
                 <div class="control">
                   <input class="input" type="password" placeholder="密码" v-model="password">
                 </div>
               </div>
-              <div class="field is-clearfix">
-                <div class="control is-pulled-right">
-                  <a class="button is-text is-size-7" @click.prevent="switchModal">切换厂商</a>
-                </div>
-                <div class="control is-pulled-left">
-                  <button type="submit" class="button is-info">登录</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-        <button class="modal-close is-large" aria-label="close" @click="reset"></button>
-      </div>
-      <div id="login-ap" class="modal login is-active" v-if="isAPModalShow" v-cloak>
-        <div class="modal-background" @click="reset"></div>
-        <div class="modal-content">
-          <div class="box">
-            <form method="post" action="/login-ap" @submit.prevent="login('/login-ap')" class="mui-form">
-              <div class="field">
-                <label class="label">厂商登录</label>
-                <div class="control">
-                  <input class="input" key="a" type="text" placeholder="用户名" v-focus v-model="name">
-                </div>
-              </div>
-
               <div class="field">
                 <div class="control">
-                  <input class="input" type="password" placeholder="密码" v-model="password">
+                  <label class="radio">
+                    <input type="radio" value="common" v-model="loginType">
+                    会员登录
+                  </label>
+                  <label class="radio">
+                    <input type="radio" value="ap" v-model="loginType">
+                    厂商登录
+                  </label>
                 </div>
               </div>
               <div class="field is-clearfix">
-                <div class="control is-pulled-right">
-                  <a class="button is-text is-size-7" @click.prevent="switchModal">切换会员</a>
-                </div>
                 <div class="control is-pulled-left">
                   <button type="submit" class="button is-info">登录</button>
                 </div>
@@ -111,8 +89,11 @@
         <p><a href="#">关于我们</a> | <a href="/contact">联系我们</a></p>
       </div>
     </footer>
-
+    {% if config.env === 'local' %}
+    <script src="/public/vendor/js/vue.js"></script>
+    {% else %}
     <script src="/public/vendor/js/vue.min.js"></script>
+    {% endif %}
     <script src="/public/js/common.js"></script>
     
     {% block footer %}{% endblock %}

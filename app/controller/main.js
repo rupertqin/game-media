@@ -5,22 +5,7 @@ const { URL } = require('url')
 module.exports = app => {
   class MainController extends app.Controller {
     async index() {
-      const dataList = {
-        list: [ ],
-      };
-
-      const account = await this.app.mysql.get('account', { id: 1 });
-      if (account && account.username) {
-        dataList.list.push({
-          title: account.username, url: account.username,
-        });
-      }
-
-      const day = await this.app.redis.get('day');
-      dataList.list.push({
-        title: day, url: day,
-      });
-      await this.ctx.render('index.tpl', dataList);
+      await this.ctx.render('index.tpl');
     }
 
     async login() {

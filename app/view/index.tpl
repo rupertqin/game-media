@@ -3,7 +3,7 @@
 {% block title %} 首页 {% endblock %}
 {% block content %}
   <div class="main-content page-index">
-    <section class="has-text-centered banner"><img src="/public/img/index-banner.jpg" alt=""></section>
+    <section class="has-text-centered banner mb-1"><img src="/public/img/index-banner.jpg" alt=""></section>
     <div class="container">
 
       <div class="panel">

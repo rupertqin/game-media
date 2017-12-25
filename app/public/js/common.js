@@ -84,65 +84,66 @@ function weixinMask() {
   });
 }());
 
-Vue.directive('focus', {
-  // 当被绑定的元素插入到 DOM 中时……
-  inserted(el) {
-    // 聚焦元素
-    el.focus()
-  },
-})
-
-const headerVM = new Vue({
-  delimiters: [ '${', '}' ],
-  el: 'header',
-  data: {
-    isModalShow: false,
-    isAPModalShow: false,
-    isMenuShow: false,
-    name: '',
-    password: '',
-  },
-  methods: {
-    showModal(chosen, app_id, index) {
-      this.isModalShow = true
+(function header() {
+  Vue.directive('focus', {
+    // 当被绑定的元素插入到 DOM 中时……
+    inserted(el) {
+      // 聚焦元素
+      el.focus()
     },
-    switchModal() {
-      if (this.isModalShow) {
-        this.isModalShow = false
-        this.isAPModalShow = true
-      } else {
+  })
+
+  const headerVM = new Vue({
+    delimiters: [ '${', '}' ],
+    el: 'header',
+    data: {
+      isModalShow: false,
+      loginType: 'common',
+      isMenuShow: false,
+      name: '',
+      password: '',
+    },
+    computed: {
+      loginTitle() {
+        return this.loginType === 'common' ? '会员登录' : '厂商登录'
+      },
+      submitPath() {
+        return this.loginType === 'common' ? '/login' : '/login-ap'
+      },
+    },
+    methods: {
+      showModal() {
         this.isModalShow = true
-        this.isAPModalShow = false
-      }
-    },
-    login(submitPath) {
-      if (!this.name) {
-        return alert('用户名不正确')
-      }
-      if (!this.password) {
-        return alert('密码不正确')
-      }
-      fetch(submitPath, {
-        method: 'POST',
-        headers: {
-          'Content-type': 'application/json',
-        },
-        // 带上 session
-        credentials: 'include',
-        body: JSON.stringify({ name: this.name, password: this.password }),
-      }).then(res => {
-        if (res.status === 200) {
-          location.reload()
-        } else {
-          alert('密码不正确!')
+      },
+      login() {
+        if (!this.name) {
+          return alert('用户名不正确')
         }
-      })
+        if (!this.password) {
+          return alert('密码不正确')
+        }
+        fetch(this.submitPath, {
+          method: 'POST',
+          headers: {
+            'Content-type': 'application/json',
+          },
+          // 带上 session
+          credentials: 'include',
+          body: JSON.stringify({ name: this.name, password: this.password }),
+        }).then(res => {
+          if (res.status === 200) {
+            location.reload()
+          } else {
+            alert('密码不正确!')
+          }
+        })
+      },
+      reset() {
+        this.name = this.password = ''
+        this.isModalShow = false
+      },
     },
-    reset() {
-      this.name = this.password = ''
-      this.isModalShow = this.isAPModalShow = false
-    },
-  },
-})
+  })
 
+}());
 
