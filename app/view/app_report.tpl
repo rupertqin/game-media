@@ -19,6 +19,7 @@
               <th></th>
               <th>游戏名称</th>
               <th>充值人数</th>
+              <th>新增用户数</th>
               <th>充值金额</th>
               <th>分成金额</th>
             </tr>
@@ -30,6 +31,7 @@
               <td data-label="Name"><img src={{ item.icon }} /></td>
               <td data-label="Surname">{{ item.app_name }}</td>
               <td data-label="Surname">{{ item.recharge_num }}</td>
+              <td data-label="Surname">{{ item.reg_num or 0 }}</td>
               <td data-label="Surname">{{ item.price | round(2) }}</td>
               <td data-label="Surname">{{ item.price | getFromProfit | round(2) }}</td>
             </tr>
