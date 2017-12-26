@@ -2,6 +2,7 @@
 
 module.exports = appInfo => {
   const config = exports = {};
+  config.ipHeaders = undefined
 
   config.redis = {
     client: {

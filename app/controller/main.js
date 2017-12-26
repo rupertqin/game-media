@@ -1,6 +1,6 @@
 'use strict';
 
-const { URL } = require('url')
+const url = require('url')
 
 module.exports = app => {
   class MainController extends app.Controller {
@@ -35,9 +35,13 @@ module.exports = app => {
     }
 
     async logout() {
+      let targetUrl
       this.ctx.session.user = null;
-      const myURL = new URL(this.ctx.request.header.referer)
-      this.ctx.redirect(myURL.pathname);
+      const refererUrl = this.ctx.request && this.ctx.request.header && this.ctx.request.header.referer
+      if (refererUrl) {
+        targetUrl = url.parse(refererUrl).pathname
+      }
+      this.ctx.redirect(targetUrl || '/');
     }
 
     async enjoy() {
@@ -47,7 +51,7 @@ module.exports = app => {
       }
       const promoteLink = await app.mysql.get('promote_link', { id: promotelink_id });
       const game = await app.mysql.get('pay_client_app', { id: promoteLink.app_id });
-      this.service.main.enjoy(promoteLink.app_id, promotelink_id.toString(), this.ctx.quest.uuid, game.app_store_id)
+      this.service.main.enjoy(promoteLink.app_id, promotelink_id.toString(), this.ctx.query.uuid, game.app_store_id)
 
       await this.ctx.render('enjoy.tpl', { game })
     }

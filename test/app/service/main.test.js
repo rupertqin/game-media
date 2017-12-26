@@ -46,7 +46,10 @@ describe('test/app/service/main.test.js', () => {
   })
 
   it('should promote get games sucess', async function() {
-    const games = await ctx.service.main.promote()
+    const { games } = await ctx.service.main.promote({
+      limit: 10,
+      page: 1,
+    })
     assert(Array.isArray(games))
   })
 

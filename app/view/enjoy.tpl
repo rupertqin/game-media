@@ -44,7 +44,6 @@
         </div>
       </div>
     </div>
-    <script src="/public/js/common.js"></script>
     <script src="/public/vendor/clipboard.js"></script>
     <script src="/public/js/enjoy.js"></script>
     

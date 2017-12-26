@@ -7,18 +7,29 @@ const assert = require('assert');
 describe('test/app/controller/main.test.js', () => {
   let app
   let ctx
-  before(async () => {
+  const user_id = 1
+  const username = '18055855754'
+  before(() => {
     app = mock.app();
-    await app.ready();
-    ctx = app.mockContext();
+    return app.ready();
+
+    // 模拟登录
+    // app.mockSession({
+    //   user: {
+    //     id: user_id,
+    //     username,
+    //   },
+    // });
   });
+
+  // afterEach(mock.restore);
+  after(() => app.close());
 
 
   it('should GET /choose redirect to home', async function() {
     app.mockSession({
       user: null,
     });
-    ctx = app.mockContext();
     const response = await app.httpRequest()
       .get('/choose')
       .expect(302);
@@ -30,7 +41,7 @@ describe('test/app/controller/main.test.js', () => {
       .post('/login')
       .send({
         name: '18055855754',
-        pwd: 'null',
+        password: 'null',
       })
       .expect(401);
   });
@@ -40,29 +51,39 @@ describe('test/app/controller/main.test.js', () => {
       .post('/login')
       .send({
         name: '18055855754',
-        pwd: 'aaaa',
+        password: 'aaaa',
       })
-      .expect(302);
+      .expect(200);
 
   });
 
   it('should GET /logout success', async function() {
-    app.httpRequest()
+    ctx = app.mockContext({
+      request: {
+        header: {
+          referer: 'http://localhost:7001/aa'
+        },
+      },
+      haha: 'bibi',
+    });
+    console.log(ctx, '===========')
+    await app.httpRequest()
       .get('/logout')
       .expect(302);
 
   });
 
   it('should GET /enjoy fail', async function() {
-    app.httpRequest()
+    await app.httpRequest()
       .get('/enjoy/666')
       .expect(404);
   });
 
   it('should GET /enjoy sucess', async function() {
-    app.httpRequest()
+    const response = await app.httpRequest()
       .get('/enjoy/LJ')
-      .expect(200);
+      .expect(200)
+      .expect(/乱世王者/)
   });
 
 });
