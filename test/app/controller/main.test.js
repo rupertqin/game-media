@@ -58,17 +58,9 @@ describe('test/app/controller/main.test.js', () => {
   });
 
   it('should GET /logout success', async function() {
-    ctx = app.mockContext({
-      request: {
-        header: {
-          referer: 'http://localhost:7001/aa'
-        },
-      },
-      haha: 'bibi',
-    });
-    console.log(ctx, '===========')
     await app.httpRequest()
       .get('/logout')
+      .set('referer', 'http://localhost:7001/aa')
       .expect(302);
 
   });
