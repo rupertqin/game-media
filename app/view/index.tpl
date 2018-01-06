@@ -5,6 +5,19 @@
   <div class="main-content page-index">
     <section class="has-text-centered banner mb-1"><img src="/public/img/index-banner.jpg" alt=""></section>
     <div class="container">
+      <div class="game-recom">
+        <div class="tabs">
+          <ul>
+            <li class="is-active"> <a><img src="/public/img/ico-hot.png" /> 游戏推荐</a></li>
+          </ul>
+        </div>
+        <div class="my-columns has-text-centered">
+          <div class="col blue"><img src="/public/img/game-recom-1.jpg" alt=""> <h3 class="">超越联盟3D</h3></div>
+          <div class="col orange"><img src="/public/img/game-recom-2.jpg" alt=""> <h3>命运之塔</h3></div>
+          <div class="col purple"><img src="/public/img/game-recom-3.jpg" alt=""> <h3>崛起·终极王者</h3></div>
+          <div class="col pink"><img src="/public/img/game-recom-4.jpg" alt=""> <h3>你来嘛英雄</h3></div>
+        </div>
+      </div>
 
       <div class="panel">
         <p class="panel-heading">

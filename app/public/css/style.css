@@ -24,6 +24,8 @@ body {
   height: 0;
 }
 a {text-decoration: none;}
+.my-columns {display: flex;justify-content: space-between;}
+.my-columns .col {width: 103px;}
 
 .bg_blue {background: #209cee;}
 .bg_red {background: #ff3860;}
@@ -107,6 +109,16 @@ div[class$="-box"]{ border-radius: 2px; margin-bottom: 8px; min-height: 14px; pa
 .page-index .panel-block time {text-align: right;display: block;font-size: 12px;color: rgb(0, 119, 255	);}
 .page-index .slide img {width: 100%;}
 .page-index .banner {margin-top: -1rem;}
+.page-index .game-recom {margin-bottom: 1rem;}
+.page-index .game-recom .tabs ul {border: none;}
+.page-index .game-recom .tabs a {color: #000; font-size: 18px;}
+.page-index .game-recom .tabs a img {margin: -3px 10px 0 0;}
+.page-index .game-recom .my-columns {padding: 0 1em;}
+.page-index .game-recom .col h3 {font-size: 13px;font-weight: bold;}
+.page-index .game-recom .col.blue h3 {color: #5eacff;}
+.page-index .game-recom .col.orange h3 {color: #ff9a42;}
+.page-index .game-recom .col.purple h3 {color: #ae6fed;}
+.page-index .game-recom .col.pink h3 {color: #ff7cb4;}
 
 .width-160 {width: 160px;}
 .width-200 {width: 200px;}
@@ -117,6 +129,10 @@ div[class$="-box"]{ border-radius: 2px; margin-bottom: 8px; min-height: 14px; pa
 .login.modal .field {margin-bottom: 1.2rem;}
 
 
-@media screen and (min-width: 1024) {
+@media screen and (min-width: 769px) {
+  .page-index .game-recom .col h3 {font-size: 16px;}
+}
+
+@media screen and (min-width: 1024px) {
   .navbar { min-height: 4.25rem; }
 }
