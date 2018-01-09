@@ -69,3 +69,5 @@ ADD `username` varchar(20) COLLATE 'utf8_general_ci' NOT NULL COMMENT '客户用
 ALTER TABLE `client` ADD INDEX(`username`);
 ALTER TABLE `client` ADD UNIQUE(`username`);
 
+ALTER TABLE `client`
+ADD `rebate_ratio` smallint NOT NULL COMMENT '分成比例（0-100）' AFTER `tax_location`;

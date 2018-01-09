@@ -33,7 +33,7 @@
               <td data-label="Surname">{{ item.recharge_num }}</td>
               <td data-label="Surname">{{ item.reg_num or 0 }}</td>
               <td data-label="Surname">{{ item.price | round(2) }}</td>
-              <td data-label="Surname">{{ item.price | getFromProfit | round(2) }}</td>
+              <td data-label="Surname">{{ item.price | getFromProfit(user.rebate_ratio) | round(2) }}</td>
             </tr>
             {% endfor %}
           </tbody>
