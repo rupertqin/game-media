@@ -23,7 +23,6 @@
         <p class="panel-heading">
           平台公告
         </p>
-        {% for i in range(0, 5) -%}
         <div class="panel-block">
           <div>
             <strong>［公告］</strong> 关于需要合作伙伴账号修改密码的通知
@@ -33,7 +32,6 @@
             <time>2016-01-18 18:16:34</time>
           </div>
         </div>
-        {%- endfor %}
       </div>
 
     </div>

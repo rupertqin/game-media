@@ -8,7 +8,7 @@
       <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
           <li>位置：</li>
-          <li class="is-active"><a href="#" aria-current="page">联系我们</a></li>
+          <li class="is-active"><a href="#" aria-current="page">关于我们</a></li>
         </ul>
       </nav>
       <div class="row board"></div>
