@@ -111,5 +111,15 @@
     <script src="/public/js/common.js"></script>
     
     {% block footer %}{% endblock %}
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?caf4a036b859359e3e65b219e47a874d";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
   </body>
 </html>
