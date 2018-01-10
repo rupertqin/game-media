@@ -20,7 +20,7 @@
               <span>公司介绍</span>
             </a>
           </li>
-          <li :class="{ 'is-active': active_tab==1 }" @click="active_tab=1">
+          <li :class="{ 'is-active': active_tab==1 }" v-show="false" @click="active_tab=1">
             <a>
               <span class="icon is-small"></i></span>
               <span>联系我们</span>
