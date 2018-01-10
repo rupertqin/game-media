@@ -12,10 +12,10 @@
           </ul>
         </div>
         <div class="my-columns has-text-centered">
-          <div class="col blue"><img src="/public/img/game-recom-1.jpg" alt=""> <h3 class="">超越联盟3D</h3></div>
-          <div class="col orange"><img src="/public/img/game-recom-2.jpg" alt=""> <h3>命运之塔</h3></div>
-          <div class="col purple"><img src="/public/img/game-recom-3.jpg" alt=""> <h3>崛起·终极王者</h3></div>
-          <div class="col pink"><img src="/public/img/game-recom-4.jpg" alt=""> <h3>你来嘛英雄</h3></div>
+          <div class="col blue"><a href="/enjoy/6N"> <img src="/public/img/game-recom-1.jpg" alt=""> <h3 class="">超越联盟3D</h3></a></div>
+          <div class="col orange"><a href="/enjoy/zm"> <img src="/public/img/game-recom-2.jpg" alt=""> <h3>命运之塔</h3></a></div>
+          <div class="col purple"><a href="/enjoy/xX"><img src="/public/img/game-recom-3.jpg" alt=""> <h3>钢铁奇兵</h3></a></div>
+          <div class="col pink"><a href="/enjoy/GL"><img src="/public/img/game-recom-4.jpg" alt=""> <h3>你来嘛英雄</h3></a></div>
         </div>
       </div>
 
