@@ -87,7 +87,21 @@
     {% block content %}{% endblock %}
     <footer class="footer">
       <div class="container">
-        <p><a href="#">关于我们</a> | <a href="/contact">联系我们</a></p>
+        <div class="columns">
+          <div class="column c-1 is-size-4 vh-centered">
+            <a href="/contact">关于我们</a><br>
+            <!-- <a href="/">联系我们</a> -->
+          </div>
+          <div class="column is-half  vh-centered">
+            <!-- <p>服务时间：9 : 00-18 : 00</p>
+            <p class="is-size-4">021-6628-6566</p> -->
+            <p>邮箱：fengjie@17kaiheiba.com</p>
+          </div>
+          <div class="column qr">
+            <img src="/public/img/qr_wx.png" alt=""> <br>
+            扫描关注艾擎公众号
+          </div>
+        </div>
       </div>
     </footer>
     {% if config.env === 'local' %}
