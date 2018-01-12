@@ -31,6 +31,7 @@
               <a class="navbar-item" href="/promote"> <span>推广列表</span> </a>
               <a class="navbar-item" href="/income"> <span>我的收入</span> </a>
               {% endif %}
+              <a class="navbar-item" href="http://blockchain.17kaiheiba.com"> <span>蘑菇链</span> </a>
               <a class="navbar-item" href="/contact"> <span>联系我们</span> </a>
               <span class="navbar-item">
                 <i class="fa fa-user" aria-hidden="true"></i>
