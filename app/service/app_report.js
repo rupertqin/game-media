@@ -14,7 +14,7 @@ class Main extends Service {
       SUM(price) / 100 as price 
       FROM pay_order o
       LEFT JOIN pay_client_app p ON o.app_id = p.id
-      WHERE p.status =1 AND o.client_id = ?
+      WHERE p.status = 1 AND o.client_id = ? AND o.status = 5
       GROUP BY DATE(o.created_at), o.app_id
       LIMIT ? OFFSET ?`
     tasks.push(this.app.mysql.query(sql, [ uid, limit, limit * (page - 1) ]))
