@@ -19,7 +19,9 @@ class Main extends Service {
       LIMIT ? OFFSET ?`
     tasks.push(this.app.mysql.query(sql, [ uid, limit, limit * (page - 1) ]))
     tasks.push(this.app.mysql.query(`select COUNT(DISTINCT DATE(created_at), app_id) as len
-      from pay_order WHERE  client_id = ?`, [ uid ]))
+      from pay_order 
+      WHERE client_id = ? AND status = 5
+      `, [ uid ]))
     tasks.push(this.findAllRegNum())
     const [ items, [{ len }], regNumArr ] = await Promise.all(tasks)
 
