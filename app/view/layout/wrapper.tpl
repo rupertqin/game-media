@@ -90,7 +90,6 @@
         <div class="columns">
           <div class="column c-1 is-size-4 vh-centered">
             <a href="/contact">关于我们</a><br>
-            <!-- <a href="/">联系我们</a> -->
           </div>
           <div class="column is-half  vh-centered">
             <!-- <p>服务时间：9 : 00-18 : 00</p>
@@ -101,6 +100,16 @@
             <img src="/public/img/qr_wx.png" alt=""> <br>
             扫描关注艾擎公众号
           </div>
+        </div>
+        <div class="about">
+          <a href="/jiazhang" target="_blank">家长监护</a>
+          <span>|</span>
+          <a href="" target="_blank">纠纷处理</a>
+        </div>
+        <div>
+          办公地址：上海市静安区江场西路299弄中铁时代广场3号楼 702室 <br>
+          客服电话：021-66286566
+          客服邮箱：aiqing@17kaiheiba.com
         </div>
       </div>
     </footer>
