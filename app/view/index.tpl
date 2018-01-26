@@ -6,10 +6,14 @@
     <section class="has-text-centered banner mb-1"><img src="/public/img/index-banner.jpg" alt=""></section>
     <div class="container">
       <div class="game-recom">
-        <div class="tabs">
+        <div class="tabs" style="margin-bottom: .1rem;">
           <ul>
             <li class="is-active"> <a><img src="/public/img/ico-hot.png" /> 游戏推荐</a></li>
           </ul>
+        </div>
+        <div class="" style="margin: 0 0 1rem 2rem;font-size: 10px;">
+          本网站游戏适合年满16周岁以上的 用户使用；<br>
+          为了您的健康，请合理控制游戏时间
         </div>
         <div class="my-columns has-text-centered">
           <div class="col blue"><a href="/enjoy/6N"> <img src="/public/img/game-recom-1.jpg" alt=""> <h3 class="">超越联盟3D</h3></a></div>
