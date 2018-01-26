@@ -107,9 +107,8 @@
           <a href="http://wpa.qq.com/msgrd?v=3&uin=455389311&site=qq&menu=yes" target="_blank">商务合作</a>
         </div>
         <div>
-          办公地址：上海市静安区江场西路299弄中铁时代广场3号楼 702室 <br>
-          客服电话：021-66286566
-          客服邮箱：aiqing@17kaiheiba.com
+          地址：上海市静安区江场西路299弄中铁时代广场3号楼 702室 
+          客服：021-66286566 
         </div>
         <div class="has-text-centered">
           Copyright © 2018 www.17kaiheiba.com 艾擎网络科技（上海）有限公司 <span style="">沪ICP备17053548号-1</span> <br>
