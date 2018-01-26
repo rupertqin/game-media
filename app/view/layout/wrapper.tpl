@@ -32,7 +32,7 @@
               <a class="navbar-item" href="/income"> <span>我的收入</span> </a>
               {% endif %}
               <a class="navbar-item" href="http://blockchain.17kaiheiba.com"> <span>蘑菇链</span> </a>
-              <a class="navbar-item" href="/contact"> <span>联系我们</span> </a>
+              <a class="navbar-item" href="/contact"> <span>关于我们</span> </a>
               <span class="navbar-item">
                 <i class="fa fa-user" aria-hidden="true"></i>
                 {% if user %}
@@ -101,10 +101,10 @@
             扫描关注艾擎公众号
           </div>
         </div>
-        <div class="about">
+        <div class="">
           <a href="/jiazhang" target="_blank">家长监护</a>
           <span>|</span>
-          <a href="" target="_blank">纠纷处理</a>
+          <a href="http://wpa.qq.com/msgrd?v=3&uin=455389311&site=qq&menu=yes" target="_blank">商务合作</a>
         </div>
         <div>
           办公地址：上海市静安区江场西路299弄中铁时代广场3号楼 702室 <br>

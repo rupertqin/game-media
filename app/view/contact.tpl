@@ -1,5 +1,5 @@
 {% extends "./layout/wrapper.tpl" %}
-{% block title %} 联系我们 {% endblock %}
+{% block title %} 关于我们 {% endblock %}
 
 {% block content %}
   <div class="main-content page-contact">
