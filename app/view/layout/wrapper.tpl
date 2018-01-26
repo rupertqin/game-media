@@ -112,7 +112,7 @@
           客服邮箱：aiqing@17kaiheiba.com
         </div>
         <div class="has-text-centered">
-          Copyright © 2018 www.17kaiheiba.com 艾擎网络科技（上海）有限公司 <span style="display: none;">沪ICP备16019745号-3</span> <br>
+          Copyright © 2018 www.17kaiheiba.com 艾擎网络科技（上海）有限公司 <span style="">沪ICP备17053548号-1</span> <br>
           健康游戏公告：抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活
         </div>
       </div>
