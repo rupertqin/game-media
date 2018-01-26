@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="no" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no,email=no" />
+  <meta name="apple-touch-fullscreen" content="yes" />
+  <meta content="fullscreen=yes,preventMove=no" name="ML-Config" />
+  <meta name='HandheldFriendly' content="True" />
+  <base href="http://dwb.gyyx.cn/m/" />
+  <link rel="stylesheet" href="http://dwb.gyyx.cn/m/css/public.css" type="text/css" />
+  <link rel="stylesheet" href="http://dwb.gyyx.cn/m/css/swiper.min.css" />
+  <link rel="stylesheet" href="http://dwb.gyyx.cn/m/css/lh170424.css" type="text/css" />
+  <style type="text/css">
+    .wrap {
+      padding-bottom: 50px;
+    }
+    footer a {
+      background: rgb(54, 153, 246);
+      border-radius: 15px;
+      color: #fff;
+      text-align: center;
+      line-height: 28px;
+      font-size: 13px;
+    }
+    header .text, footer .text {
+      position: absolute;
+      left: 25%;
+      top: 40px;
+      font-size: 12px;
+      color: #fff;
+    }
+    footer .text {
+      bottom: 10px;
+      left: 45%;
+    }
+  </style>
+  <script src="http://dwb.gyyx.cn/m/js/zepto.min.js"></script>
+  <title>道无边官网</title>
+</head>
+
+<body ontouchstart="">
+  <header class="top">
+    <img src="http://dwb.gyyx.cn/m/images/bg_nav.jpg" />
+    <span class="text">（仅安卓用户）</span>
+    <a class="btn" href="http://download.17kaiheiba.com/apk/dwb.apk"></a>
+  </header>
+  <div class="wrap iWrap">
+    <div class="page page01">
+      <img src="http://dwb.gyyx.cn/m/images/sy_bg.jpg">
+      <a href="javascript:;" class="syVideo" data-videourl="http://download.gyyx.cn/Default.ashx?typeid=938&netType=1&file=rxgc.mp4"></a>
+    </div>
+    
+    <div class="page page03">
+      <img src="http://dwb.gyyx.cn/m/images/sy_bg02.jpg">
+      <h3><img src="http://dwb.gyyx.cn/m/images/sy_tit02.png"></h3>
+      <!--门派介绍-->
+      <div id="tabCont" class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="http://dwb.gyyx.cn/m/images/dwb_mpj.png"><a href="javascript:;" data-i="0"></a></div>
+          <div class="swiper-slide"><img src="http://dwb.gyyx.cn/m/images/dwb_mpm.png"><a href="javascript:;" data-i="1"></a></div>
+          <div class="swiper-slide"><img src="http://dwb.gyyx.cn/m/images/dwb_mps.png"><a href="javascript:;" data-i="2"></a></div>
+          <div class="swiper-slide"><img src="http://dwb.gyyx.cn/m/images/dwb_mph.png"><a href="javascript:;" data-i="3"></a></div>
+          <div class="swiper-slide"><img src="http://dwb.gyyx.cn/m/images/dwb_mpt.png"><a href="javascript:;" data-i="4"></a></div>
+        </div>
+      </div>
+      <div class="syTabs02">
+        <a href="javascript:;" class="a01 active">1</a>
+        <a href="javascript:;" class="a02">2</a>
+        <a href="javascript:;" class="a03">3</a>
+        <a href="javascript:;" class="a04">4</a>
+        <a href="javascript:;" class="a05">5</a>
+      </div>
+      <!--门派介绍 End-->
+      <div class="bgFooter"><img src="http://dwb.gyyx.cn/m/images/sy_bg03.png"></div>
+    </div>
+    
+  </div>
+  <!--门派介绍 tc-->
+  <div class="tc">
+    <img src="http://dwb.gyyx.cn/m/images/sy_tcBg.png">
+    <div class="tcTxt">
+    </div>
+    <a href="javascript:;" class="close"><img src="http://dwb.gyyx.cn/m/images/sy_tcClose.png"></a>
+  </div>
+  <!--video tc-->
+  <div id="vidWrap">
+    <video src="http://download.gyyx.cn/Default.ashx?typeid=938&netType=1&file=hddyj.mp4" webkit-playsinline controls style="width: 100%">
+      您的浏览器不支持 video 标签。
+    </video>
+  </div>
+  <footer>
+    <span class="text">（仅安卓用户）</span>
+    <img src="http://dwb.gyyx.cn/m/images/dwb_footer.png">
+    <a href="http://actionv2.gyyx.cn/sapevent/dwbxf2017/index" target="_blank">免费下载</a>
+  </footer>
+  <script type="text/javascript" src="http://dwb.gyyx.cn/m/js/swiper-3.4.2.min.js"></script>
+  <script type="text/javascript" src="http://dwb.gyyx.cn/m/js/lh170426.js"></script>
+  <script>
+  $(".btn").click(function() {
+    var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    var url = "";
+    if (isAndroid) {
+      url = "http://download.17kaiheiba.com/apk/dwb.apk"
+    }
+    if (isiOS) {
+      url = "http://download.17kaiheiba.com/apk/dwb.apk"
+    }
+    $(".btn").attr("href", url);
+  })
+  </script>
+</body>
+
+</html>
