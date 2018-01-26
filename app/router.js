@@ -14,6 +14,7 @@ module.exports = app => {
   app.get('app-report', '/app-report', needAPVIP, renderView, 'appReport.index');
   app.get('enjoy', '/enjoy/:id', renderView, 'main.enjoy');
   app.get('contact', '/contact', renderView, 'main.contact');
+  app.get('about', '/about', renderView, 'main.about');
 
   // login
   app.post('/login', 'main.login');

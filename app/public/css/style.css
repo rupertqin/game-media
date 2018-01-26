@@ -109,6 +109,9 @@ div[class$="-box"]{ border-radius: 2px; margin-bottom: 8px; min-height: 14px; pa
 .page-contact .panel-block i.fa {color: #fff;border-radius: 50%;margin-bottom: .5em;width: 80px;height: 80px;box-sizing: content-box;}
 .page-contact .panel-block.advantages i.fa {padding: 0.4em;}
 
+.page-about {}
+.page-about .advantages {margin: 8rem auto;}
+
 .page-index {}
 .page-index .panel-block time {text-align: right;display: block;font-size: 12px;color: rgb(0, 119, 255	);}
 .page-index .slide img {width: 100%;}

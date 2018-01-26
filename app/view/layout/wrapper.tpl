@@ -32,7 +32,7 @@
               <a class="navbar-item" href="/income"> <span>我的收入</span> </a>
               {% endif %}
               <a class="navbar-item" href="http://blockchain.17kaiheiba.com"> <span>蘑菇链</span> </a>
-              <a class="navbar-item" href="/contact"> <span>关于我们</span> </a>
+              <a class="navbar-item" href="/about"> <span>关于我们</span> </a>
               <span class="navbar-item">
                 <i class="fa fa-user" aria-hidden="true"></i>
                 {% if user %}
@@ -89,7 +89,7 @@
       <div class="container">
         <div class="columns">
           <div class="column c-1 is-size-4 vh-centered">
-            <a href="/contact">关于我们</a><br>
+            <a href="/about">关于我们</a><br>
           </div>
           <div class="column is-half  vh-centered">
             <!-- <p>服务时间：9 : 00-18 : 00</p>
@@ -102,7 +102,7 @@
           </div>
         </div>
         <div class="">
-          <a href="/jiazhang" target="_blank">家长监护</a>
+          <a href="/public/jiazhang/index.html" target="_blank">家长监护</a>
           <span>|</span>
           <a href="http://wpa.qq.com/msgrd?v=3&uin=455389311&site=qq&menu=yes" target="_blank">商务合作</a>
         </div>
@@ -110,6 +110,10 @@
           办公地址：上海市静安区江场西路299弄中铁时代广场3号楼 702室 <br>
           客服电话：021-66286566
           客服邮箱：aiqing@17kaiheiba.com
+        </div>
+        <div class="has-text-centered">
+          Copyright © 2018 www.17kaiheiba.com 艾擎网络科技（上海）有限公司 <span style="display: none;">沪ICP备16019745号-3</span> <br>
+          健康游戏公告：抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活
         </div>
       </div>
     </footer>

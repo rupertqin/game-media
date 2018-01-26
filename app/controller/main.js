@@ -59,6 +59,9 @@ module.exports = app => {
     async contact() {
       await this.ctx.render('contact.tpl');
     }
+    async about() {
+      await this.ctx.render('about.tpl');
+    }
 
   }
   return MainController;
