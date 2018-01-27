@@ -57,7 +57,7 @@ module.exports = app => {
     }
 
     async contact() {
-      await this.ctx.render('contact.tpl');
+      await this.ctx.render('contact_2.tpl');
     }
     async about() {
       await this.ctx.render('about.tpl');

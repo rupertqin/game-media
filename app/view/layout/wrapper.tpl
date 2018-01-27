@@ -103,8 +103,10 @@
         </div>
         <div class="">
           <a href="/public/jiazhang/index.html" target="_blank">家长监护</a>
+          <!--<span>|</span>
+          <a href="/contact" target="_blank">商务合作</a>-->
           <span>|</span>
-          <a href="http://wpa.qq.com/msgrd?v=3&uin=455389311&site=qq&menu=yes" target="_blank">商务合作</a>
+          <a href="/contact" target="_blank">联系我们</a>
         </div>
         <div>
           地址：上海市静安区江场西路299弄中铁时代广场3号楼 702室 
